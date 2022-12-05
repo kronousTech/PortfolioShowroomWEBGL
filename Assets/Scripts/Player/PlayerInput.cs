@@ -21,20 +21,21 @@ public class PlayerInput : MonoBehaviour
     private const string MOVEMENT_VERTICAL_INPUT = "Vertical";
     private const string MOUSE_X_INPUT = "Mouse X";
     private const string MOUSE_Y_INPUT = "Mouse Y";
-    
 
     private void Update()
     {
-        SetMouseInput();
         SetMovementInput();
+
     }
     private void FixedUpdate()
     {
-        InvokeMovementListeners();
+        InvokeMovementInputListeners();
     }
+
     private void LateUpdate()
     {
-        InvokeMouseMovingListeners();
+        SetMouseInput();
+        InvokeMouseInputListeners();
     }
     private void OnApplicationFocus(bool hasFocus)
     {
@@ -56,7 +57,7 @@ public class PlayerInput : MonoBehaviour
         _mouseInput = new Vector2(xAxis, yAxis);
     }
 
-    private void InvokeMovementListeners()
+    private void InvokeMovementInputListeners()
     {
         if (_movementInput.x != 0 || _movementInput.y != 0)
         {
@@ -64,7 +65,7 @@ public class PlayerInput : MonoBehaviour
             _onMovementValue?.Invoke(_movementInput);
         }
     }
-    private void InvokeMouseMovingListeners()
+    private void InvokeMouseInputListeners()
     {
         // Invoke if mouse moved
         if (_mouseInput.x != 0 || _mouseInput.y != 0)
