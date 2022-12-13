@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
     private Action<Vector2> _onMovementValue = new((Vector2) => { });
     private Action _onMouseMoving = new(() => { });
     private Action<Vector2> _onMouseMovingValue = new((Vector2) => { });
+    private Action _onJumpInput = new(() => { });
 
     private const string MOVEMENT_HORIZONTAL_INPUT = "Horizontal";
     private const string MOVEMENT_VERTICAL_INPUT = "Vertical";
@@ -26,7 +27,10 @@ public class PlayerInput : MonoBehaviour
     {
         SetMovementInput();
 
+        CheckJumpInput();
+
     }
+
     private void FixedUpdate()
     {
         InvokeMovementInputListeners();
@@ -57,9 +61,17 @@ public class PlayerInput : MonoBehaviour
         _mouseInput = new Vector2(xAxis, yAxis);
     }
 
+    private void CheckJumpInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _onJumpInput?.Invoke();
+        }
+    }
+
     private void InvokeMovementInputListeners()
     {
-        if (_movementInput.x != 0 || _movementInput.y != 0)
+        //if (_movementInput.x != 0 || _movementInput.y != 0)
         {
             _onMovement?.Invoke();
             _onMovementValue?.Invoke(_movementInput);
@@ -89,4 +101,7 @@ public class PlayerInput : MonoBehaviour
     public void AddOnMouseMovingListener(Action<Vector2> listener) => _onMouseMovingValue += listener;
     public void RemoveOnMouseMovingListener(Action listener) => _onMouseMoving -= listener;
     public void RemoveOnMouseMovingListener(Action<Vector2> listener) => _onMouseMovingValue -= listener;
+
+    public void AddOnJumpInputListener(Action listener) => _onJumpInput += listener;
+    public void RemoveOnJumpInputListener(Action listener) => _onJumpInput -= listener;
 }

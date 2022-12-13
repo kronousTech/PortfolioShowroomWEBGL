@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerGroundCheck : MonoBehaviour
 {
     [Header("Ground Check")]
+    [SerializeField] private float _sphereRadius = 0.3f;
     [SerializeField] private float _checkOffset;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private bool _grounded;
@@ -22,12 +23,12 @@ public class PlayerGroundCheck : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(transform.position - (Vector3.up * _checkOffset), 0.5f);
+        Gizmos.DrawSphere(transform.position - (Vector3.up * _checkOffset), _sphereRadius);
     }
     private bool IsOnGround()
     {
         var spherePos = new Vector3(transform.position.x, transform.position.y - _checkOffset, transform.position.z);
-        return Physics.CheckSphere(spherePos, 0.5f, _groundLayer, QueryTriggerInteraction.Ignore);
+        return Physics.CheckSphere(spherePos, _sphereRadius, _groundLayer, QueryTriggerInteraction.Ignore);
     }
 
     public void AddOnGroundStateChangeListener(Action<bool> listener) => _onGroundStateChange += listener;

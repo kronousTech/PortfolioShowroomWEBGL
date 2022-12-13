@@ -23,6 +23,6 @@ public class DebugCanvas : MonoBehaviour
         _cameraRotation.text = "Camera Rotation: " + _camera.transform.rotation.ToString();
         _cameraEuler.text = "Camera Euler Angles: " + _camera.transform.eulerAngles.ToString();
         _cameraLocalEuler.text = "Camera Local Euler Angles: " + _camera.transform.localEulerAngles.ToString();
-        _interpolateValue.text = "Interpolation Value: " + _interpolateScript.interpolateValue;
+        //_interpolateValue.text = "Interpolation Value: " + _interpolateScript.interpolateValue;
     }
 }

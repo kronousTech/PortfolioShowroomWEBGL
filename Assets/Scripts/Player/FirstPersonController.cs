@@ -18,9 +18,14 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField][Range(100f, 400f)] private float _moveSpeed = 150f;
     [SerializeField][Range(0f, 10)] private float _groundDrag = 5f;
     [SerializeField][Range(0.05f, 5f)] private float _lookSensivity = 2f;
-    [SerializeField][Range(0f, 90f)] float _xRotationLimit = 88f;
+    [SerializeField][Range(0f, 90f)] private float _xRotationLimit = 88f;
+    [SerializeField][Range(5f, 20f)] private float _jumpForce = 12f;
+    [SerializeField][Range(0f, 5f)] private float _airMultiplier = 0.25f;
+    [SerializeField] private bool _isOnGround = true;
+
 
     private float interpolateValue = 15f;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -31,14 +36,15 @@ public class FirstPersonController : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _playerInput.AddOnMovementListener(MovePlayer);
         _playerInput.AddOnMouseMovingListener(RotateView);
-        //_playerInput.AddOnMouseMovingListener(RotateOrientation);
-        //_playerInput.AddOnMouseMovingListener(RotateHead);
+        _playerInput.AddOnJumpInputListener(Jump);
 
         _playerGroundCheck = GetComponent<PlayerGroundCheck>();
         _playerGroundCheck.AddOnGroundStateChangeListener(HandleDrag);
+        _playerGroundCheck.AddOnGroundStateChangeListener(CheckIfJumpIsReady);
     }
     private void Update()
     {
+        SpeedControl();
         //if (Input.GetKeyDown(KeyCode.C)) interpolateValue += 1f;
         //if (Input.GetKeyDown(KeyCode.V)) interpolateValue -= 1f;
     }
@@ -56,8 +62,9 @@ public class FirstPersonController : MonoBehaviour
     {
         var moveDirection = _orientation.forward * movementInput.y
             + _orientation.right * movementInput.x;
+        var force = (_moveSpeed * Time.maximumDeltaTime * moveDirection.normalized) * (_isOnGround ? 1:_airMultiplier);
 
-        _rigidbody.AddForce(_moveSpeed * Time.maximumDeltaTime * moveDirection.normalized, ForceMode.Force);
+        _rigidbody.AddForce(force, ForceMode.Force);
     }
 
     private void RotateView(Vector2 mouseInput)
@@ -68,5 +75,32 @@ public class FirstPersonController : MonoBehaviour
         // Interpolated way
         _mainCamera.transform.localEulerAngles -= new Vector3(Mathf.Clamp(inputY, -_xRotationLimit, _xRotationLimit), 0, 0);
         _orientation.localEulerAngles += new Vector3(0, inputX, 0);
+    }
+
+    private void SpeedControl()
+    {
+        var velocity = _rigidbody.velocity;
+        var flatVelocity = new Vector3(velocity.x, 0, velocity.z);
+
+        if(flatVelocity.magnitude > _moveSpeed)
+        {
+            var limitedVelocity = flatVelocity.normalized * _moveSpeed;
+            _rigidbody.velocity = new Vector3(limitedVelocity.x, velocity.y, limitedVelocity.z);
+        }
+    }
+
+    private void Jump()
+    {
+        if (!_isOnGround)
+            return;
+
+        var velocity = _rigidbody.velocity;
+        _rigidbody.velocity = new Vector3(velocity.x, 0f, velocity.z);
+        _rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+    }
+
+    private void CheckIfJumpIsReady(bool state)
+    {
+        _isOnGround = state;
     }
 }
