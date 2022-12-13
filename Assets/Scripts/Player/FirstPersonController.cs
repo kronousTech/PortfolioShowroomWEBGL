@@ -20,7 +20,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField][Range(0.05f, 5f)] private float _lookSensivity = 2f;
     [SerializeField][Range(0f, 90f)] float _xRotationLimit = 88f;
 
-    public float interpolateValue = 0.95f;
+    private float interpolateValue = 15f;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -39,9 +39,8 @@ public class FirstPersonController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)) interpolateValue += 1f;
-        if (Input.GetKeyDown(KeyCode.V)) interpolateValue -= 1f;
-
+        //if (Input.GetKeyDown(KeyCode.C)) interpolateValue += 1f;
+        //if (Input.GetKeyDown(KeyCode.V)) interpolateValue -= 1f;
     }
 
     private void OnDrawGizmos()
@@ -66,38 +65,8 @@ public class FirstPersonController : MonoBehaviour
         var inputX = Mathf.Clamp(mouseInput.x, -interpolateValue, interpolateValue) * _lookSensivity * Time.maximumDeltaTime;
         var inputY = Mathf.Clamp(mouseInput.y, -interpolateValue, interpolateValue) * _lookSensivity * Time.maximumDeltaTime;
 
-        //xRotation -= Mathf.Lerp(xRotation, inputY, interpolateValue);
-        //yRotation += Mathf.Lerp(yRotation, inputX, interpolateValue);
-
-        //_cameraRotationToInterpolate += new Vector3(-inputY, inputX, 0);
-        //_cameraRotationToInterpolate = 
-        //    new Vector3( Mathf.Clamp(_cameraRotationToInterpolate.x, -_xRotationLimit, _xRotationLimit),
-        //    _cameraRotationToInterpolate.y,
-        //    _cameraRotationToInterpolate.z);
-
-        // Default calculation
-        //_mainCamera.transform.eulerAngles = _cameraRotationToInterpolate;
         // Interpolated way
         _mainCamera.transform.localEulerAngles -= new Vector3(Mathf.Clamp(inputY, -_xRotationLimit, _xRotationLimit), 0, 0);
         _orientation.localEulerAngles += new Vector3(0, inputX, 0);
-        //_mainCamera.transform.localEulerAngles = Vector3.Lerp(_mainCamera.transform.eulerAngles, _cameraRotationToInterpolate, interpolateValue);
-        //_orientation.Rotate(Vector3.up, yRotation, Space.World);
-        //newRotation.x = Mathf.Clamp(newRotation.x, -_xRotationLimit, _xRotationLimit);
-        //_mainCamera.transform.Rotate(inputY, inputX, 0);
-        //_mainCamera.transform.Rotate(Vector3.right, inputX, Space.World);
-        //_mainCamera.transform.Rotate(Vector3.up, inputX, Space.World);
-
-        //_mainCamera.transform.ro = Quaternion.Lerp(_mainCamera.transform.rotation, newRotation, 0.99f);
-        //_yRotation += inputX;
-        //_xRotation -= inputY;
-        //_xRotation = Mathf.Clamp(_xRotation, -_xRotationLimit, _xRotationLimit);
-    }
-    private void RotateHead()
-    {
-        
-
-    }
-    private void RotateOrientation()
-    {
     }
 }
