@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
@@ -8,23 +9,33 @@ using Input = UnityEngine.Input;
 public class FirstPersonController : MonoBehaviour
 {
     [SerializeField] public Transform _orientation;
+    [SerializeField] private bool _isOnGround = true;
+    [SerializeField] private bool _isOnSlope = true;
 
     private Rigidbody _rigidbody;
     private GameObject _mainCamera;
     private PlayerInput _playerInput;
     private PlayerGroundCheck _playerGroundCheck;
+    private PlayerSlopeCheck _playerSlopeCheck;
 
     [Header("Player Settings")]
-    [SerializeField][Range(100f, 400f)] private float _moveSpeed = 150f;
+    private float _moveSpeed;
+    [SerializeField][Range(1f, 10f)] private float _walkSpeed = 7f;
+    [SerializeField][Range(1.5f, 15f)] private float _sprintSpeed = 10f;
+
+    [Header("Jumping Handling")]
     [SerializeField][Range(0f, 10)] private float _groundDrag = 5f;
-    [SerializeField][Range(0.05f, 5f)] private float _lookSensivity = 2f;
-    [SerializeField][Range(0f, 90f)] private float _xRotationLimit = 88f;
     [SerializeField][Range(5f, 20f)] private float _jumpForce = 12f;
     [SerializeField][Range(0f, 5f)] private float _airMultiplier = 0.25f;
-    [SerializeField] private bool _isOnGround = true;
 
+    [Header("Camera Handling")]
+    [SerializeField][Range(10f, 100f)] private float _lookSensivity = 2f;
+    [SerializeField][Range(0f, 90f)] private float _xRotationLimit = 88f;
 
-    private float interpolateValue = 15f;
+    private Vector3 _moveDirection;
+    private readonly float _interpolateValue = 20f;
+    private readonly float _forceMultiplier = 1000f;
+   
 
     private void Awake()
     {
@@ -36,41 +47,79 @@ public class FirstPersonController : MonoBehaviour
         _playerInput = GetComponent<PlayerInput>();
         _playerInput.AddOnMovementListener(MovePlayer);
         _playerInput.AddOnMouseMovingListener(RotateView);
-        _playerInput.AddOnJumpInputListener(Jump);
+        _playerInput.AddOnJumpInputListener(JumpListener);
+        _playerInput.AddOnSprintInputListener(HandleMoveSpeedListener);
 
         _playerGroundCheck = GetComponent<PlayerGroundCheck>();
-        _playerGroundCheck.AddOnGroundStateChangeListener(HandleDrag);
-        _playerGroundCheck.AddOnGroundStateChangeListener(CheckIfJumpIsReady);
+        _playerGroundCheck.AddOnGroundStateChangeListener(HandleDragListener);
+        _playerGroundCheck.AddOnGroundStateChangeListener(HandleOnGroundStateListener);
+
+        _playerSlopeCheck = GetComponent<PlayerSlopeCheck>();
+        _playerSlopeCheck.AddOnStateListener(MovePlayerOnSlope);
+        _playerSlopeCheck.AddOnStateChangeListener(HandleOnSlopeStateListener);
+        _playerSlopeCheck.AddOnStateChangeListener(HandleGravityListener);
+
+        _moveSpeed = _walkSpeed;
     }
+
     private void Update()
     {
         SpeedControl();
-        //if (Input.GetKeyDown(KeyCode.C)) interpolateValue += 1f;
-        //if (Input.GetKeyDown(KeyCode.V)) interpolateValue -= 1f;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, transform.position + _orientation.forward);
-    }
-    private void HandleDrag(bool state)
+    
+    private void HandleDragListener(bool state)
     {
         _rigidbody.drag = state ? _groundDrag : 0;
     }
-
-    private void MovePlayer(Vector2 movementInput)
+    private void HandleGravityListener(bool onSlope)
     {
-        var moveDirection = _orientation.forward * movementInput.y
-            + _orientation.right * movementInput.x;
-        var force = (_moveSpeed * Time.maximumDeltaTime * moveDirection.normalized) * (_isOnGround ? 1:_airMultiplier);
-
-        _rigidbody.AddForce(force, ForceMode.Force);
+        _rigidbody.useGravity = !onSlope;
+    }
+    private void HandleOnGroundStateListener(bool state)
+    {
+        _isOnGround = state;
+    }
+    private void HandleOnSlopeStateListener(bool state)
+    {
+        _isOnSlope = state;
+    }
+    private void HandleMoveSpeedListener(bool state)
+    {
+        _moveSpeed = state ? _sprintSpeed : _walkSpeed;
     }
 
+    private void JumpListener()
+    {
+        if (!_isOnGround && !_isOnSlope)
+            return;
+
+        var velocity = _rigidbody.velocity;
+        _rigidbody.velocity = new Vector3(velocity.x, 0f, velocity.z);
+        _rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+    }
+    private void MovePlayer(Vector2 movementInput)
+    {
+        _moveDirection = _orientation.forward * movementInput.y + _orientation.right * movementInput.x;
+
+        var force = _moveDirection.normalized* _moveSpeed * Time.deltaTime * (_isOnGround ? 1 : _airMultiplier);
+
+        _rigidbody.AddForce(force * _forceMultiplier, ForceMode.Force);
+    }
+    private void MovePlayerOnSlope()
+    {
+        var slopeDirection = _playerSlopeCheck.GetSlopeMoveDirection(_moveDirection);
+        var slopeForce = slopeDirection * _moveSpeed * Time.deltaTime;
+
+        _rigidbody.AddForce(slopeForce * (_forceMultiplier * 10f), ForceMode.Force);
+
+        if (_rigidbody.velocity.y > 0)
+            _rigidbody.AddForce(Vector3.down * _forceMultiplier, ForceMode.Force);
+    }
     private void RotateView(Vector2 mouseInput)
     {
-        var inputX = Mathf.Clamp(mouseInput.x, -interpolateValue, interpolateValue) * _lookSensivity * Time.maximumDeltaTime;
-        var inputY = Mathf.Clamp(mouseInput.y, -interpolateValue, interpolateValue) * _lookSensivity * Time.maximumDeltaTime;
+        var inputX = Mathf.Clamp(mouseInput.x, -_interpolateValue, _interpolateValue) * _lookSensivity * Time.deltaTime;
+        var inputY = Mathf.Clamp(mouseInput.y, -_interpolateValue, _interpolateValue) * _lookSensivity * Time.deltaTime;
 
         // Interpolated way
         _mainCamera.transform.localEulerAngles -= new Vector3(Mathf.Clamp(inputY, -_xRotationLimit, _xRotationLimit), 0, 0);
@@ -80,27 +129,21 @@ public class FirstPersonController : MonoBehaviour
     private void SpeedControl()
     {
         var velocity = _rigidbody.velocity;
-        var flatVelocity = new Vector3(velocity.x, 0, velocity.z);
 
-        if(flatVelocity.magnitude > _moveSpeed)
+        if (_isOnSlope)
         {
-            var limitedVelocity = flatVelocity.normalized * _moveSpeed;
-            _rigidbody.velocity = new Vector3(limitedVelocity.x, velocity.y, limitedVelocity.z);
+            if(velocity.magnitude > _moveSpeed)
+                _rigidbody.velocity = _rigidbody.velocity.normalized * _moveSpeed;
         }
-    }
+        else
+        {
+            var flatVelocity = new Vector3(velocity.x, 0, velocity.z);
 
-    private void Jump()
-    {
-        if (!_isOnGround)
-            return;
-
-        var velocity = _rigidbody.velocity;
-        _rigidbody.velocity = new Vector3(velocity.x, 0f, velocity.z);
-        _rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
-    }
-
-    private void CheckIfJumpIsReady(bool state)
-    {
-        _isOnGround = state;
+            if (flatVelocity.magnitude > _moveSpeed)
+            {
+                var limitedVelocity = flatVelocity.normalized * _moveSpeed;
+                _rigidbody.velocity = new Vector3(limitedVelocity.x, velocity.y, limitedVelocity.z);
+            }
+        }
     }
 }

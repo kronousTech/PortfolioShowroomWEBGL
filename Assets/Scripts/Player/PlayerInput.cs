@@ -17,6 +17,7 @@ public class PlayerInput : MonoBehaviour
     private Action _onMouseMoving = new(() => { });
     private Action<Vector2> _onMouseMovingValue = new((Vector2) => { });
     private Action _onJumpInput = new(() => { });
+    private Action<bool> _onSprintInput = new((state) => { });
 
     private const string MOVEMENT_HORIZONTAL_INPUT = "Horizontal";
     private const string MOVEMENT_VERTICAL_INPUT = "Vertical";
@@ -25,20 +26,18 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        SetMovementInput();
-
+        CheckMovementInput();
         CheckJumpInput();
-
+        CheckSprintInput();
     }
 
     private void FixedUpdate()
     {
         InvokeMovementInputListeners();
     }
-
     private void LateUpdate()
     {
-        SetMouseInput();
+        CheckMouseInput();
         InvokeMouseInputListeners();
     }
     private void OnApplicationFocus(bool hasFocus)
@@ -46,26 +45,36 @@ public class PlayerInput : MonoBehaviour
         SetCursorState(cursorLocked);
     }
 
-    private void SetMovementInput()
+    private void CheckMovementInput()
     {
         var hMovement = Input.GetAxisRaw(MOVEMENT_HORIZONTAL_INPUT);
         var vMovement = Input.GetAxisRaw(MOVEMENT_VERTICAL_INPUT);
 
         _movementInput = new Vector2(hMovement, vMovement);
     }
-    private void SetMouseInput()
+    private void CheckMouseInput()
     {
         var xAxis = Input.GetAxis(MOUSE_X_INPUT);
         var yAxis = Input.GetAxis(MOUSE_Y_INPUT);
 
         _mouseInput = new Vector2(xAxis, yAxis);
     }
-
     private void CheckJumpInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _onJumpInput?.Invoke();
+        }
+    }
+    private void CheckSprintInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _onSprintInput?.Invoke(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _onSprintInput?.Invoke(false);
         }
     }
 
@@ -80,7 +89,7 @@ public class PlayerInput : MonoBehaviour
     private void InvokeMouseInputListeners()
     {
         // Invoke if mouse moved
-        if (_mouseInput.x != 0 || _mouseInput.y != 0)
+        //if (_mouseInput.x != 0 || _mouseInput.y != 0)
         {
             _onMouseMoving?.Invoke();
             _onMouseMovingValue?.Invoke(_mouseInput);
@@ -104,4 +113,7 @@ public class PlayerInput : MonoBehaviour
 
     public void AddOnJumpInputListener(Action listener) => _onJumpInput += listener;
     public void RemoveOnJumpInputListener(Action listener) => _onJumpInput -= listener;
+
+    public void AddOnSprintInputListener(Action<bool> listener) => _onSprintInput += listener;
+    public void RemoveOnSprintInputListener(Action<bool> listener) => _onSprintInput -= listener;
 }
