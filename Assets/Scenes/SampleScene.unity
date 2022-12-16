@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cba296f981dae4a85a600305a44d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSlopeAngle: 50
+  _maxSlopeAngle: 60
 --- !u!1 &134773221
 GameObject:
   m_ObjectHideFlags: 0

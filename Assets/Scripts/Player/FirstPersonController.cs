@@ -30,7 +30,7 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Camera Handling")]
     [SerializeField][Range(10f, 100f)] private float _lookSensivity = 2f;
-    [SerializeField][Range(0f, 90f)] private float _xRotationLimit = 88f;
+    [SerializeField][Range(0f, 90f)] private float _xRotationLimit;
 
     private Vector3 _moveDirection;
     private readonly float _interpolateValue = 20f;
@@ -66,7 +66,6 @@ public class FirstPersonController : MonoBehaviour
     {
         SpeedControl();
     }
-
     
     private void HandleDragListener(bool state)
     {
@@ -118,11 +117,16 @@ public class FirstPersonController : MonoBehaviour
     }
     private void RotateView(Vector2 mouseInput)
     {
+        // Interpolated way
         var inputX = Mathf.Clamp(mouseInput.x, -_interpolateValue, _interpolateValue) * _lookSensivity * Time.deltaTime;
         var inputY = Mathf.Clamp(mouseInput.y, -_interpolateValue, _interpolateValue) * _lookSensivity * Time.deltaTime;
 
-        // Interpolated way
-        _mainCamera.transform.localEulerAngles -= new Vector3(Mathf.Clamp(inputY, -_xRotationLimit, _xRotationLimit), 0, 0);
+        var newXAngle = _mainCamera.transform.localEulerAngles.x - inputY;
+        _mainCamera.transform.localEulerAngles = new Vector3(
+            Mathf.Clamp((newXAngle <= 180) ? newXAngle : -(360 - newXAngle), -_xRotationLimit, _xRotationLimit),
+            transform.localEulerAngles.y, 
+            transform.localEulerAngles.z);
+
         _orientation.localEulerAngles += new Vector3(0, inputX, 0);
     }
 

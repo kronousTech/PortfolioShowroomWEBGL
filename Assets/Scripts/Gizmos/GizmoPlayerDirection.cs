@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Debug.GizmosVisualizers
+namespace GizmosVisualizers
 {
     public class GizmoPlayerDirection : MonoBehaviour
     {
