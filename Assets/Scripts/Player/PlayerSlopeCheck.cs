@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-
 public class PlayerSlopeCheck : MonoBehaviour
 {
     [SerializeField][Range(15f, 75f)] private float _maxSlopeAngle;
+    [SerializeField] private float _rayLength;
     private RaycastHit _slopeHit;
-
     private bool _isOnSlope = false;
 
     private Action _onState = new(() => { });
@@ -26,10 +25,9 @@ public class PlayerSlopeCheck : MonoBehaviour
             _onState?.Invoke();
     }
 
-
     private bool OnSlope()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, 1.8f * 0.5f + 0.3f))
+        if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, _rayLength))
         {
             float angle = Vector3.Angle(Vector3.up, _slopeHit.normal);
             return angle < _maxSlopeAngle && angle != 0;

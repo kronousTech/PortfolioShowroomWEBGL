@@ -28,6 +28,10 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField][Range(5f, 20f)] private float _jumpForce = 12f;
     [SerializeField][Range(0f, 5f)] private float _airMultiplier = 0.25f;
 
+    [Header("Slope Handling")]
+    [SerializeField] private float _slopeForceMultiplier;
+    [SerializeField] private float _slopeDownForceMultiplier;
+
     [Header("Camera Handling")]
     [SerializeField][Range(10f, 100f)] private float _lookSensivity = 2f;
     [SerializeField][Range(0f, 90f)] private float _xRotationLimit;
@@ -110,10 +114,10 @@ public class FirstPersonController : MonoBehaviour
         var slopeDirection = _playerSlopeCheck.GetSlopeMoveDirection(_moveDirection);
         var slopeForce = slopeDirection * _moveSpeed * Time.deltaTime;
 
-        _rigidbody.AddForce(slopeForce * (_forceMultiplier * 10f), ForceMode.Force);
+        _rigidbody.AddForce(slopeForce * _forceMultiplier * _slopeForceMultiplier, ForceMode.Force);
 
-        if (_rigidbody.velocity.y > 0)
-            _rigidbody.AddForce(Vector3.down * _forceMultiplier, ForceMode.Force);
+        if (_rigidbody.velocity.y > 0 || _moveDirection != Vector3.zero)
+            _rigidbody.AddForce(Vector3.down * _slopeDownForceMultiplier, ForceMode.Force);
     }
     private void RotateView(Vector2 mouseInput)
     {
@@ -129,7 +133,6 @@ public class FirstPersonController : MonoBehaviour
 
         _orientation.localEulerAngles += new Vector3(0, inputX, 0);
     }
-
     private void SpeedControl()
     {
         var velocity = _rigidbody.velocity;
