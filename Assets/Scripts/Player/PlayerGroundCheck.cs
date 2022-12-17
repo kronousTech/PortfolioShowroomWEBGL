@@ -29,7 +29,7 @@ public class PlayerGroundCheck : MonoBehaviour
     private bool IsOnGround()
     {
         var spherePos = new Vector3(transform.position.x, transform.position.y - _checkOffset, transform.position.z);
-        return Physics.CheckSphere(spherePos, _sphereRadius, _groundLayer, QueryTriggerInteraction.UseGlobal);
+        return Physics.CheckSphere(spherePos, _sphereRadius, _groundLayer);
     }
 
     public void AddOnGroundStateChangeListener(Action<bool> listener) => _onGroundStateChange += listener;
