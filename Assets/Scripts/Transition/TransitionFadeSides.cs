@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TransitionTunnel))]
 public class TransitionFadeSides : MonoBehaviour
 {
-    private Transform _selectedSide; 
+    private Transform _selectedSide;
     private void Awake()
     {
         var tunnel = GetComponent<TransitionTunnel>();

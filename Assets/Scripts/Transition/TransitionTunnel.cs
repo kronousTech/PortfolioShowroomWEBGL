@@ -141,5 +141,9 @@ namespace Transitions
 
         public void AddOnLeftEffect(Action<float> listener) => _onLeftEffect += listener;
         public void AddOnRightEffect(Action<float> listener) => _onRightEffect += listener;
+        public void AddOnLeftActivation(Action listener) => _onLeftActivation += listener;
+        public void AddOnRightActivation(Action listener) => _onRightActivation += listener;
+        public void AddOnLeftDeactivation(Action listener) => _onLeftDeactivation += listener;
+        public void AddOnRightDeactivation(Action listener) => _onRightDeactivation += listener;
     }
 }
