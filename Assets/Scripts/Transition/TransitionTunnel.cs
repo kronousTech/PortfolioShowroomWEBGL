@@ -9,18 +9,18 @@ namespace Transitions
         X
     }
 
-    public enum ClosestSide
+    public enum TransitionTunnelSide
     {
-        Left,
-        Right
+        Blue,
+        Red
     }
     public class TransitionTunnel : MonoBehaviour
     {
         private readonly string _playerTag = "Player";
         private Transform _player;
         [SerializeField] private TunnelDirection _direction;
-        [SerializeField] private ClosestSide _closestSide;
-        private ClosestSide _oldClosestSide;
+        [SerializeField] private TransitionTunnelSide _closestSide;
+        private TransitionTunnelSide _oldClosestSide;
         [SerializeField] private bool _isTransitioning;
 
         private Transform _leftSide;
@@ -63,11 +63,11 @@ namespace Transitions
 
                 switch (_closestSide)
                 {
-                    case ClosestSide.Left:
+                    case TransitionTunnelSide.Blue:
                         _onLeftEffect?.Invoke(1f);
                         _onRightEffect?.Invoke(0f);
                         break;
-                    case ClosestSide.Right:
+                    case TransitionTunnelSide.Red:
                         _onLeftEffect?.Invoke(0f);
                         _onRightEffect?.Invoke(1f);
                         break;
@@ -90,7 +90,7 @@ namespace Transitions
                 //_distanceFromRight = 1f - (Mathf.Clamp(GetSideDistance(_rightSide.position, _player.position), 0, distanceToCenter) / distanceToCenter);
 
                 _closestSide = GetSideDistance(_leftSide.position, _player.position) < GetSideDistance(_rightSide.position, _player.position) ?
-                    ClosestSide.Left : ClosestSide.Right;
+                    TransitionTunnelSide.Blue : TransitionTunnelSide.Red;
 
                 if(_closestSide != _oldClosestSide)
                 {
@@ -98,13 +98,13 @@ namespace Transitions
 
                     switch (_closestSide)
                     {
-                        case ClosestSide.Left:
+                        case TransitionTunnelSide.Blue:
                             _onLeftEffect?.Invoke(1f);
                             _onRightEffect?.Invoke(0f);
                             _onLeftActivation?.Invoke();
                             _onRightDeactivation?.Invoke();
                             break;
-                        case ClosestSide.Right:
+                        case TransitionTunnelSide.Red:
                             _onLeftEffect?.Invoke(0f);
                             _onRightEffect?.Invoke(1f);
                             _onRightActivation?.Invoke();
@@ -116,10 +116,10 @@ namespace Transitions
                 // Side effect
                 switch (_closestSide)
                 {
-                    case ClosestSide.Left:
+                    case TransitionTunnelSide.Blue:
                         _onLeftEffect?.Invoke(_effect);
                         break;
-                    case ClosestSide.Right:
+                    case TransitionTunnelSide.Red:
                         _onRightEffect?.Invoke(_effect);
                         break;
                 }

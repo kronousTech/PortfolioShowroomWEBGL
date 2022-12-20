@@ -6,7 +6,7 @@ namespace Transitions
     [RequireComponent(typeof(TransitionTunnel))]
     public class TransitionLoadModels : MonoBehaviour
     {
-        [SerializeField] private ClosestSide _defaultSide;
+        [SerializeField] private TransitionTunnelSide _defaultSide;
         [SerializeField] private List<GameObject> _onLeftActivation;
         [SerializeField] private List<GameObject> _onRightActivation;
 
@@ -19,11 +19,11 @@ namespace Transitions
 
             switch (_defaultSide)
             {
-                case ClosestSide.Left:
+                case TransitionTunnelSide.Blue:
                     LeftActivation();
                     RightDeactivation();
                     break;
-                case ClosestSide.Right:
+                case TransitionTunnelSide.Red:
                     RightActivation();
                     LeftDeactivation();
                     break;
@@ -44,6 +44,12 @@ namespace Transitions
 
             foreach (var model in models)
             {
+                if(model == null)
+                {
+                    Debug.LogError("Object not found at: " + gameObject.name);
+                    continue;
+                }
+
                 foreach (var meshRenderer in model.GetComponentsInChildren<MeshRenderer>())
                 {
                     meshRenderer.enabled = state;

@@ -4,7 +4,6 @@ using UnityEngine;
 public class GizmoPlayerCollision : MonoBehaviour
 {
     private Mesh _capsuleMesh;
-
     private void Awake()
     {
         _capsuleMesh = Resources.Load<GameObject>("BasicPrimitives/Capsule").GetComponent<MeshFilter>().sharedMesh;
