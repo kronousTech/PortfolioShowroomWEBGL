@@ -37,7 +37,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField][Range(0f, 90f)] private float _xRotationLimit;
 
     private Vector3 _moveDirection;
-    private readonly float _interpolateValue = 15f;
+    private readonly float _interpolateValue = 10f;
     private readonly float _forceMultiplier = 1000f;
    
 
