@@ -36,7 +36,6 @@ namespace Transitions
         private Action<float> _onRightEffect = new((e) => { });
         private Action _onRightActivation = new(() => { });
         private Action _onRightDeactivation = new(() => { });
-
         private void Awake()
         {
             _leftSide = transform.GetChild(0);

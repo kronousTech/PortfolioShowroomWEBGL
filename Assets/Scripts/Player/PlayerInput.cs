@@ -7,9 +7,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private Vector2 _movementInput;
     [SerializeField] private Vector2 _mouseInput;
 
-    [Header("Mouse Cursor Settings")]
-    [SerializeField] private bool cursorLocked = true;
-    [SerializeField] private bool cursorInputForLook = true;
+
 
     // ----- Mouse moving -----
     private Action _onMovement = new(() => { });
@@ -39,10 +37,6 @@ public class PlayerInput : MonoBehaviour
     {
         CheckMouseInput();
         InvokeMouseInputListeners();
-    }
-    private void OnApplicationFocus(bool hasFocus)
-    {
-        SetCursorState(cursorLocked);
     }
 
     private void CheckMovementInput()
@@ -94,11 +88,6 @@ public class PlayerInput : MonoBehaviour
             _onMouseMoving?.Invoke();
             _onMouseMovingValue?.Invoke(_mouseInput);
         }
-    }
-
-    private void SetCursorState(bool newState)
-    {
-        Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
     }
 
     public void AddOnMovementListener(Action listener) => _onMovement += listener;

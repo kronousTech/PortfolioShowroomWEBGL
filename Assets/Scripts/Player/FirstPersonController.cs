@@ -39,20 +39,12 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 _moveDirection;
     private readonly float _interpolateValue = 10f;
     private readonly float _forceMultiplier = 1000f;
-   
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _rigidbody.freezeRotation = true;
-
         _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
         _playerInput = GetComponent<PlayerInput>();
-        _playerInput.AddOnMovementListener(MovePlayer);
-        _playerInput.AddOnMouseMovingListener(RotateView);
-        _playerInput.AddOnJumpInputListener(JumpListener);
-        _playerInput.AddOnSprintInputListener(HandleMoveSpeedListener);
 
         _playerGroundCheck = GetComponent<PlayerGroundCheck>();
         _playerGroundCheck.AddOnGroundStateChangeListener(HandleDragListener);
@@ -63,7 +55,12 @@ public class FirstPersonController : MonoBehaviour
         _playerSlopeCheck.AddOnStateChangeListener(HandleOnSlopeStateListener);
         _playerSlopeCheck.AddOnStateChangeListener(HandleGravityListener);
 
+        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.freezeRotation = true;
+
         _moveSpeed = _walkSpeed;
+
+        EnableMovement();
     }
 
     private void Update()
@@ -71,6 +68,25 @@ public class FirstPersonController : MonoBehaviour
         SpeedControl();
     }
     
+    public void EnableMovement()
+    {
+        _playerInput.AddOnMovementListener(MovePlayer);
+        _playerInput.AddOnMouseMovingListener(RotateView);
+        _playerInput.AddOnJumpInputListener(JumpListener);
+        _playerInput.AddOnSprintInputListener(HandleMoveSpeedListener);
+    }
+    public void DisableMovement()
+    {
+        _playerInput.RemoveOnMovementListener(MovePlayer);
+        _playerInput.RemoveOnMouseMovingListener(RotateView);
+        _playerInput.RemoveOnJumpInputListener(JumpListener);
+        _playerInput.RemoveOnSprintInputListener(HandleMoveSpeedListener);
+
+        // Prevent buges related to player moving after opening an ui painel
+        _rigidbody.velocity = Vector3.zero;
+        _moveDirection = Vector3.zero;
+    }
+
     private void HandleDragListener(bool state)
     {
         _rigidbody.drag = state ? _groundDrag : 0;
