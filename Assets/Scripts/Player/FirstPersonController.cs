@@ -1,8 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Windows;
-using Input = UnityEngine.Input;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(PlayerInput))]
@@ -33,7 +29,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float _slopeDownForceMultiplier;
 
     [Header("Camera Handling")]
-    [SerializeField][Range(10f, 100f)] private float _lookSensivity = 2f;
+    [SerializeField][Range(1f, 100f)] private float _lookSensivity;
     [SerializeField][Range(0f, 90f)] private float _xRotationLimit;
 
     private Vector3 _moveDirection;
@@ -85,6 +81,14 @@ public class FirstPersonController : MonoBehaviour
         // Prevent buges related to player moving after opening an ui painel
         _rigidbody.velocity = Vector3.zero;
         _moveDirection = Vector3.zero;
+    }
+    public void SetMouseSensivity(float value)
+    {
+        _lookSensivity = Mathf.Clamp(value, 1f, 100f);
+    }
+    public float GetMouseSensivity()
+    {
+        return _lookSensivity;
     }
 
     private void HandleDragListener(bool state)
