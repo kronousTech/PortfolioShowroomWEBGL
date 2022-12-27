@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 public class PlayerSounds : MonoBehaviour
 {
+    [SerializeField] private bool _isEnabled = true;
     [SerializeField] private PlayerSound _step;
     [SerializeField] private PlayerSound _jumping;
     [SerializeField] private PlayerSound _landing;
@@ -15,9 +15,27 @@ public class PlayerSounds : MonoBehaviour
         _jumping.Init();
         _landing.Init();
 
+        if (_isEnabled)
+            EnablePlayerSounds();
+    }
+
+    public void EnablePlayerSounds()
+    {
+        _isEnabled = true;
         FindObjectOfType<PlayerSteps>().AddListener(PlayStepsSound);
         FindObjectOfType<FirstPersonController>().OnJump += PlayJumpingSound;
         FindObjectOfType<PlayerGroundCheck>().AddOnGroundStateChangeListener(PlayLandingSound);
+    }
+    public void DisablePlayerSounds()
+    {
+        _isEnabled = false;
+        FindObjectOfType<PlayerSteps>().RemoveListener(PlayStepsSound);
+        FindObjectOfType<FirstPersonController>().OnJump -= PlayJumpingSound;
+        FindObjectOfType<PlayerGroundCheck>().RemoveOnGroundStateChangeListener(PlayLandingSound);
+    }
+    public bool GetState()
+    {
+        return _isEnabled;
     }
 
     private void PlayStepsSound()
