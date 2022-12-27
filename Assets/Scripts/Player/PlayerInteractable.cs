@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerInteractable : MonoBehaviour
@@ -6,6 +7,22 @@ public class PlayerInteractable : MonoBehaviour
     [SerializeField] private float _interactDistance;
 
     private readonly string _interactableTag = "Interactable";
+
+    private bool _isLookingAtInteractable;
+    private bool IsLookingAtInteractable
+    {
+        get { return _isLookingAtInteractable; }
+        set
+        {
+            if(_isLookingAtInteractable != value)
+            {
+                _isLookingAtInteractable = value;
+
+                OnLookingAtInteractable?.Invoke(value);
+            }
+        }
+    }
+    public event Action<bool> OnLookingAtInteractable;
 
     private void Awake()
     {
@@ -21,7 +38,6 @@ public class PlayerInteractable : MonoBehaviour
                 {
                     try
                     {
-                        Debug.Log("Click");
                         hit.transform.GetComponent<IInteractable>().OnInteract();
                     }
                     catch
@@ -29,7 +45,13 @@ public class PlayerInteractable : MonoBehaviour
                         Debug.LogWarning("Interactable doesnt have interact script");
                     }
                 }
+
+                IsLookingAtInteractable = true;
             }
+        }
+        else
+        {
+            IsLookingAtInteractable = false;
         }
     }
 }

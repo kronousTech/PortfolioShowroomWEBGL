@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class StadiumBannerAnimation : MonoBehaviour
+namespace PortfolioProject.Sabseg
 {
-    [SerializeField] private float _speed;
-    private const string TEXTURE_NAME = "_BaseMap";
-
-    private void Update()
+    public class StadiumBannerAnimation : MonoBehaviour
     {
-        var material = GetComponent<MeshRenderer>().material;
-        var offset = material.GetTextureOffset(TEXTURE_NAME);
-        offset.x += Time.deltaTime * _speed;
+        [SerializeField] private float _speed;
+        private const string TEXTURE_NAME = "_BaseMap";
 
-        material.SetTextureOffset(TEXTURE_NAME, new Vector2(offset.x, offset.y));
+        private void Update()
+        {
+            var material = GetComponent<MeshRenderer>().material;
+            var offset = material.GetTextureOffset(TEXTURE_NAME);
+            offset.x += Time.deltaTime * _speed;
+
+            material.SetTextureOffset(TEXTURE_NAME, new Vector2(offset.x, offset.y));
+        }
     }
 }
