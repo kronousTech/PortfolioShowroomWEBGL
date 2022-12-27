@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -35,6 +36,8 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 _moveDirection;
     private readonly float _interpolateValue = 10f;
     private readonly float _forceMultiplier = 1000f;
+
+    public event Action OnJump;
 
     private void Awake()
     {
@@ -90,6 +93,8 @@ public class FirstPersonController : MonoBehaviour
     {
         return _lookSensivity;
     }
+    public float GetWalkSpeed() => _walkSpeed;
+    public float GetSprintSpeed() => _sprintSpeed;
 
     private void HandleDragListener(bool state)
     {
@@ -116,6 +121,8 @@ public class FirstPersonController : MonoBehaviour
     {
         if (!_isOnGround && !_isOnSlope)
             return;
+
+        OnJump?.Invoke();
 
         var velocity = _rigidbody.velocity;
         _rigidbody.velocity = new Vector3(velocity.x, 0f, velocity.z);

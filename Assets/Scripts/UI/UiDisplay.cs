@@ -19,7 +19,6 @@ public class UiDisplay : MonoBehaviour
             TogglePanel();
         }
     }
-
     private void TogglePanel()
     {
         if (!CanOpen())
@@ -33,6 +32,12 @@ public class UiDisplay : MonoBehaviour
             _onOpen?.Invoke();
         else
             _onClose?.Invoke();
+    }
+
+    public void ClosePanel()
+    {
+        if (_isOpen)
+            TogglePanel();
     }
 
     private bool CanOpen()

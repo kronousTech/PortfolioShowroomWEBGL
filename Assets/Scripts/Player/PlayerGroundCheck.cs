@@ -9,7 +9,7 @@ public class PlayerGroundCheck : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private bool _grounded;
 
-    private Action<bool> _onGroundStateChange = new((b) => { });
+    private event Action<bool> _onGroundStateChange = new((b) => { });
 
     private void Update()
     {

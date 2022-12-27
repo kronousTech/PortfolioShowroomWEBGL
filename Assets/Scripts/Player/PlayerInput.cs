@@ -7,20 +7,24 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private Vector2 _movementInput;
     [SerializeField] private Vector2 _mouseInput;
 
-
-
     // ----- Mouse moving -----
-    private Action _onMovement = new(() => { });
-    private Action<Vector2> _onMovementValue = new((Vector2) => { });
-    private Action _onMouseMoving = new(() => { });
-    private Action<Vector2> _onMouseMovingValue = new((Vector2) => { });
-    private Action _onJumpInput = new(() => { });
-    private Action<bool> _onSprintInput = new((state) => { });
+    private event Action _onMovement = new(() => { });
+    private event Action<Vector2> _onMovementValue = new((Vector2) => { });
+    private event Action<bool> _onMovementState = new((state) => { });
+
+    private event Action _onMouseMoving = new(() => { });
+    private event Action<Vector2> _onMouseMovingValue = new((Vector2) => { });
+
+    private event Action _onJumpInput = new(() => { });
+
+    private event Action<bool> _onSprintInput = new((state) => { });
 
     private const string MOVEMENT_HORIZONTAL_INPUT = "Horizontal";
     private const string MOVEMENT_VERTICAL_INPUT = "Vertical";
     private const string MOUSE_X_INPUT = "Mouse X";
     private const string MOUSE_Y_INPUT = "Mouse Y";
+
+    private bool _isMoving = false;
 
     private void Update()
     {
@@ -74,11 +78,15 @@ public class PlayerInput : MonoBehaviour
 
     private void InvokeMovementInputListeners()
     {
-        //if (_movementInput.x != 0 || _movementInput.y != 0)
+        var hasInput = (_movementInput.x != 0 || _movementInput.y != 0);
+        if (_isMoving != hasInput)
         {
-            _onMovement?.Invoke();
-            _onMovementValue?.Invoke(_movementInput);
+            _isMoving = hasInput;
+            _onMovementState?.Invoke(_isMoving);
         }
+
+        _onMovement?.Invoke();
+        _onMovementValue?.Invoke(_movementInput);
     }
     private void InvokeMouseInputListeners()
     {
@@ -91,6 +99,7 @@ public class PlayerInput : MonoBehaviour
     }
 
     public void AddOnMovementListener(Action listener) => _onMovement += listener;
+    public void AddOnMovementListener(Action<bool> listener) => _onMovementState += listener;
     public void AddOnMovementListener(Action<Vector2> listener) => _onMovementValue += listener;
     public void RemoveOnMovementListener(Action listener) => _onMovement -= listener;
     public void RemoveOnMovementListener(Action<Vector2> listener) => _onMovementValue -= listener;
