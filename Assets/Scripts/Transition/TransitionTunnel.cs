@@ -125,6 +125,24 @@ namespace Transitions
             }
         }
 
+        public void ForceRedSide()
+        {
+            _closestSide = TransitionTunnelSide.Red;
+
+            _onLeftEffect?.Invoke(0f);
+            _onRightEffect?.Invoke(1f);
+            _onRightActivation?.Invoke();
+            _onLeftDeactivation?.Invoke();
+        }
+        public void ForceBlueSide()
+        {
+            _closestSide = TransitionTunnelSide.Blue;
+            _onLeftEffect?.Invoke(1f);
+            _onRightEffect?.Invoke(0f);
+            _onLeftActivation?.Invoke();
+            _onRightDeactivation?.Invoke();
+        }
+
         private static Vector3 GetZeroYPosition(Vector3 position)
         {
             return new Vector3(position.x, 0, position.z);

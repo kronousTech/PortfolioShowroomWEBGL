@@ -95,6 +95,10 @@ public class FirstPersonController : MonoBehaviour
     }
     public float GetWalkSpeed() => _walkSpeed;
     public float GetSprintSpeed() => _sprintSpeed;
+    public void Teleport(Vector3 position)
+    {
+        transform.position = position;
+    }
 
     private void HandleDragListener(bool state)
     {
