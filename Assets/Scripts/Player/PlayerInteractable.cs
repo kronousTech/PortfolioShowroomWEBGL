@@ -48,6 +48,10 @@ public class PlayerInteractable : MonoBehaviour
 
                 IsLookingAtInteractable = true;
             }
+            else
+            {
+                IsLookingAtInteractable = false;
+            }
         }
         else
         {
