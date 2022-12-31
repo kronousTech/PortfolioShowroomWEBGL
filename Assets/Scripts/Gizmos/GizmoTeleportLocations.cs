@@ -37,9 +37,10 @@ namespace GizmosVisualizers
             {
                 Gizmos.color = Color.cyan;
                 Gizmos.DrawMesh(_capsuleMesh, item.location.position, Quaternion.identity, Vector3.one);
-                
+#if UNITY_EDITOR
                 Handles.color = Color.cyan;
                 Handles.Label(item.location.position + (Vector3.up * 1.5f), item.name);
+#endif
             }
         }
     }
