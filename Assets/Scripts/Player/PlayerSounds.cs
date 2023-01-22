@@ -1,22 +1,28 @@
-using System;
+using Sounds.PlayerSounds;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] private bool _isEnabled = true;
-    [SerializeField] private PlayerSound _step;
-    [SerializeField] private PlayerSound _jumping;
-    [SerializeField] private PlayerSound _landing;
+    [SerializeField] private PlayerSoundScriptableObject _pack;
+    [SerializeField] private AudioSource _walkingSource;
+    [SerializeField] private AudioSource _jumpingSource;
+    [SerializeField] private AudioSource _landingSource;
 
     private void Awake()
     {
-        _step.Init();
-        _jumping.Init();
-        _landing.Init();
+        ChangeSoundPack(GroundType.Wood);
 
         if (_isEnabled)
             EnablePlayerSounds();
+    }
+    private void OnEnable()
+    {
+        GetComponent<PlayerGroundCheck>().OnGroundTypeChange += ChangeSoundPack;
+    }
+    private void OnDisable()
+    {
+        GetComponent<PlayerGroundCheck>().OnGroundTypeChange -= ChangeSoundPack;
     }
 
     public void EnablePlayerSounds()
@@ -33,6 +39,24 @@ public class PlayerSounds : MonoBehaviour
         FindObjectOfType<FirstPersonController>().OnJump -= PlayJumpingSound;
         FindObjectOfType<PlayerGroundCheck>().RemoveOnGroundStateChangeListener(PlayLandingSound);
     }
+    public void ChangeSoundPack(GroundType type) 
+    {
+        _pack = Resources.Load<PlayerSoundScriptableObject>("SoundPacks/PlayerSounds/PlayerSoundPack - " + type.ToString());
+        if(_pack == null) 
+        {
+            Debug.Log("Failed to get sound pack");
+            return;
+        }
+
+        _walkingSource.clip = _pack.walking.clip;
+        _walkingSource.volume = _pack.walking.volume;
+
+        _jumpingSource.clip = _pack.jumping.clip;
+        _jumpingSource.volume = _pack.jumping.volume;
+
+        _landingSource.clip = _pack.landing.clip;
+        _landingSource.volume = _pack.landing.volume;
+    }
     public bool GetState()
     {
         return _isEnabled;
@@ -40,47 +64,24 @@ public class PlayerSounds : MonoBehaviour
 
     private void PlayStepsSound()
     {
-        _step.Play();
+        PlaySound(_walkingSource);
     }
     private void PlayJumpingSound()
     {
-        if (!_step.IsPlaying())
+        if (!_walkingSource.isPlaying)
         {
-            _jumping.Play();
-            //_step.Stop();
+            PlaySound(_jumpingSource);
         }
     }
     private void PlayLandingSound(bool state)
     {
         if(state)
-            _landing.Play();
+            PlaySound(_landingSource);
     }
-
-    [Serializable]
-    private class PlayerSound
+    private void PlaySound(AudioSource source) 
     {
-        public AudioClip clip;
-        public AudioSource audioSource;
-        public float volume;
-
-        public void Init()
-        {
-            audioSource.clip = clip;
-            audioSource.volume = volume;
-        }
-        public void Play()
-        {
-            var pitch = Random.Range(0.75f, 1f);
-            audioSource.pitch = pitch;
-            audioSource.Play();
-        }
-        public bool IsPlaying()
-        {
-            return audioSource.isPlaying;
-        }
-        public void Stop()
-        {
-            audioSource.Stop();
-        }
+        var pitch = Random.Range(0.75f, 1f);
+        source.pitch = pitch;
+        source.Play();
     }
 }

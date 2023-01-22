@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class RopeBarrierBuilder : MonoBehaviour
 {
+    [SerializeField] private LineRenderer ropeExample;
     [SerializeField] private List<GameObject> _bars = new List<GameObject>();
     [SerializeField] private List<GameObject> _ropes = new List<GameObject>();
-
     [SerializeField] private int _bezierVerticesCount;
     [SerializeField] private float _downAmount;
 
@@ -38,22 +38,39 @@ public class RopeBarrierBuilder : MonoBehaviour
     {
         ClearRopes();
 
-        var exampleRope = GetComponent<LineRenderer>();
+        // Add line renderers
         for (int i = 0; i < _bars.Count - 1; i++)
         {
             var newLine = new GameObject("Line " + i);
+            var currentHandle = GetHandlePosition(_bars[i]);
+            var nextHandle = GetHandlePosition(_bars[i + 1]);
             newLine.transform.SetParent(transform);
-            newLine.AddComponent<LineRenderer>();
-            newLine.GetComponent<LineRenderer>().useWorldSpace = true;
-            newLine.GetComponent<LineRenderer>().positionCount = 2 + _bezierVerticesCount;
-            newLine.GetComponent<LineRenderer>().SetPositions(GetRopePositions(GetHandlePosition(_bars[i]), GetHandlePosition(_bars[i+ 1])));
-            newLine.GetComponent<LineRenderer>().widthCurve = exampleRope.widthCurve;
-            newLine.GetComponent<LineRenderer>().startWidth = exampleRope.startWidth;
-            newLine.GetComponent<LineRenderer>().endWidth = exampleRope.endWidth;
-            newLine.GetComponent<LineRenderer>().material = exampleRope.sharedMaterial;
-            newLine.GetComponent<LineRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.TwoSided;
+            newLine.transform.position = Vector3.Lerp(currentHandle, nextHandle, 0.5f);
+            newLine.transform.LookAt(nextHandle);
+            var lineRenderer = newLine.AddComponent<LineRenderer>();
+            lineRenderer.useWorldSpace = true;
+            lineRenderer.positionCount = 2 + _bezierVerticesCount;
+            lineRenderer.SetPositions(GetRopePositions(currentHandle, nextHandle));
+            lineRenderer.widthCurve = ropeExample.widthCurve;
+            lineRenderer.startWidth = ropeExample.startWidth;
+            lineRenderer.endWidth = ropeExample.endWidth;
+            lineRenderer.material = ropeExample.sharedMaterial;
+            lineRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.TwoSided;
 
             _ropes.Add(newLine);
+        }
+
+        // Add colliders
+        foreach (var rope in _ropes) 
+        {
+            var lineRenderer = rope.GetComponent<LineRenderer>();
+            var firstPos = lineRenderer.GetPosition(0);
+            var lastPos = lineRenderer.GetPosition(lineRenderer.positionCount - 1);
+            var length = Vector3.Distance(firstPos, lastPos);
+
+            var collider = rope.AddComponent<BoxCollider>();
+            collider.size = new Vector3(0.1f, 1, length);
+            collider.center = new Vector3(collider.center.x, -0.5f, collider.center.z);
         }
     }
 

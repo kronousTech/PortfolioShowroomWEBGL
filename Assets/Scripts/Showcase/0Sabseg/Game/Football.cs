@@ -48,6 +48,8 @@ namespace Showcase.Sabseg
         {
             var kickDirection = _playerOrientation.transform.forward;
 
+            GetComponent<AudioSource>().Play();
+
             _rigidbody.AddForce(kickDirection.normalized * forwardKickForce, ForceMode.Impulse);
             _rigidbody.AddForce(Vector3.up * upKickForce, ForceMode.Impulse);
         }
