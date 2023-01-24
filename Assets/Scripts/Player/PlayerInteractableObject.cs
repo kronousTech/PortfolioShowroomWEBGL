@@ -24,7 +24,6 @@ namespace Core.Player
             }
         }
 
-
         private void Awake()
         {
             _ray = GetComponent<PlayerInteractableRay>();
