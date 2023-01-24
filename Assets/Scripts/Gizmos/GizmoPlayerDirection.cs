@@ -7,7 +7,7 @@ namespace GizmosVisualizers
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawLine(transform.position, transform.forward * 2f);
+            Gizmos.DrawLine(transform.position, transform.position + transform.forward * 2f);
         }
     }
 }

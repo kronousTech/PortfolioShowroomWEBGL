@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core.Player;
 using UnityEngine;
 
 namespace Ui.Hud
@@ -8,7 +7,7 @@ namespace Ui.Hud
     {
         private void Awake()
         {
-            GameObject.FindObjectOfType<PlayerInteractable>().OnLookingAtInteractable += SetCrossairState;
+            GameObject.FindObjectOfType<PlayerInteractableObject>().OnLookedAtInteractableObject += SetCrossairState;
         }
 
         private void SetCrossairState(bool lookingAtInteractable)

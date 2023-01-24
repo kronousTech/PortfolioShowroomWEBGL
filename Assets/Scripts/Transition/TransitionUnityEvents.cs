@@ -14,7 +14,9 @@ public class TransitionUnityEvents : MonoBehaviour
     {
         GetComponent<TransitionTunnel>().AddOnLeftActivation(_onLeftActivation.Invoke);
         GetComponent<TransitionTunnel>().AddOnRightActivation(_onRightActivation.Invoke);
-
+    }
+    private void Start()
+    {
         switch (_defaultSide)
         {
             case TransitionTunnelSide.Blue:
