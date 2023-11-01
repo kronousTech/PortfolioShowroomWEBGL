@@ -1,7 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Teleports
 {
@@ -11,34 +10,49 @@ namespace Teleports
         [SerializeField] private Transform _displaysParent;
         [SerializeField] private TeleportDisplay _display;
         [SerializeField] private UiDisplay _teleportPanel;
-        [Header("Settings")]
-        [SerializeField] private bool _teleportToFirstIndexOnStart = true;
-        [Header("Locations")]
-        [SerializeField] private TeleportInfo[] _info;
-        private List<TeleportDisplay> _locations = new List<TeleportDisplay>();
 
         private FirstPersonController _playerController;
+
+        private readonly Dictionary<Transform, GameObject> _locationsDictionary = new();
+
         private void Awake()
+        {
+            if(_playerController == null)
+            {
+                Initialize();
+            }
+        }
+
+        private void Initialize()
         {
             _playerController = GameObject.FindObjectOfType<FirstPersonController>();
         }
 
-        private void Start()
+        public void AddTeleport(Transform location, string name)
         {
-            foreach (var item in _info)
+            if (_playerController == null)
             {
-                var newDisplay = Instantiate(_display, _displaysParent);
-                newDisplay.Init(item, _playerController, _teleportPanel);
-
-                _locations.Add(newDisplay);
+                Initialize();
             }
 
-            if(_teleportToFirstIndexOnStart && _info.Length > 0)
+            var newDisplay = Instantiate(_display, _displaysParent);
+            newDisplay.Init(name);
+            newDisplay.button.onClick.AddListener(() =>
             {
-                _locations[0].GetComponent<Button>().onClick.Invoke();
-            }
+                _playerController.Teleport(location);
+                _teleportPanel.ClosePanel();
+            });
+
+            _locationsDictionary.Add(location, newDisplay.gameObject);
         }
+        public void RemoveTeleport(Transform location, string name)
+        {
+            if(_locationsDictionary.ContainsKey(location) )
+            {
+                Destroy(_locationsDictionary[location]);
+            }
 
-        public IEnumerable<TeleportInfo> GetLocationsInfo() => _info;
+            _locationsDictionary.Remove(location);
+        }
     }
 }

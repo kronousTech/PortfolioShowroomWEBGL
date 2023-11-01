@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -23,14 +22,10 @@ namespace Core.Player.Interactions
             _eventSystem = FindObjectOfType<EventSystem>();
             _pointerEventData = new PointerEventData(_eventSystem);
         }
-
-        private void Start()
-        {
-            _pointerEventData.position = new Vector2(Screen.width / 2, Screen.height / 2);
-        }
-
         private void Update()
         {
+            _pointerEventData.position = new Vector2(Screen.width / 2, Screen.height / 2);
+
             List<RaycastResult> results = new List<RaycastResult>();
 
             _eventSystem.RaycastAll(_pointerEventData, results);

@@ -9,14 +9,6 @@ public class TagToggle : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _tagText;
 
-    private void OnEnable()
-    {
-        _toggle.onValueChanged.AddListener((a) => TagSelector.OnNewSelection.Invoke());
-    }
-    private void OnDisable()
-    {
-        _toggle.onValueChanged.RemoveListener((a) => TagSelector.OnNewSelection.Invoke());
-    }
     private void Awake()
     {
         _toggle = GetComponent<Toggle>();

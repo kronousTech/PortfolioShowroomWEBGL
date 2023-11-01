@@ -16,7 +16,7 @@ public class RoomsSelector : MonoBehaviour
         ShowroomGenerationEvents.OnNewRoomsRequest -= SelectNewRooms;
     }
 
-    private void GetRoomTags(List<GameObject> rooms)
+    private void GetRoomTags(List<GalleryRoom> rooms)
     {
         foreach (var room in rooms)
         {
@@ -27,13 +27,13 @@ public class RoomsSelector : MonoBehaviour
     [ContextMenu("Initialize Selected Rooms")]
     private void SelectNewRooms(RoomTagFlags flags)
     {
-        var selectedRooms = new List<GameObject>();
+        var selectedRooms = new List<GalleryRoom>();
 
         for (int i = 0; i < _roomTags.Count; i++)
         {
             if(_roomTags[i].Tags.HasAny(flags))
             {
-                selectedRooms.Add(_roomTags[i].gameObject);
+                selectedRooms.Add(_roomTags[i].GetComponent<GalleryRoom>());
             }
         }
 

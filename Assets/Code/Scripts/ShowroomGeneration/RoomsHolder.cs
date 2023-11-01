@@ -7,16 +7,16 @@ namespace KronosTech.ShowroomGeneration
     {
         [SerializeField] private Transform _parent;
 
-        [SerializeField] private List<GameObject> _roomPrefabs;
+        [SerializeField] private List<GalleryRoom> _roomPrefabs;
 
-        private List<GameObject> _initializedRooms = new();
+        private readonly List<GalleryRoom> _initializedRooms = new();
 
         private void Start()
         {
             for (int i = 0; i < _roomPrefabs.Count; i++)
             {
                 var room = Instantiate(_roomPrefabs[i], _parent);
-                room.SetActive(false);
+                room.Initialize();
 
                 _initializedRooms.Add(room);
             }

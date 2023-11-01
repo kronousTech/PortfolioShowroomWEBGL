@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Windows;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(PlayerInput))]
@@ -95,9 +96,12 @@ public class FirstPersonController : MonoBehaviour
     }
     public float GetWalkSpeed() => _walkSpeed;
     public float GetSprintSpeed() => _sprintSpeed;
-    public void Teleport(Vector3 position)
+
+    public void Teleport(Transform location)
     {
-        transform.position = position;
+        transform.position = location.position;
+        _mainCamera.transform.localEulerAngles = Vector3.zero;
+        _orientation.eulerAngles = new Vector3(0, location.eulerAngles.y, 0);
     }
 
     private void HandleDragListener(bool state)

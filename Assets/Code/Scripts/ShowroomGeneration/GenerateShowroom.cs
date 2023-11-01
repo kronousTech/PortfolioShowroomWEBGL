@@ -5,18 +5,12 @@ namespace KronosTech.ShowroomGeneration
 {
     public class GenerateShowroom : MonoBehaviour
     {
+        [SerializeField] private GalleryTileExit _galleryStart;
+
         [Header("Parents")]
-        [SerializeField] private Transform _floorsParent;
-        [SerializeField] private Transform _wallsParent;
+        [SerializeField] private Transform _tilesParent;
+        [SerializeField] private Transform _corridorsParent;
         [SerializeField] private Transform _roomsParent;
-        [Header("Prefabs")]
-        [SerializeField] private GameObject _floorPrefab;
-        [SerializeField] private GameObject _endWallPrefab;
-        [SerializeField] private GameObject _noRoomWallPrefab;
-        
-        private const float ROW_LENGTH = 9;
-        private const float ROW_WIDTH = 12;
-        private const float ROOM_WIDTH = 7;
 
         private void OnEnable()
         {
@@ -27,45 +21,49 @@ namespace KronosTech.ShowroomGeneration
             ShowroomGenerationEvents.OnRoomsSelection -= GenerateRooms;
         }
 
-        private void GenerateRooms(List<GameObject> rooms) 
+        private void GenerateRooms(List<GalleryRoom> rooms) 
         {
-            _floorsParent.ClearChildren();
-            _wallsParent.ClearChildren();
+            _tilesParent.ClearChildren();
+            _corridorsParent.ClearChildren();
             _roomsParent.DisableChildren();
             
-            var rowsCount = rooms.Count / 2 + rooms.Count % 2;
+            var remainingRooms = rooms.Count;
+            GalleryTileExit nextExit = null;
             var roomIndex = 0;
-
-            // Generate Floors And
-            for (int i = 0; i < rowsCount; i++)
+            
+            while (remainingRooms > 0)
             {
-                var floor = Instantiate(_floorPrefab, _floorsParent);
-                floor.transform.position = new Vector3(0,0, i * ROW_LENGTH);
+                var corridor = Instantiate(GalleryGenerationPieces.GetCorridor(), _corridorsParent);
+                corridor.Place(nextExit != null ? nextExit : _galleryStart);
 
-                for (int r = -1; r < 2; r += 2)
+                nextExit = corridor.GetExit;
+
+                // Instantiate Tile
+                var currentTile = Instantiate(GalleryGenerationPieces.GetTile(remainingRooms), _tilesParent);
+                currentTile.Initialize(remainingRooms, nextExit, (GalleryTileExit exit, GalleryTileExit[] roomPositions) =>
                 {
-                    GameObject room;
-
-                    if(roomIndex < rooms.Count && rooms[roomIndex] != null) 
+                    if(exit != null)
                     {
-                        room = rooms[roomIndex];
-                        room.SetActive(true);
-                    }
-                    else 
-                    {
-                        room = Instantiate(_noRoomWallPrefab, _wallsParent);
+                        nextExit = exit;
                     }
 
-                    room.transform.position = new Vector3(((ROW_WIDTH / 2f) + (ROOM_WIDTH / 2f)) * r, 0, (i) * ROW_LENGTH);
-                    room.transform.localEulerAngles = new Vector3(0, r == -1 ? 0 : 180, 0);
+                    // Add Display Rooms
+                    for (int i = 0; i < roomPositions.Length; i++)
+                    {
+                        if(roomIndex < rooms.Count)
+                        {
+                            rooms[roomIndex++].Place(roomPositions[i]);
 
-                    roomIndex++;
-                }
+                            remainingRooms--;
+                        }
+                        else
+                        {
+                            Instantiate(GalleryGenerationPieces.GetWall, _corridorsParent)
+                            .Place(roomPositions[i]);
+                        } 
+                    }
+                });
             }
-
-            // Generate End wall
-            var endWall = Instantiate(_endWallPrefab, _wallsParent);
-            endWall.transform.position = new Vector3(0, 0, (rowsCount) * ROW_LENGTH);
         }
     }
 }

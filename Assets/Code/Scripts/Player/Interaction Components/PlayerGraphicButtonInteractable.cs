@@ -1,26 +1,13 @@
 using Core.Player.Interactions;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerGraphicButtonInteractable : MonoBehaviour
 {
-    private Animator _SelectedButton;
-    private Animator SelectedButton
-    {
-        get { return _SelectedButton; }
-        set 
-        { 
-            if( _SelectedButton != value)
-            {
-                _SelectedButton?.SetBool("Selected", false);
-
-                _SelectedButton = value;
-
-                _SelectedButton?.SetBool("Selected", true);
-            }
-        }
-    }
+    private Button _selectedButton;
 
     private void Awake()
     {
@@ -31,32 +18,51 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
     {
         foreach (var item in elements)
         {
-            if (item.GetComponent<Button>())
+            if (item.TryGetComponent<Button>(out var button))
             {
-                SelectedButton = item.GetComponent<Animator>();
+                _selectedButton = button;
+                _selectedButton.Select();
+
                 return;
             }
         }
 
-        SelectedButton = null;
+        _selectedButton = null;
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void Update()
     {
-        if(SelectedButton == null)
+        if(_selectedButton == null)
         {
             return;
         }
 
-        if (InteractKeyIsPressed())
+        if (Input.GetMouseButtonDown(0))
         {
-            SelectedButton.GetComponent<Button>().onClick.Invoke();
-            SelectedButton.SetTrigger("Pressed");
+            ExecuteEvents.Execute(_selectedButton.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerDownHandler);
+
+            _selectedButton.onClick.Invoke();
+
+            ExecuteEvents.Execute(_selectedButton.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerUpHandler);
         }
     }
 
-    private bool InteractKeyIsPressed()
+
+    static bool IsMouseOverUI()
     {
-        return Input.GetMouseButtonDown(0);
+        // Create a pointer event data
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+
+        // Set the event data's position to the current mouse position
+        eventData.position = Input.mousePosition;
+
+        // Perform a raycast to check for UI elements under the mouse
+        RaycastResult[] results = new RaycastResult[1];
+        EventSystem.current.RaycastAll(eventData, results.ToList());
+
+        // If there are any results, the mouse is over a UI element
+        return results.Length > 0;
     }
 }

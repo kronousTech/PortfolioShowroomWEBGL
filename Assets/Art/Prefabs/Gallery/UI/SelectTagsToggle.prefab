@@ -430,7 +430,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 5968020907716903557}
+  m_TargetGraphic: {fileID: 4694184159459378351}
   toggleTransition: 1
   graphic: {fileID: 5968020907716903557}
   m_Group: {fileID: 0}

@@ -1,0 +1,10 @@
+Add decoration to main and selection rooms
+
+Add Info of every project
+
+Add bottom wood to other rooms
+Develop follow lines on every room
+
+Get project Images from github repo
+
+BUG - UI Panels and Panels In world click bug
