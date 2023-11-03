@@ -7,4 +7,6 @@ Develop follow lines on every room
 
 Get project Images from github repo
 
+Add random walls to tiles
+
 BUG - UI Panels and Panels In world click bug
