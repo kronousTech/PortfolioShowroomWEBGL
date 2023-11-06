@@ -288,12 +288,17 @@ PrefabInstance:
     - target: {fileID: 7353842615954423934, guid: f9ffea872ca70bb4292c52ab2c8b5368,
         type: 3}
       propertyPath: m_fontSize
-      value: 89.5
+      value: 108.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353842615954423934, guid: f9ffea872ca70bb4292c52ab2c8b5368,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 8941264854740908045, guid: f9ffea872ca70bb4292c52ab2c8b5368,
         type: 3}
       propertyPath: m_Name
-      value: Info Frame Main Developer
+      value: Info_Frame-Main Developer
       objectReference: {fileID: 0}
     - target: {fileID: 8941264854740908046, guid: f9ffea872ca70bb4292c52ab2c8b5368,
         type: 3}

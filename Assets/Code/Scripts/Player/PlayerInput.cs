@@ -48,12 +48,12 @@ public class PlayerInput : MonoBehaviour
         var hMovement = Input.GetAxisRaw(MOVEMENT_HORIZONTAL_INPUT);
         var vMovement = Input.GetAxisRaw(MOVEMENT_VERTICAL_INPUT);
 
-        _movementInput = new Vector2(hMovement, vMovement);
+        _movementInput = new Vector2(hMovement, vMovement) * Time.deltaTime;
     }
     private void CheckMouseInput()
     {
-        var xAxis = Input.GetAxis(MOUSE_X_INPUT);
-        var yAxis = Input.GetAxis(MOUSE_Y_INPUT);
+        var xAxis = Input.GetAxisRaw(MOUSE_X_INPUT);
+        var yAxis = Input.GetAxisRaw(MOUSE_Y_INPUT);
 
         _mouseInput = new Vector2(xAxis, yAxis);
     }
