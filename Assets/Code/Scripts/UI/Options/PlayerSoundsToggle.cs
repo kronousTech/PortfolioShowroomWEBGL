@@ -18,15 +18,15 @@ namespace Ui.Options
             }
 
             GetComponent<Toggle>().onValueChanged.AddListener(TogglePlayerSounds);
-            GetComponent<Toggle>().isOn = _playerSounds.GetState();
+            //GetComponent<Toggle>().isOn = _playerSounds.GetState();
         }
 
         private void TogglePlayerSounds(bool value)
         {
-            if (value)
-                _playerSounds.EnablePlayerSounds();
-            else
-                _playerSounds.DisablePlayerSounds(); 
+            //if (value)
+            //    _playerSounds.EnablePlayerSounds();
+            //else
+            //    _playerSounds.DisablePlayerSounds(); 
         }
     }
 }

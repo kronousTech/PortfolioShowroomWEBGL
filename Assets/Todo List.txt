@@ -2,11 +2,11 @@ Add decoration to main and selection rooms
 
 Add Info of every project
 
-Add bottom wood to other rooms
-Develop follow lines on every room
-
 Get project Images from github repo
 
-Add random walls to tiles
+Add random walls to tiles.
+Add player sounds.
+Add headbobbing.
+Fix mouse disappearing issue.
 
 BUG - UI Panels and Panels In world click bug

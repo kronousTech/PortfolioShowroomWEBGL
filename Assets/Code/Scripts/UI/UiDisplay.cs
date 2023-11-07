@@ -1,24 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CanvasGroup))]
 public class UiDisplay : MonoBehaviour
 {
-    [SerializeField] private KeyCode _key;
     [SerializeField] private UnityEvent _onOpen;
     [SerializeField] private UnityEvent _onClose;
+    [SerializeField] private InputActionReference _actionRef;
+
     private bool _isOpen;
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(_key))
-        {
-            TogglePanel();
-        }
+        _actionRef.action.performed += (a) => TogglePanel();
     }
+    private void OnEnable()
+    {
+        _actionRef.action.Enable();
+    }
+    private void OnDisable()
+    {
+        _actionRef.action.Disable();
+    }
+
     private void TogglePanel()
     {
         if (!CanOpen())
@@ -32,6 +38,8 @@ public class UiDisplay : MonoBehaviour
             _onOpen?.Invoke();
         else
             _onClose?.Invoke();
+
+        GameEvents.OnPanelOpen?.Invoke(_isOpen);
     }
 
     public void ClosePanel()

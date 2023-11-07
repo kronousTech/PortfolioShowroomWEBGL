@@ -1,8 +1,8 @@
 using Core.Player.Interactions;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace KronosTech.PlayerInteraction
@@ -11,9 +11,21 @@ namespace KronosTech.PlayerInteraction
     {
         private Toggle _selectedToggle;
 
+        [SerializeField] private InputActionReference _actionRef;
+
         private void Awake()
         {
             GetComponent<PlayerGraphicRay>().OnElementsUpdate += CheckForButton;
+
+            _actionRef.action.performed += (a) => ClickToggle();
+        }
+        private void OnEnable()
+        {
+            _actionRef.action.Enable();
+        }
+        private void OnDisable()
+        {
+            _actionRef.action.Disable();
         }
 
         private void CheckForButton(List<GameObject> elements)
@@ -31,37 +43,18 @@ namespace KronosTech.PlayerInteraction
             _selectedToggle = null;
         }
 
-        private void Update()
+        private void ClickToggle()
         {
             if (_selectedToggle == null)
             {
                 return;
             }
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                ExecuteEvents.Execute(_selectedToggle.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerDownHandler);
+            ExecuteEvents.Execute(_selectedToggle.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerDownHandler);
 
-                _selectedToggle.isOn = !_selectedToggle.isOn;
+            _selectedToggle.isOn = !_selectedToggle.isOn;
 
-                ExecuteEvents.Execute(_selectedToggle.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerUpHandler);
-            }
-        }
-
-        bool IsMouseOverUI()
-        {
-            // Create a pointer event data
-            PointerEventData eventData = new PointerEventData(EventSystem.current);
-
-            // Set the event data's position to the current mouse position
-            eventData.position = Input.mousePosition;
-
-            // Perform a raycast to check for UI elements under the mouse
-            RaycastResult[] results = new RaycastResult[1];
-            EventSystem.current.RaycastAll(eventData, results.ToList());
-
-            // If there are any results, the mouse is over a UI element
-            return results.Length > 0;
+            ExecuteEvents.Execute(_selectedToggle.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerUpHandler);
         }
     }
 }

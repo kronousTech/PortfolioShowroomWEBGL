@@ -1,25 +1,33 @@
+using StarterAssets;
 using UnityEngine;
 
 public class PlayerHeadBobbing : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    private float _maxSpeed;
-    private float _minSpeed;
     [SerializeField] private bool _state;
+
+    private FirstPersonController _controller;
 
     private void Awake()
     {
-        _minSpeed = GetComponent<FirstPersonController>().GetWalkSpeed();
-        _maxSpeed = GetComponent<FirstPersonController>().GetSprintSpeed();
-
-        GetComponent<PlayerGroundCheck>().AddOnGroundStateChangeListener(SetAnimatorOnGroundState);
-        GetComponent<PlayerInput>().AddOnMovementListener(SetAnimatorWakingState);
-        GetComponent<PlayerInput>().AddOnSprintInputListener(SetAnimatorSpeed);
+        _controller = GetComponent<FirstPersonController>();
 
         SetAnimatorOnGroundState(false);
         SetAnimatorWakingState(false);
         SetAnimatorSpeed(false);
         SetState(_state);
+    }
+    private void OnEnable()
+    {
+        FirstPersonController.OnGroundedEvent += SetAnimatorOnGroundState;
+        StarterAssetsInputs.OnSprintEvent += SetAnimatorSpeed;
+        StarterAssetsInputs.OnMoveEvent += SetAnimatorWakingState;
+    }
+    private void OnDisable()
+    {
+        FirstPersonController.OnGroundedEvent -= SetAnimatorOnGroundState;
+        StarterAssetsInputs.OnSprintEvent -= SetAnimatorSpeed;
+        StarterAssetsInputs.OnMoveEvent -= SetAnimatorWakingState;
     }
 
     public void SetState(bool value)
@@ -42,6 +50,6 @@ public class PlayerHeadBobbing : MonoBehaviour
     }
     private void SetAnimatorSpeed(bool value)
     {
-        _animator.SetFloat("Speed", value ? _maxSpeed : _minSpeed);
+       _animator.SetFloat("Speed", value ? _controller.SprintSpeed : _controller.MoveSpeed);
     }
 }

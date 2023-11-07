@@ -5,7 +5,7 @@ public class DebugCanvas : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     [SerializeField] private Transform _camera;
-    [SerializeField] private FirstPersonController _interpolateScript;
+    //[SerializeField] private FirstPersonController _interpolateScript;
 
     [SerializeField] private TextMeshProUGUI _playerRotation;
     [SerializeField] private TextMeshProUGUI _playerEuler;
