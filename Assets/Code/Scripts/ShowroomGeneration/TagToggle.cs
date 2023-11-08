@@ -27,4 +27,9 @@ public class TagToggle : MonoBehaviour
 
         return _toggle.isOn;
     }
+
+    public void SetInteractability(bool interactable)
+    {
+        _toggle.interactable = interactable;
+    }
 }

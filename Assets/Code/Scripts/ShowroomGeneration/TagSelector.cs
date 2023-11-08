@@ -1,13 +1,30 @@
+using KronosTech.ShowroomGeneration;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TagSelector : MonoBehaviour
 {
     [SerializeField] private Transform _parent;
     [SerializeField] private TagToggle _togglePrefab;
+    [SerializeField] private Button _generateButton;
 
     private readonly List<TagToggle> _toggles = new();
-    
+
+    private void OnEnable()
+    {
+        _generateButton.onClick.AddListener(RequestNewRooms);
+
+        GenerateShowroom.OnGenerationStart += () => SetInteractivity(false);
+        GenerateShowroom.OnGenerationEnd += () => SetInteractivity(true);
+    }
+    private void OnDisable()
+    {
+        _generateButton.onClick.RemoveListener(RequestNewRooms);
+
+        GenerateShowroom.OnGenerationStart -= () => SetInteractivity(false);
+        GenerateShowroom.OnGenerationEnd -= () => SetInteractivity(true);
+    }
     private void Awake()
     {
         foreach (var tag in System.Enum.GetNames(typeof(RoomTagFlags)))
@@ -18,13 +35,8 @@ public class TagSelector : MonoBehaviour
             _toggles.Add(toggle);
         }
     }
-    private void Start()
-    {
-        RequestNewRooms();
-    }
-
-    // Called by Unity Button
-    public void RequestNewRooms()
+    
+    private void RequestNewRooms()
     {
         var tags = new RoomTagFlags();
 
@@ -37,5 +49,15 @@ public class TagSelector : MonoBehaviour
         }
 
         ShowroomGenerationEvents.OnNewRoomsRequest?.Invoke(tags);
+    }
+
+    private void SetInteractivity(bool interactable)
+    {
+        foreach (var toggle in _toggles)
+        {
+            toggle.SetInteractability(interactable);
+        }
+
+        _generateButton.interactable = interactable;
     }
 }

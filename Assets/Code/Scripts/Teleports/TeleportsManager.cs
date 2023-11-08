@@ -1,4 +1,4 @@
-using StarterAssets;
+using KronosTech.Player;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,7 +39,7 @@ namespace Teleports
             newDisplay.Init(name);
             newDisplay.button.onClick.AddListener(() =>
             {
-                _playerController.Teleport(location);
+                StartCoroutine(_playerController.Teleport(location));
                 _teleportPanel.ClosePanel();
             });
 

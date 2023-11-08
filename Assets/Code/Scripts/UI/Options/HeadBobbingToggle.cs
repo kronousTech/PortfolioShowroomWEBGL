@@ -1,3 +1,4 @@
+using KronosTech.Player;
 using UnityEngine;
 using UnityEngine.UI;
 

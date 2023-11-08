@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class PlayerSteps : MonoBehaviour
 {
-    private event Action _onStep;
+    public static event Action OnStep;
 
     // Function called via animation
     protected void Step()
     {
-        _onStep?.Invoke();
+        OnStep?.Invoke();
     }
 
-    public void AddListener(Action listener) => _onStep += listener;
-    public void RemoveListener(Action listener) => _onStep -= listener;
+    public void AddListener(Action listener) => OnStep += listener;
+    public void RemoveListener(Action listener) => OnStep -= listener;
 }

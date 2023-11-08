@@ -1,12 +1,6 @@
 using System;
 using UnityEngine;
-
-public enum GroundType
-{
-    Wood = 0,
-    Grass = 1,
-    Concrete = 2
-}
+using static PlayerGrounded;
 
 public class PlayerGroundCheck : MonoBehaviour
 {
@@ -39,7 +33,18 @@ public class PlayerGroundCheck : MonoBehaviour
             OnGroundTypeChange?.Invoke(_type);
         }
     }
-
+    private GroundType CheckGroundType()
+    {
+        if (Physics.Raycast(new Ray(transform.position, Vector3.down), out var hit, 1f, _groundLayer))
+        {
+            var tag = hit.transform.tag;
+            if (Enum.TryParse(typeof(GroundType), tag, false, out object result))
+            {
+                return (GroundType)result;
+            }
+        }
+        return _type;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = _grounded ? Color.green : Color.white;
@@ -51,18 +56,7 @@ public class PlayerGroundCheck : MonoBehaviour
         return Physics.CheckSphere(spherePos, _sphereRadius, _groundLayer);
     }
 
-    private GroundType CheckGroundType() 
-    {
-        if(Physics.Raycast(new Ray(transform.position, Vector3.down), out var hit ,1f, _groundLayer))
-        {
-            var tag = hit.transform.tag;
-            if(Enum.TryParse(typeof(GroundType), tag, false, out object result)) 
-            {
-                return (GroundType)result;
-            }
-        }
-        return _type;
-    }
+    
 
     public void AddOnGroundStateChangeListener(Action<bool> listener) => _onGroundStateChange += listener;
     public void RemoveOnGroundStateChangeListener(Action<bool> listener) => _onGroundStateChange -= listener;

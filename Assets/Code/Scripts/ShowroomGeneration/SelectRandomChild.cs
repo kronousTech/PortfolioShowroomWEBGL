@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace KronosTech.ShowroomGeneration 
 {
-    public class ChooseRandomDecoration : MonoBehaviour
+    public class SelectRandomChild : MonoBehaviour
     {
         private void OnEnable()
         {

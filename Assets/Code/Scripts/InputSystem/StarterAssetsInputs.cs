@@ -4,54 +4,54 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
+namespace KronosTech.InputSystem
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
 		[Header("Character Input Values")]
 		public Vector2 move;
-		public Vector2 look;
+        public Vector2 look;
 		public bool jump;
 		public bool sprint;
 
-		[Header("Input ettings")]
+		[Header("Input Settings")]
 		[SerializeField] private bool _disableMouseInput = false;
 		[SerializeField] private bool _disableMoveInput = false;
 
 		public static event Action<bool> OnSprintEvent;
         public static event Action<bool> OnMoveEvent;
+        public static event Action OnJumpEvent;
 
         private void OnEnable()
         {
 			GameEvents.OnPanelOpen += (state) => _disableMouseInput = state;
             GameEvents.OnPanelOpen += (state) => _disableMoveInput = state;
+            GameEvents.OnPanelOpen += (state) => { if (state) StopMovement(); };
         }
         private void OnDisable()
         {
             GameEvents.OnPanelOpen -= (state) => _disableMouseInput = state;
             GameEvents.OnPanelOpen -= (state) => _disableMoveInput = state;
+            GameEvents.OnPanelOpen += (state) => { if (state) StopMovement(); };
         }
 
 #if ENABLE_INPUT_SYSTEM
         public void OnMove(InputValue value)
 		{
-			if (_disableMoveInput)
-				return;
-         
-			MoveInput(value.Get<Vector2>());
+			MoveInput(_disableMoveInput ? Vector2.zero : value.Get<Vector2>());
         }
         public void OnLook(InputValue value)
 		{
-			if (_disableMouseInput)
-				return;
-		
-			LookInput(value.Get<Vector2>());
+			LookInput(_disableMouseInput ? Vector2.zero : value.Get<Vector2>());
         }
         public void OnJump(InputValue value)
 		{
             if (_disableMoveInput)
                 return;
-            
+
+			if (value.isPressed)
+				OnJumpEvent?.Invoke();
+
 			JumpInput(value.isPressed);
 		}
 		public void OnSprint(InputValue value)
@@ -62,13 +62,13 @@ namespace StarterAssets
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
-			move = newMoveDirection;
+            move = newMoveDirection;
 
 			OnMoveEvent?.Invoke(move != Vector2.zero);
         } 
 		public void LookInput(Vector2 newLookDirection)
 		{
-			look = newLookDirection;
+            look = newLookDirection;
 		}
 		public void JumpInput(bool newJumpState)
 		{
@@ -79,6 +79,14 @@ namespace StarterAssets
 			sprint = newSprintState;
 
             OnSprintEvent?.Invoke(newSprintState);
+        }
+
+		private void StopMovement()
+		{
+			MoveInput(Vector2.zero);
+			LookInput(Vector2.zero);
+			JumpInput(false);
+			SprintInput(false);
         }
 	}
 }

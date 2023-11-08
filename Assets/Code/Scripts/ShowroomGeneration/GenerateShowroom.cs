@@ -1,5 +1,8 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace KronosTech.ShowroomGeneration
 {
@@ -12,17 +15,34 @@ namespace KronosTech.ShowroomGeneration
         [SerializeField] private Transform _corridorsParent;
         [SerializeField] private Transform _roomsParent;
 
+        public static event Action OnGenerationStart;
+        public static event Action OnGenerationEnd;
+
+        public UnityEvent OnGenerationStartEvent;
+        public UnityEvent OnGenerationEndEvent;
+
+        private bool _startedGeneration;
+
         private void OnEnable()
         {
-            ShowroomGenerationEvents.OnRoomsSelection += GenerateRooms;
+            OnGenerationStart += () => OnGenerationStartEvent?.Invoke();
+            OnGenerationEnd += () => OnGenerationEndEvent?.Invoke();
+            ShowroomGenerationEvents.OnRoomsSelection += (rooms) => StartCoroutine(GenerateRooms(rooms));
         }
         private void OnDisable()
         {
-            ShowroomGenerationEvents.OnRoomsSelection -= GenerateRooms;
+            OnGenerationStart -= () => OnGenerationStartEvent?.Invoke();
+            OnGenerationEnd -= () => OnGenerationEndEvent?.Invoke();
+            ShowroomGenerationEvents.OnRoomsSelection -= (rooms) => StartCoroutine(GenerateRooms(rooms));
         }
 
-        private void GenerateRooms(List<GalleryRoom> rooms) 
+        private IEnumerator GenerateRooms(List<GalleryRoom> rooms) 
         {
+            if (_startedGeneration)
+                yield break;
+
+            OnGenerationStart?.Invoke();
+            
             _tilesParent.ClearChildren();
             _corridorsParent.ClearChildren();
             _roomsParent.DisableChildren();
@@ -30,7 +50,9 @@ namespace KronosTech.ShowroomGeneration
             var remainingRooms = rooms.Count;
             GalleryTileExit nextExit = null;
             var roomIndex = 0;
-            
+
+            _startedGeneration = true;
+
             while (remainingRooms > 0)
             {
                 var corridor = Instantiate(GalleryGenerationPieces.GetCorridor(), _corridorsParent);
@@ -63,7 +85,13 @@ namespace KronosTech.ShowroomGeneration
                         } 
                     }
                 });
+
+                yield return null;
             }
+
+            _startedGeneration = false;
+
+            OnGenerationEnd?.Invoke();
         }
     }
 }
