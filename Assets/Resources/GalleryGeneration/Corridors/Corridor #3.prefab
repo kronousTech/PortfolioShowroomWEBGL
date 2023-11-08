@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 9170845692652309458}
   - component: {fileID: 8380550554196784618}
   - component: {fileID: 6996220195110223384}
+  - component: {fileID: 3222543519881696453}
   m_Layer: 0
   m_Name: Ceiling #1
   m_TagString: Untagged
@@ -1510,6 +1511,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3222543519881696453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516856428637959025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797659161419460591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,10 +1553,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2460609393634782037}
-  - {fileID: 8446026949427510933}
   - {fileID: 6495580654863288635}
   m_Father: {fileID: 3542072856144111244}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6093465411553318571
 MonoBehaviour:
@@ -4487,8 +4499,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2935961699970543023}
-  m_RootOrder: 1
+  m_Father: {fileID: 3542072856144111244}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6115595383693849336
 MonoBehaviour:
@@ -4702,7 +4714,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 372
+  m_VersionIndex: 378
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5067,6 +5079,7 @@ GameObject:
   - component: {fileID: 3542072856144111249}
   - component: {fileID: 3542072856144111246}
   - component: {fileID: 3542072856144111247}
+  - component: {fileID: 1462079923434550469}
   m_Layer: 0
   m_Name: Structure
   m_TagString: Untagged
@@ -5086,6 +5099,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8446026949427510933}
   - {fileID: 2935961699970543023}
   m_Father: {fileID: 3542072855018158841}
   m_RootOrder: 0
@@ -18600,6 +18614,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1462079923434550469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542072856144111245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4742142264519691491
 GameObject:
   m_ObjectHideFlags: 0
@@ -21401,7 +21427,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2425
+  m_VersionIndex: 2428
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -24396,7 +24422,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2422
+  m_VersionIndex: 2425
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -24604,13 +24630,14 @@ GameObject:
   - component: {fileID: 8854917965442370181}
   - component: {fileID: 4695629133282677769}
   - component: {fileID: 1955172523741017102}
+  - component: {fileID: 5354890261991324939}
   m_Layer: 0
   m_Name: Ceiling #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6495580654863288635
 Transform:
   m_ObjectHideFlags: 0
@@ -24626,7 +24653,7 @@ Transform:
   - {fileID: 3938511146376855777}
   - {fileID: 2558024713185923524}
   m_Father: {fileID: 2935961699970543023}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &752083412464164494
 MonoBehaviour:
@@ -26860,7 +26887,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 891
+  m_VersionIndex: 894
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -26956,3 +26983,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5354890261991324939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644477379600420741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

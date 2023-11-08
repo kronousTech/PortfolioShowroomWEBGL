@@ -8,8 +8,6 @@ Add random walls to tiles.
 
 switch line sprite to decals
 
-fix player sounds setting
+Add stairs sign to stair corridors
 
 Bug - Change camera root pitch (maybe change to regular camera if necessary)
-
-BUG - UI Panels and Panels In world click bug (ADD listener to OpenPanel action)

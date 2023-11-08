@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 4030132789955429819}
   - component: {fileID: 661307114491971015}
   - component: {fileID: 5101901951280874228}
+  - component: {fileID: 6831098145116308896}
   m_Layer: 0
   m_Name: Ceiling/Wall #1
   m_TagString: Untagged
@@ -4974,7 +4975,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3062
+  m_VersionIndex: 3065
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5071,6 +5072,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6831098145116308896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563956176482677326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2040338018553126475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8025,7 +8038,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2696
+  m_VersionIndex: 2699
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8135,6 +8148,7 @@ GameObject:
   - component: {fileID: 598591765207196640}
   - component: {fileID: 5440099395420972883}
   - component: {fileID: 4274436591849784519}
+  - component: {fileID: 2823227229791650954}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -12894,6 +12908,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2823227229791650954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3182003194349514786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3443505233176946948
 GameObject:
   m_ObjectHideFlags: 0
@@ -13122,6 +13148,7 @@ GameObject:
   - component: {fileID: 3343686324521124773}
   - component: {fileID: 6113834679154786684}
   - component: {fileID: 2146985690815806699}
+  - component: {fileID: 3059267463808956188}
   m_Layer: 0
   m_Name: Ceiling/Wall #1 (1)
   m_TagString: Untagged
@@ -18185,6 +18212,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3059267463808956188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3573070678540523506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4000889796053585480
 GameObject:
   m_ObjectHideFlags: 0
@@ -18254,6 +18293,7 @@ GameObject:
   - component: {fileID: 8590531698706873747}
   - component: {fileID: 3513273264618511074}
   - component: {fileID: 4761175412113584507}
+  - component: {fileID: 1665168545203483210}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -19025,6 +19065,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1665168545203483210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5323665544982434572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5443924503066699430
 GameObject:
   m_ObjectHideFlags: 0

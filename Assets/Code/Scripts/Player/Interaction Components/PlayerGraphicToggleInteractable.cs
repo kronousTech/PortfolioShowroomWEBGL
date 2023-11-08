@@ -9,23 +9,31 @@ namespace KronosTech.PlayerInteraction
 {
     public class PlayerGraphicToggleInteractable : MonoBehaviour
     {
-        private Toggle _selectedToggle;
-
         [SerializeField] private InputActionReference _actionRef;
+
+        private Toggle _selectedToggle;
+        private PlayerGraphicRay _ray;
+        private bool _uiOpen = false;
 
         private void Awake()
         {
-            GetComponent<PlayerGraphicRay>().OnElementsUpdate += CheckForButton;
-
-            _actionRef.action.performed += (a) => ClickToggle();
+            _ray = GetComponent<PlayerGraphicRay>();
         }
         private void OnEnable()
         {
+            _ray.OnElementsUpdate += CheckForButton;
+            _actionRef.action.performed += (a) => ClickToggle();
             _actionRef.action.Enable();
+
+            GameEvents.OnPanelOpen += (value) => _uiOpen = value;
         }
         private void OnDisable()
         {
+            _ray.OnElementsUpdate -= CheckForButton;
+            _actionRef.action.performed -= (a) => ClickToggle();
             _actionRef.action.Disable();
+
+            GameEvents.OnPanelOpen -= (value) => _uiOpen = value;
         }
 
         private void CheckForButton(List<GameObject> elements)
@@ -42,10 +50,9 @@ namespace KronosTech.PlayerInteraction
 
             _selectedToggle = null;
         }
-
         private void ClickToggle()
         {
-            if (_selectedToggle == null)
+            if (_selectedToggle == null || _uiOpen)
             {
                 return;
             }
@@ -58,4 +65,3 @@ namespace KronosTech.PlayerInteraction
         }
     }
 }
-

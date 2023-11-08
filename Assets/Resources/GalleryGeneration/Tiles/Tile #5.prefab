@@ -2196,9 +2196,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1370981093084447227}
-  - {fileID: 2394359832485060272}
   m_Father: {fileID: 319736698739910772}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2887553111830751517
 MonoBehaviour:
@@ -2310,6 +2309,7 @@ GameObject:
   - component: {fileID: 6298299735747933629}
   - component: {fileID: 4468111952470753156}
   - component: {fileID: 6358196096888443854}
+  - component: {fileID: 2660095519967381310}
   m_Layer: 0
   m_Name: Structure
   m_TagString: Untagged
@@ -2329,6 +2329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2394359832485060272}
   - {fileID: 3972303389829118012}
   m_Father: {fileID: 5388433986925062756}
   m_RootOrder: 0
@@ -4895,6 +4896,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2660095519967381310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028946536003039165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6533733407029331689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5534,8 +5547,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3972303389829118012}
-  m_RootOrder: 1
+  m_Father: {fileID: 319736698739910772}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &7000449904224296716
 MonoBehaviour:
@@ -5712,7 +5725,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 606
+  m_VersionIndex: 609
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5992,6 +6005,7 @@ GameObject:
   - component: {fileID: 6588010290119046614}
   - component: {fileID: 9191322615055411961}
   - component: {fileID: 5709292955979522245}
+  - component: {fileID: 5844679165758051068}
   m_Layer: 0
   m_Name: OpenCeiling
   m_TagString: Untagged
@@ -6720,3 +6734,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5844679165758051068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454465429240181917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -818,6 +818,7 @@ GameObject:
   - component: {fileID: 5344849423531755104}
   - component: {fileID: 6911240588372966099}
   - component: {fileID: 899000220320831686}
+  - component: {fileID: 98524881693705901}
   m_Layer: 0
   m_Name: Structure
   m_TagString: Untagged
@@ -837,6 +838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4302148318282616925}
   - {fileID: 5271624388697663764}
   m_Father: {fileID: 8563523199043799894}
   m_RootOrder: 0
@@ -9071,6 +9073,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &98524881693705901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698665289376805758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3593957467581965382
 GameObject:
   m_ObjectHideFlags: 0
@@ -9085,6 +9099,7 @@ GameObject:
   - component: {fileID: 2523850163816521313}
   - component: {fileID: 4240840627268388168}
   - component: {fileID: 8526415161368169111}
+  - component: {fileID: 454910237976851827}
   m_Layer: 0
   m_Name: Open
   m_TagString: Untagged
@@ -9106,7 +9121,7 @@ Transform:
   m_Children:
   - {fileID: 3785233739845922650}
   m_Father: {fileID: 5271624388697663764}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8173046680292524824
 MonoBehaviour:
@@ -10428,7 +10443,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 725
+  m_VersionIndex: 731
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10524,6 +10539,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &454910237976851827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593957467581965382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3681469210421616937
 GameObject:
   m_ObjectHideFlags: 0
@@ -13770,6 +13797,7 @@ GameObject:
   - component: {fileID: 8278685249882278828}
   - component: {fileID: 3365814158526226298}
   - component: {fileID: 2198377072186408603}
+  - component: {fileID: 8889833679745670301}
   m_Layer: 0
   m_Name: Open (1)
   m_TagString: Untagged
@@ -13791,7 +13819,7 @@ Transform:
   m_Children:
   - {fileID: 3979480467974285436}
   m_Father: {fileID: 5271624388697663764}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7334458154764489102
 MonoBehaviour:
@@ -15209,6 +15237,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8889833679745670301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973768848180158875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3432baf95f65541a0adc486a8342f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6842298366391783070
 GameObject:
   m_ObjectHideFlags: 0
@@ -18010,7 +18050,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1868
+  m_VersionIndex: 1874
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18288,11 +18328,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4302148318282616925}
   - {fileID: 9093277364763595206}
   - {fileID: 5822145241661873096}
   m_Father: {fileID: 1526697527208173432}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1596835552879517672
 MonoBehaviour:
@@ -18321,7 +18360,7 @@ GameObject:
   - component: {fileID: 1587227327857999293}
   - component: {fileID: 6781307272460264456}
   m_Layer: 0
-  m_Name: Closed
+  m_Name: Closed NOT USED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18339,7 +18378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5271624388697663764}
+  m_Father: {fileID: 1526697527208173432}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3778170153974566012
@@ -18554,7 +18593,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 133
+  m_VersionIndex: 136
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
