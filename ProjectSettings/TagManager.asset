@@ -8,6 +8,7 @@ TagManager:
   - GateHitBox
   - Interactable
   - Grass
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX

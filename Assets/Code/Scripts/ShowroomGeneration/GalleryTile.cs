@@ -41,7 +41,7 @@ namespace KronosTech.ShowroomGeneration
                     _exits[x + 1] = currentExit;
                 }
 
-                var furthestIndex = UnityEngine.Random.Range(0, 1);
+                var furthestIndex = _exits.Length > 2 ? UnityEngine.Random.Range(0, 2) : 0;
                 var roomPositions = new GalleryTileExit[_exits.Length - 1];
                 var j = 0;
 

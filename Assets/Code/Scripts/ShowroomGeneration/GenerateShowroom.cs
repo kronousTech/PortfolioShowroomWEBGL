@@ -60,6 +60,8 @@ namespace KronosTech.ShowroomGeneration
 
                 nextExit = corridor.GetExit;
 
+                yield return null;
+
                 // Instantiate Tile
                 var currentTile = Instantiate(GalleryGenerationPieces.GetTile(remainingRooms), _tilesParent);
                 currentTile.Initialize(remainingRooms, nextExit, (GalleryTileExit exit, GalleryTileExit[] roomPositions) =>
@@ -82,7 +84,7 @@ namespace KronosTech.ShowroomGeneration
                         {
                             Instantiate(GalleryGenerationPieces.GetWall, _corridorsParent)
                             .Place(roomPositions[i]);
-                        } 
+                        }
                     }
                 });
 

@@ -18156,6 +18156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7314955581188479381}
   - component: {fileID: 7336902602622670352}
+  - component: {fileID: 4849106169763185814}
   m_Layer: 0
   m_Name: LineDecal
   m_TagString: Untagged
@@ -18201,6 +18202,18 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 1.5}
   m_Size: {x: 6, y: 5, z: 3}
   m_FadeFactor: 1
+--- !u!114 &4849106169763185814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982869727397150311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c288cc0c5215a408dedc924889f513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7417164188193561406
 GameObject:
   m_ObjectHideFlags: 0
