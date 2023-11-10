@@ -4,6 +4,7 @@ using UnityEngine;
 public class TeleportLocation : MonoBehaviour
 {
     [SerializeField] private string _name;
+    [SerializeField] private RoomTags _tags;
 
     private TeleportsManager _teleportsManager;
 
@@ -20,11 +21,11 @@ public class TeleportLocation : MonoBehaviour
             Initialize();
         }
 
-        _teleportsManager.AddTeleport(transform, _name);
+        _teleportsManager.AddTeleport(transform, _name, _tags != null ? _tags.Tags.ToString() : string.Empty);
     }
     private void OnDisable()
     {
-        _teleportsManager.RemoveTeleport(transform, _name);
+        _teleportsManager.RemoveTeleport(transform);
     }
 
     private void Initialize()

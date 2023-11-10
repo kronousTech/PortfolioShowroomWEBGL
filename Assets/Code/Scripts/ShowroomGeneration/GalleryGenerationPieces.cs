@@ -1,23 +1,43 @@
 using KronosTech.ShowroomGeneration;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class GalleryGenerationPieces
 {
-    [SerializeField] private static GalleryTile[] _tilesPrefabs;
+    private static GalleryTile _lastTile;
+    [SerializeField] private static List<GalleryTile> _tilesPrefabs;
     [SerializeField] private static GalleryCorridor[] _corridorPrefabs;
     [SerializeField] private static GalleryRoom _endWall;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize() 
     {
-        _tilesPrefabs = Resources.LoadAll<GalleryTile>("GalleryGeneration/Tiles");
+        _tilesPrefabs = Resources.LoadAll<GalleryTile>("GalleryGeneration/Tiles").ToList();
         _corridorPrefabs = Resources.LoadAll<GalleryCorridor>("GalleryGeneration/Corridors");
         _endWall = Resources.Load<GalleryRoom>("GalleryGeneration/Wall/Wall");
     }
 
     public static GalleryTile GetTile(int remainingRoomsCount)
     {
-        return _tilesPrefabs[Random.Range(0, _tilesPrefabs.Length)];    
+        if(_lastTile == null)
+        {
+            _lastTile = _tilesPrefabs[Random.Range(0, _tilesPrefabs.Count)];
+
+            return _lastTile;
+        }
+        else
+        {
+            var indexOfLastTile = _tilesPrefabs.IndexOf(_lastTile);
+            var tempTile = _tilesPrefabs[^1];
+
+            _tilesPrefabs[indexOfLastTile] = tempTile;
+            _tilesPrefabs[^1] = _lastTile;
+
+            _lastTile = _tilesPrefabs[Random.Range(0, _tilesPrefabs.Count - 1)];
+
+            return _lastTile;
+        }
     } 
     public static GalleryCorridor GetCorridor()
     {

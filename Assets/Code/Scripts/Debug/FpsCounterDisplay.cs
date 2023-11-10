@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class FpsCounterDisplay : MonoBehaviour
 {
+    private TextMeshProUGUI _text;
+
+    private void Awake()
+    {
+        _text = GetComponent<TextMeshProUGUI>();
+    }
     private void Start()
     {
         InvokeRepeating(nameof(UpdateFps), 0.5f, 0.5f);
@@ -10,6 +16,6 @@ public class FpsCounterDisplay : MonoBehaviour
 
     private void UpdateFps()
     {
-        GetComponent<TextMeshProUGUI>().text = "FPS: " + (int)(1f / Time.unscaledDeltaTime);
+        _text.text = "FPS: " + (int)(1f / Time.unscaledDeltaTime);
     }
 }

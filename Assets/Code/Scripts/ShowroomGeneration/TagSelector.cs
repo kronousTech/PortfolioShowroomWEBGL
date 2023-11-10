@@ -16,14 +16,14 @@ public class TagSelector : MonoBehaviour
         _generateButton.onClick.AddListener(RequestNewRooms);
 
         GenerateShowroom.OnGenerationStart += () => SetInteractivity(false);
-        GenerateShowroom.OnGenerationEnd += () => SetInteractivity(true);
+        GenerateShowroom.OnGenerationEnd += (state) => SetInteractivity(true);
     }
     private void OnDisable()
     {
         _generateButton.onClick.RemoveListener(RequestNewRooms);
 
         GenerateShowroom.OnGenerationStart -= () => SetInteractivity(false);
-        GenerateShowroom.OnGenerationEnd -= () => SetInteractivity(true);
+        GenerateShowroom.OnGenerationEnd -= (state) => SetInteractivity(true);
     }
     private void Awake()
     {

@@ -31,9 +31,9 @@ public class InfoText : MonoBehaviour
             + "<b>" + time.Year   + "</b>" + "Years " 
             + "<b>" + time.Month  + "</b>" + " Months " 
             + "<b>" + time.Day    + "</b>" + " Days " 
-            + "<b>" + time.Hour   + "</b>" + " Hours "
+            /*+ "<b>" + time.Hour   + "</b>" + " Hours "
             + "<b>" + time.Minute + "</b>" + " Minutes "
-            + "<b>" + time.Second + "</b>" + " Seconds" 
+            + "<b>" + time.Second + "</b>" + " Seconds" */
             + "</color>";
 
         GetComponent<TextMeshPro>().text = textBeforeTime + " " + carrerTimeString + " " + textAfterTime;

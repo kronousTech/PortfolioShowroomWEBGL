@@ -4,10 +4,4 @@ Add Info of every project
 
 Get project Images from github repo
 
-Add random walls to tiles.
-
-switch line sprite to decals
-
-Add stairs sign to stair corridors
-
 Bug - Change camera root pitch (maybe change to regular camera if necessary)

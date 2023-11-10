@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ProBuilder;
 using UnityEngine.UI;
 
 namespace KronosTech.Customization
@@ -20,8 +21,16 @@ namespace KronosTech.Customization
 
                 _image.sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
             }
+            // Skybox
+            else if (material.HasProperty("_Tex"))
+            {
+                var texture2D = ConvertCubemapToTexture2D((Cubemap)material.GetTexture("_Tex"));
+
+                _image.sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
+            }
             
-            _image.color = material.color;
+            if(material.HasProperty("_Color"))
+                _image.color = material.color;
         }
 
         private static Texture2D TextureToTexture2D(Texture texture)
@@ -40,6 +49,24 @@ namespace KronosTech.Customization
             RenderTexture.ReleaseTemporary(renderTexture);
 
             return texture2D;
+        }
+
+        Texture2D ConvertCubemapToTexture2D(Cubemap cubemap)
+        {
+            var width = cubemap.width;
+            var height = cubemap.height;
+
+            // Create a new Texture2D
+            var texture = new Texture2D(width, height, TextureFormat.RGB24, false);
+
+            // Set pixels from the specified face of the cubemap
+            var colors = cubemap.GetPixels(CubemapFace.PositiveY);
+            texture.SetPixels(colors);
+
+            // Apply changes
+            texture.Apply();
+
+            return texture;
         }
     }
 }

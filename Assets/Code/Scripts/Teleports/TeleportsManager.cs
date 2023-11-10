@@ -28,7 +28,7 @@ namespace Teleports
             _playerController = GameObject.FindObjectOfType<FirstPersonController>();
         }
 
-        public void AddTeleport(Transform location, string name)
+        public void AddTeleport(Transform location, string name, string tags)
         {
             if (_playerController == null)
             {
@@ -36,7 +36,7 @@ namespace Teleports
             }
 
             var newDisplay = Instantiate(_display, _displaysParent);
-            newDisplay.Init(name);
+            newDisplay.Init(name, tags);
             newDisplay.button.onClick.AddListener(() =>
             {
                 StartCoroutine(_playerController.Teleport(location));
@@ -45,7 +45,7 @@ namespace Teleports
 
             _locationsDictionary.Add(location, newDisplay.gameObject);
         }
-        public void RemoveTeleport(Transform location, string name)
+        public void RemoveTeleport(Transform location)
         {
             if(_locationsDictionary.ContainsKey(location) )
             {

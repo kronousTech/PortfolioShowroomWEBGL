@@ -1,4 +1,5 @@
 using Core.Player.Interactions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,6 +15,8 @@ namespace KronosTech.PlayerInteraction
         private Toggle _selectedToggle;
         private PlayerGraphicRay _ray;
         private bool _uiOpen = false;
+        private bool _isFocused = true;
+
 
         private void Awake()
         {
@@ -26,6 +29,8 @@ namespace KronosTech.PlayerInteraction
             _actionRef.action.Enable();
 
             GameEvents.OnPanelOpen += (value) => _uiOpen = value;
+
+            Application.focusChanged += (focus) => StartCoroutine(ToggleFocus(focus));
         }
         private void OnDisable()
         {
@@ -34,6 +39,8 @@ namespace KronosTech.PlayerInteraction
             _actionRef.action.Disable();
 
             GameEvents.OnPanelOpen -= (value) => _uiOpen = value;
+
+            Application.focusChanged += (focus) => StartCoroutine(ToggleFocus(focus));
         }
 
         private void CheckForButton(List<GameObject> elements)
@@ -52,7 +59,7 @@ namespace KronosTech.PlayerInteraction
         }
         private void ClickToggle()
         {
-            if (_selectedToggle == null || _uiOpen)
+            if (_selectedToggle == null || _uiOpen || !_isFocused)
             {
                 return;
             }
@@ -62,6 +69,20 @@ namespace KronosTech.PlayerInteraction
             _selectedToggle.isOn = !_selectedToggle.isOn;
 
             ExecuteEvents.Execute(_selectedToggle.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerUpHandler);
+        }
+
+        private IEnumerator ToggleFocus(bool focused)
+        {
+            if (focused)
+            {
+                yield return null;
+
+                _isFocused = true;
+            }
+            else
+            {
+                _isFocused = false;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using Core.Player.Interactions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,7 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
     private Button _selectedButton;
     private PlayerGraphicRay _ray;
     private bool _uiOpen = false;
+    private bool _isFocused = true;
 
     private void Awake()
     {
@@ -24,6 +26,8 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
         _actionRef.action.Enable();
 
         GameEvents.OnPanelOpen += (value) => _uiOpen = value;
+
+        Application.focusChanged += (focus) => StartCoroutine(ToggleFocus(focus));
     }
     private void OnDisable()
     {
@@ -32,6 +36,8 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
         _actionRef.action.Disable();
 
         GameEvents.OnPanelOpen -= (value) => _uiOpen = value;
+
+        Application.focusChanged -= (focus) => StartCoroutine(ToggleFocus(focus));
     }
 
     private void CheckForButton(List<GameObject> elements)
@@ -53,7 +59,7 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
     }
     private void ClickButton()
     {
-        if (_selectedButton == null || _uiOpen)
+        if (_selectedButton == null || _uiOpen || !_isFocused)
         {
             return;
         }
@@ -63,5 +69,19 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
         _selectedButton.onClick.Invoke();
 
         ExecuteEvents.Execute(_selectedButton.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerUpHandler);
+    }
+
+    private IEnumerator ToggleFocus(bool focused)
+    {
+        if (focused)
+        {
+            yield return null;
+
+            _isFocused = true;
+        }
+        else
+        {
+            _isFocused = false;
+        }
     }
 }

@@ -16,23 +16,16 @@ namespace KronosTech.ShowroomGeneration
         [SerializeField] private Transform _roomsParent;
 
         public static event Action OnGenerationStart;
-        public static event Action OnGenerationEnd;
-
-        public UnityEvent OnGenerationStartEvent;
-        public UnityEvent OnGenerationEndEvent;
+        public static event Action<bool> OnGenerationEnd;
 
         private bool _startedGeneration;
 
         private void OnEnable()
         {
-            OnGenerationStart += () => OnGenerationStartEvent?.Invoke();
-            OnGenerationEnd += () => OnGenerationEndEvent?.Invoke();
             ShowroomGenerationEvents.OnRoomsSelection += (rooms) => StartCoroutine(GenerateRooms(rooms));
         }
         private void OnDisable()
         {
-            OnGenerationStart -= () => OnGenerationStartEvent?.Invoke();
-            OnGenerationEnd -= () => OnGenerationEndEvent?.Invoke();
             ShowroomGenerationEvents.OnRoomsSelection -= (rooms) => StartCoroutine(GenerateRooms(rooms));
         }
 
@@ -52,6 +45,8 @@ namespace KronosTech.ShowroomGeneration
             var roomIndex = 0;
 
             _startedGeneration = true;
+
+            yield return null;
 
             while (remainingRooms > 0)
             {
@@ -93,7 +88,7 @@ namespace KronosTech.ShowroomGeneration
 
             _startedGeneration = false;
 
-            OnGenerationEnd?.Invoke();
+            OnGenerationEnd?.Invoke(rooms.Count > 0);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace KronosTech.Customization
         [SerializeField] private Transform _baseboardParent;
         [SerializeField] private Transform _wallParent;
         [SerializeField] private Transform _guidelinesParent;
+        [SerializeField] private Transform _backgroundParent;
 
         private void OnEnable()
         {
@@ -19,6 +20,8 @@ namespace KronosTech.Customization
             GalleryCustomization.OnAddBaseboardMaterials += (materials) => AddButtons(CustomizableElement.Baseboard, _baseboardParent, materials);
             GalleryCustomization.OnAddWallMaterials += (materials) => AddButtons(CustomizableElement.Wall, _wallParent, materials);
             GalleryCustomization.OnAddGuidelineMaterials += (materials) => AddButtons(CustomizableElement.Guideline, _guidelinesParent, materials);
+
+            GalleryEnvironment.OnAddSkyboxMaterials += (materials) => AddButtons(_backgroundParent, materials);
         }
         private void OnDisable()
         {
@@ -26,6 +29,8 @@ namespace KronosTech.Customization
             GalleryCustomization.OnAddBaseboardMaterials -= (materials) => AddButtons(CustomizableElement.Baseboard, _baseboardParent, materials);
             GalleryCustomization.OnAddWallMaterials -= (materials) => AddButtons(CustomizableElement.Wall, _wallParent, materials);
             GalleryCustomization.OnAddGuidelineMaterials -= (materials) => AddButtons(CustomizableElement.Guideline, _guidelinesParent, materials);
+
+            GalleryEnvironment.OnAddSkyboxMaterials -= (materials) => AddButtons(_backgroundParent, materials);
         }
 
         private void AddButtons(CustomizableElement element, Transform parent, Material[] materials)
@@ -37,6 +42,17 @@ namespace KronosTech.Customization
                 button.Initialize(material);
                 button.GetComponent<Button>().onClick.AddListener(() 
                     => GalleryCustomization.SetNewCurrentMat(element, material));
+            }
+        }
+        private void AddButtons(Transform parent, Material[] materials)
+        {
+            for (int i = 0; i < materials.Length; i++)
+            {
+                var index = i;
+                var button = Instantiate(_materialButtonDisplayPrefab, parent);
+                button.Initialize(materials[i]);
+                button.GetComponent<Button>().onClick.AddListener(()
+                    => GalleryEnvironment.ReplaceEnvironment(index));
             }
         }
     }
