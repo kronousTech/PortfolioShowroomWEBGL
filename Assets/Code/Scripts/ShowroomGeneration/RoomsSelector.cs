@@ -1,26 +1,30 @@
+using KronosTech.ShowroomGeneration;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomsSelector : MonoBehaviour
 {
-    private readonly List<RoomTags> _roomTags = new();
+    private readonly List<RoomInfoTags> _roomTags = new();
+
+    public static event Action<List<GalleryRoom>> OnSelection;
 
     private void OnEnable()
     {
-        ShowroomGenerationEvents.OnRoomsInitialization += GetRoomTags;
-        ShowroomGenerationEvents.OnNewRoomsRequest += SelectNewRooms;
+        RoomsHolder.OnInitialization += GetRoomTags;
+        TagSelector.OnNewRequest += SelectNewRooms;
     }
     private void OnDisable()
     {
-        ShowroomGenerationEvents.OnRoomsInitialization -= GetRoomTags;
-        ShowroomGenerationEvents.OnNewRoomsRequest -= SelectNewRooms;
+        RoomsHolder.OnInitialization -= GetRoomTags;
+        TagSelector.OnNewRequest -= SelectNewRooms;
     }
 
     private void GetRoomTags(List<GalleryRoom> rooms)
     {
         foreach (var room in rooms)
         {
-            _roomTags.Add(room.GetComponent<RoomTags>());
+            _roomTags.Add(room.GetComponent<RoomInfoTags>());
         }
     }
 
@@ -37,6 +41,6 @@ public class RoomsSelector : MonoBehaviour
             }
         }
 
-        ShowroomGenerationEvents.OnRoomsSelection?.Invoke(selectedRooms);
+        OnSelection?.Invoke(selectedRooms);
     }
 }

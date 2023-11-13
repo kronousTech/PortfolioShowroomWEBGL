@@ -1,4 +1,5 @@
 using KronosTech.ShowroomGeneration;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class TagSelector : MonoBehaviour
     [SerializeField] private Button _generateButton;
 
     private readonly List<TagToggle> _toggles = new();
+
+    public static event Action<RoomTagFlags> OnNewRequest;
 
     private void OnEnable()
     {
@@ -48,7 +51,7 @@ public class TagSelector : MonoBehaviour
             }
         }
 
-        ShowroomGenerationEvents.OnNewRoomsRequest?.Invoke(tags);
+        OnNewRequest?.Invoke(tags);
     }
 
     private void SetInteractivity(bool interactable)
@@ -60,4 +63,7 @@ public class TagSelector : MonoBehaviour
 
         _generateButton.interactable = interactable;
     }
+
+    // Called via EditorWindow script.
+    public static void ForceNewRequest(RoomTagFlags tags) => OnNewRequest?.Invoke(tags);
 }

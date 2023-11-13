@@ -1,23 +1,35 @@
 using UnityEngine;
 
-public class GalleryRoom : MonoBehaviour
+namespace KronosTech.ShowroomGeneration
 {
-    [SerializeField] private GameObject _line;
-
-    public void Initialize()
+    public class GalleryRoom : MonoBehaviour
     {
-        gameObject.SetActive(false);
-    }
-    public void Place(GalleryTileExit exit)
-    {
-        gameObject.SetActive(true);
+        [SerializeField] private GameObject _holder;
+        [SerializeField] private GameObject _line;
 
-        transform.position = exit.Position;
-        transform.rotation = exit.Rotation;
-
-        if(_line != null)
+        private void OnEnable()
         {
-            _line.SetActive(exit.AddLines);
+            GenerateShowroom.OnGenerationStart += () => ToggleVisibility(false);
+        }
+        private void OnDisable()
+        {
+            GenerateShowroom.OnGenerationStart -= () => ToggleVisibility(false);
+        }
+
+        public void Place(GalleryTileExit exit)
+        {
+            transform.position = exit.Position;
+            transform.rotation = exit.Rotation;
+
+            if (_line != null)
+            {
+                _line.SetActive(exit.AddLines);
+            }
+        }
+
+        public void ToggleVisibility(bool state)
+        {
+            _holder.SetActive(state);
         }
     }
 }

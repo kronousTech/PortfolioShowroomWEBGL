@@ -22,11 +22,11 @@ namespace KronosTech.ShowroomGeneration
 
         private void OnEnable()
         {
-            ShowroomGenerationEvents.OnRoomsSelection += (rooms) => StartCoroutine(GenerateRooms(rooms));
+            RoomsSelector.OnSelection += (rooms) => StartCoroutine(GenerateRooms(rooms));
         }
         private void OnDisable()
         {
-            ShowroomGenerationEvents.OnRoomsSelection -= (rooms) => StartCoroutine(GenerateRooms(rooms));
+            RoomsSelector.OnSelection -= (rooms) => StartCoroutine(GenerateRooms(rooms));
         }
 
         private IEnumerator GenerateRooms(List<GalleryRoom> rooms) 
@@ -38,7 +38,6 @@ namespace KronosTech.ShowroomGeneration
             
             _tilesParent.ClearChildren();
             _corridorsParent.ClearChildren();
-            _roomsParent.DisableChildren();
             
             var remainingRooms = rooms.Count;
             GalleryTileExit nextExit = null;
@@ -71,6 +70,7 @@ namespace KronosTech.ShowroomGeneration
                     {
                         if(roomIndex < rooms.Count)
                         {
+                            rooms[roomIndex].ToggleVisibility(true);
                             rooms[roomIndex++].Place(roomPositions[i]);
 
                             remainingRooms--;

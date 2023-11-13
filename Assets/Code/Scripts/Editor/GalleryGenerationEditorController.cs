@@ -18,6 +18,6 @@ public class GalleryGenerationEditorController : EditorWindow
         _tags = (RoomTagFlags)EditorGUILayout.EnumMaskField("Select Tags", _tags);
 
         if (GUILayout.Button("GENERATE"))
-            ShowroomGenerationEvents.OnNewRoomsRequest?.Invoke(_tags);
+            TagSelector.ForceNewRequest(_tags);
     }
 }

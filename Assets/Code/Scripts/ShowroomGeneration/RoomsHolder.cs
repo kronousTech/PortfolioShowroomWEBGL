@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,17 +12,19 @@ namespace KronosTech.ShowroomGeneration
 
         private readonly List<GalleryRoom> _initializedRooms = new();
 
+        public static event Action<List<GalleryRoom>> OnInitialization;
+
         private void Start()
         {
             for (int i = 0; i < _roomPrefabs.Count; i++)
             {
                 var room = Instantiate(_roomPrefabs[i], _parent);
-                room.Initialize();
+                room.ToggleVisibility(false);
 
                 _initializedRooms.Add(room);
             }
 
-            ShowroomGenerationEvents.OnRoomsInitialization?.Invoke(_initializedRooms);
+            OnInitialization?.Invoke(_initializedRooms);
         }
     }
 }

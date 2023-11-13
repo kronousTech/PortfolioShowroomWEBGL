@@ -4,7 +4,7 @@ using UnityEngine;
 public class TeleportLocation : MonoBehaviour
 {
     [SerializeField] private string _name;
-    [SerializeField] private RoomTags _tags;
+    [SerializeField] private RoomInfoTags _tags;
 
     private TeleportsManager _teleportsManager;
 

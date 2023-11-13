@@ -27,4 +27,6 @@ public class OpenURL : MonoBehaviour
 
         Application.OpenURL(_url);
     }
+
+    public void SetNewURL(string url) => _url = url;
 }
