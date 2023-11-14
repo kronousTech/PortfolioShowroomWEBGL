@@ -14745,6 +14745,7 @@ MonoBehaviour:
   _sprites: []
   _display: {fileID: 7773747001322548025}
   _title: {fileID: 4054300553838382454}
+  _buttonsHolder: {fileID: 3998924162222105985}
   _buttonNext: {fileID: 7198213861159263918}
   _buttonPrev: {fileID: 6264124968146017704}
 --- !u!1 &4089630708958554058

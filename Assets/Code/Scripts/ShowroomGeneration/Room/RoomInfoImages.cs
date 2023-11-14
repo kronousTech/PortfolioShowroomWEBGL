@@ -11,7 +11,7 @@ namespace KronosTech.ShowroomGeneration.Room
 
         private RoomImageSpriteData[] _imageSprites;
 
-        private void Awake()
+        private void Start()
         {
             _imageSprites = new RoomImageSpriteData[_imageData.Length];
 

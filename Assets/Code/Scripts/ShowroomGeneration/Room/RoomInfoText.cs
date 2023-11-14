@@ -12,7 +12,8 @@ namespace KronosTech.ShowroomGeneration.Room
         Overview = 2,
         Challenges = 3,
         Solutions = 4,
-        Lessons = 5
+        Lessons = 5,
+        Technologies = 6
     }
     [Serializable]
     public struct InfoCategory

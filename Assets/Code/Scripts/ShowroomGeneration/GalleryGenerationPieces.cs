@@ -39,9 +39,6 @@ public static class GalleryGenerationPieces
             return _lastTile;
         }
     } 
-    public static GalleryCorridor GetCorridor()
-    {
-        return _corridorPrefabs[Random.Range(0, _corridorPrefabs.Length)];
-    }
-    public static GalleryRoom GetWall => _endWall;
+    public static GalleryCorridor GetCorridor() => _corridorPrefabs[Random.Range(0, _corridorPrefabs.Length)];
+    public static GalleryRoom GetWall() => _endWall;
 }

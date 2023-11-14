@@ -11,6 +11,7 @@ namespace KronosTech.ShowroomGeneration.Room
         [SerializeField] private Image _display;
         [SerializeField] private TextMeshProUGUI _title;
 
+        [SerializeField] private GameObject _buttonsHolder;
         [SerializeField] private Button _buttonNext;
         [SerializeField] private Button _buttonPrev;
 
@@ -39,20 +40,28 @@ namespace KronosTech.ShowroomGeneration.Room
 
         private void OnEnable()
         {
-            _buttonNext.onClick.AddListener(() => Index++);
-            _buttonPrev.onClick.AddListener(() => Index--);
+            _buttonNext.onClick.AddListener(NextImage);
+            _buttonPrev.onClick.AddListener(PreviousImage);
         }
         private void OnDisable()
         {
-            _buttonNext.onClick.RemoveListener(() => Index++);
-            _buttonPrev.onClick.RemoveListener(() => Index--);
+            _buttonNext.onClick.RemoveListener(NextImage);
+            _buttonPrev.onClick.RemoveListener(PreviousImage);
         }
+
+        private void NextImage() => Index++;
+        private void PreviousImage() => Index--;
 
         public void AddSprites(RoomImageSpriteData[] sprites)
         {
             _sprites = sprites;
 
             UpdateImage();
+
+            if(_sprites.Length <= 1)
+            {
+                _buttonsHolder.SetActive(false);
+            }
         }
 
         private void UpdateImage()

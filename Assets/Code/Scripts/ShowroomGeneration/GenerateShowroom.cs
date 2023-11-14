@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace KronosTech.ShowroomGeneration
 {
@@ -13,7 +12,6 @@ namespace KronosTech.ShowroomGeneration
         [Header("Parents")]
         [SerializeField] private Transform _tilesParent;
         [SerializeField] private Transform _corridorsParent;
-        [SerializeField] private Transform _roomsParent;
 
         public static event Action OnGenerationStart;
         public static event Action<bool> OnGenerationEnd;
@@ -77,7 +75,7 @@ namespace KronosTech.ShowroomGeneration
                         }
                         else
                         {
-                            Instantiate(GalleryGenerationPieces.GetWall, _corridorsParent)
+                            Instantiate(GalleryGenerationPieces.GetWall(), _corridorsParent)
                             .Place(roomPositions[i]);
                         }
                     }
