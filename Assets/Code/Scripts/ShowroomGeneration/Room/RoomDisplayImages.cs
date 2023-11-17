@@ -6,16 +6,18 @@ namespace KronosTech.ShowroomGeneration.Room
 {
     public class RoomDisplayImages : MonoBehaviour
     {
-        [SerializeField] private RoomImageSpriteData[] _sprites;
-
         [SerializeField] private Image _display;
         [SerializeField] private TextMeshProUGUI _title;
-
+        [SerializeField] private TextMeshProUGUI _indexDisplay;
+        [SerializeField] private GameObject _downloadingImageGO;
         [SerializeField] private GameObject _buttonsHolder;
+        [Header("Buttons")]
         [SerializeField] private Button _buttonNext;
         [SerializeField] private Button _buttonPrev;
 
+        private RoomImageSpriteData[] _sprites;
         private int _index;
+
         private int Index
         {
             get => _index;
@@ -33,6 +35,8 @@ namespace KronosTech.ShowroomGeneration.Room
                 {
                     _index = value;
                 }
+
+                _indexDisplay.text = _sprites.Length > 1 ? (_index + 1).ToString() : string.Empty;
 
                 UpdateImage();
             }
@@ -54,14 +58,15 @@ namespace KronosTech.ShowroomGeneration.Room
 
         public void AddSprites(RoomImageSpriteData[] sprites)
         {
+            _downloadingImageGO.SetActive(false);
+
             _sprites = sprites;
+
+            Index = 0;
 
             UpdateImage();
 
-            if(_sprites.Length <= 1)
-            {
-                _buttonsHolder.SetActive(false);
-            }
+            _buttonsHolder.SetActive(_sprites.Length > 1);
         }
 
         private void UpdateImage()

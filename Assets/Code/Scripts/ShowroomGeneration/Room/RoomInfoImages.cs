@@ -6,7 +6,7 @@ namespace KronosTech.ShowroomGeneration.Room
 {
     public class RoomInfoImages : MonoBehaviour
     {
-        [SerializeField] private RoomImageData[] _imageData;
+        [SerializeField] private ContentData[] _imageData;
         [SerializeField] private RoomDisplayImages[] _displays;
 
         private RoomImageSpriteData[] _imageSprites;
@@ -53,7 +53,7 @@ namespace KronosTech.ShowroomGeneration.Room
     }
 
     [Serializable]
-    public struct RoomImageData
+    public struct ContentData
     {
         public string title;
         [TextArea(1,5)] public string url;

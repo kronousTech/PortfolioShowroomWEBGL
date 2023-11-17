@@ -1,7 +1,18 @@
-Add decoration to main and selection rooms
+Fix clipping on ui elements.
 
-Add Info of every project
+Change try it button to whatever portfolio needs.
+Add master volume slider.
 
-Get project Images from github repo
+[BUG]
+- Check if button is interactable when using interact scripts.
+- Check video sizing.
+
+[FEATURES]
+- Add a way to increase/decrease video volume
+
+
+[OPTIMIZATION]
+- Download Materials from repo.
+
 
 Bug - Change camera root pitch (maybe change to regular camera if necessary)
