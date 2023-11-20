@@ -34,6 +34,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnPrepare += () => _buttonPlay.gameObject.SetActive(true);
             _controller.OnPrepare += () => _buttonPause.gameObject.SetActive(false);
             _controller.OnPrepare += () => _timebar.value = 0;
+
             _controller.OnPrepareCompleted += (length) => _buttonPlay.interactable = true;
             _controller.OnPrepareCompleted += (length) => _buttonPause.interactable = true;
             _controller.OnPrepareCompleted += (length) => _buttonRestart.interactable = true;
@@ -45,6 +46,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnPlayInput += () => _buttonPlay.interactable = false;
             _controller.OnPlayInput += () => _buttonPause.interactable = false;
             _controller.OnPlayInput += () => _buttonRestart.interactable = false;
+
             _controller.OnPlay += () => _buttonPlay.interactable = true;
             _controller.OnPlay += () => _buttonPause.interactable = true;
             _controller.OnPlay += () => _buttonRestart.interactable = true;
@@ -60,12 +62,13 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnRestartInput += () => _buttonPlay.interactable = false;
             _controller.OnRestartInput += () => _buttonPause.interactable = false;
             _controller.OnRestartInput += () => _buttonRestart.interactable = false;
+            _controller.OnRestartInput += () => _timebar.value = 0.0f;
+
             _controller.OnRestart += () => _buttonPlay.interactable = true;
             _controller.OnRestart += () => _buttonPause.interactable = true;
             _controller.OnRestart += () => _buttonRestart.interactable = true;
             _controller.OnRestart += () => _buttonPlay.gameObject.SetActive(true);
             _controller.OnRestart += () => _buttonPause.gameObject.SetActive(false);
-            _controller.OnRestart += () => _timebar.value = 0;
         }
         private void OnDisable()
         {
@@ -83,6 +86,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnPrepare -= () => _buttonPlay.gameObject.SetActive(true);
             _controller.OnPrepare -= () => _buttonPause.gameObject.SetActive(false);
             _controller.OnPrepare -= () => _timebar.value = 0;
+
             _controller.OnPrepareCompleted -= (length) => _buttonPlay.interactable = true;
             _controller.OnPrepareCompleted -= (length) => _buttonPause.interactable = true;
             _controller.OnPrepareCompleted -= (length) => _buttonRestart.interactable = true;
@@ -94,6 +98,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnPlayInput -= () => _buttonPlay.interactable = false;
             _controller.OnPlayInput -= () => _buttonPause.interactable = false;
             _controller.OnPlayInput -= () => _buttonRestart.interactable = false;
+
             _controller.OnPlay -= () => _buttonPlay.interactable = true;
             _controller.OnPlay -= () => _buttonPause.interactable = true;
             _controller.OnPlay -= () => _buttonRestart.interactable = true;
@@ -109,18 +114,13 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnRestartInput -= () => _buttonPlay.interactable = false;
             _controller.OnRestartInput -= () => _buttonPause.interactable = false;
             _controller.OnRestartInput -= () => _buttonRestart.interactable = false;
+            _controller.OnRestartInput -= () => _timebar.value = 0.0f;
+
             _controller.OnRestart -= () => _buttonPlay.interactable = true;
             _controller.OnRestart -= () => _buttonPause.interactable = true;
             _controller.OnRestart -= () => _buttonRestart.interactable = true;
             _controller.OnRestart -= () => _buttonPlay.gameObject.SetActive(true);
             _controller.OnRestart -= () => _buttonPause.gameObject.SetActive(false);
-            _controller.OnRestart -= () => _timebar.value = 0;
-        }
-
-        private void Start()
-        {
-            // Updates layout.
-            _buttonsLayout.spacing = 5;
         }
     }
 }

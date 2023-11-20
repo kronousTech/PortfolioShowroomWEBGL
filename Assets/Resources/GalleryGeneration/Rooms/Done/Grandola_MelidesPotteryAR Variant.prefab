@@ -17,6 +17,36 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 15.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 200.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.6875
+      objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.size
@@ -25,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[0].url
-      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/raw/main/Images/Grandola%20AR/Olaria%20AR.mp4
+      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Olaria%20AR.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -66,6 +96,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562947462773934064, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_text
+      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nGr\xE2ndola's
+        Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThe project was developed
+        with the purpose of creating entertaining animations related to the pottery
+        process and Gr\xE2ndola's old cultures.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -120,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 151.75
+      value: 145.75
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -175,7 +218,7 @@ PrefabInstance:
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 213.25
+      value: 219.25
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -210,22 +253,22 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Screenshot_1.png
+      value: Images/Grandola%20AR/Screenshot_1.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Screenshot_2.png
+      value: Images/Grandola%20AR/Screenshot_2.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Screenshot_3.png
+      value: Images/Grandola%20AR/Screenshot_3.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Screenshot_4.png
+      value: Images/Grandola%20AR/Screenshot_4.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -242,35 +285,18 @@ PrefabInstance:
       propertyPath: _name
       value: Grandola - Pottery AR
       objectReference: {fileID: 0}
-    - target: {fileID: 7704944702683991996, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+      propertyPath: m_text
+      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nGr\xE2ndola's
+        Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThe project was developed
+        with the purpose of creating entertaining animations related to the pottery
+        process and Gr\xE2ndola's old cultures.\n\n"
       objectReference: {fileID: 0}
-    - target: {fileID: 7704944702683991996, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7704944702683991996, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 7704944702683991996, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7704944702683991996, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7704944702683991996, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      propertyPath: m_fontSize
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -341,7 +367,7 @@ PrefabInstance:
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 167.125
+      value: 164.125
       objectReference: {fileID: 0}
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

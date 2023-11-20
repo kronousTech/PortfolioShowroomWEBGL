@@ -1,46 +1,126 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &573482901142168208
+--- !u!1001 &6014220433195287811
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 152139041425145694, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 517124979816117917, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 899000220320831686, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 2067083580944217935, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _videoData.Array.size
-      value: 1
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 3291773372820177048, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _videoData.Array.data[0].url
-      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/raw/main/Images/SABSEG/2638987133.mp4
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_text
+      value: "<b><size=90>Role</b></size>\nLead Programmer.\n\n<b><size=90>Overview</b></size>\nThis
+        project, developed for Esposende's Municipal Chamber, aimed to captivate
+        the essence of the city, highlighting its diverse offerings, encompassing
+        gastronomy, natural beauty, pristine beaches, and vibrant nautical sports.
+        \n\nThe narrative unfolded through a captivating series of immersive 360-degree
+        videos.\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032626993100454659, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: Sabseg_BrandActivation Variant
+      value: Esposende_360VideoPlayerVariant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303765843991482258, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472125357650772227, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570647795597516356, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/blob/d3126d604882b77e14b709958af249cd501d4b96/Images/SABSEG/Screenshot_5.png
+      value: Images/Esposende/Screenshot_1.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].url
+      value: Images/Esposende/Screenshot_6.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: roomTags
-      value: 34
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6911240588372966099, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -50,17 +130,17 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Sabseg - Brand Activation
+      value: Esposende - 360 Video Player
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -70,27 +150,15 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: "SABSEG is an insurance broker that sponsors several football clubs
-        of the 1st and 2nd division of Portuguese. As part of one of its \u201CCelebrate
-        Football\u201D initiatives, hivolve challenged SABSEG to carry out a brand
-        activation using Virtual Reality in the stadiums of sponsored clubs."
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[2].info
-      value: In this innovative project, we crafted new immersive environments, including
-        various football stadiums, diverse player scenarios, and dynamic weather
-        conditions. The core experience revolves around the user's objective of defending
-        penalties, each successful defense resulting in a rewarding outcome.
+      value: "This project, developed for Esposende's Municipal Chamber, aimed to
+        captivate the essence of the city, highlighting its diverse offerings, encompassing
+        gastronomy, natural beauty, pristine beaches, and vibrant nautical sports.
+        \n\nThe narrative unfolded through a captivating series of immersive 360-degree
+        videos."
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].category
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[2].category
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8563523199043799894, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
@@ -148,10 +216,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8674042517211735322, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 9043520866421796713, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _projectURL
-      value: https://github.com/kronousTech/SABSEG-BrandActivation-Build
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c, type: 3}

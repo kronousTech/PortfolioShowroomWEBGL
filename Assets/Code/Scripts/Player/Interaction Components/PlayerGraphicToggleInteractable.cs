@@ -59,7 +59,7 @@ namespace KronosTech.PlayerInteraction
         }
         private void ClickToggle()
         {
-            if (_selectedToggle == null || _uiOpen || !_isFocused)
+            if (_selectedToggle == null || !_selectedToggle.interactable || _uiOpen || !_isFocused)
             {
                 return;
             }

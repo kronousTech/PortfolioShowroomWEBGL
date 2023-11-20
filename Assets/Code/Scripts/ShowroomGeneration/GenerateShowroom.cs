@@ -32,11 +32,13 @@ namespace KronosTech.ShowroomGeneration
             if (_startedGeneration)
                 yield break;
 
-            OnGenerationStart?.Invoke();
-            
             _tilesParent.ClearChildren();
             _corridorsParent.ClearChildren();
-            
+
+            yield return null;
+
+            OnGenerationStart?.Invoke();
+
             var remainingRooms = rooms.Count;
             GalleryTileExit nextExit = null;
             var roomIndex = 0;

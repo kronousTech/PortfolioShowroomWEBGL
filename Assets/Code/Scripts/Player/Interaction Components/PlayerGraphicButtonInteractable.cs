@@ -59,7 +59,7 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
     }
     private void ClickButton()
     {
-        if (_selectedButton == null || _uiOpen || !_isFocused)
+        if (_selectedButton == null || !_selectedButton.interactable || _uiOpen || !_isFocused)
         {
             return;
         }

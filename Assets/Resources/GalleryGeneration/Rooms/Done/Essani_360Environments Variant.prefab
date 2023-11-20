@@ -171,22 +171,22 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Essani/Factory%201.png
+      value: Images/Essani/Factory%201.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Essani/Factory%201%202.png
+      value: Images/Essani/Factory%201%202.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Essani/Store%201.png
+      value: Images/Essani/Store%201.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Essani/Store%201%202.png
+      value: Images/Essani/Store%201%202.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace KronosTech.ShowroomGeneration
@@ -6,6 +7,8 @@ namespace KronosTech.ShowroomGeneration
     {
         [SerializeField] private GameObject _holder;
         [SerializeField] private GameObject _line;
+
+        public event Action OnPlacement;
 
         private void OnEnable()
         {
@@ -25,11 +28,17 @@ namespace KronosTech.ShowroomGeneration
             {
                 _line.SetActive(exit.AddLines);
             }
+
+            OnPlacement?.Invoke();
         }
 
         public void ToggleVisibility(bool state)
         {
-            _holder.SetActive(state);
+            // TODO: FIX LATER
+            if(_holder != null)
+            {
+                _holder.SetActive(state);
+            }
         }
     }
 }

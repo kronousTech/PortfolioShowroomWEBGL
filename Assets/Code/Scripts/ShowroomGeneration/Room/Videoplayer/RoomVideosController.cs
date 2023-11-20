@@ -42,10 +42,14 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
                 _videoPlayer.url = _videoData[_index].url;
 
-                OnPrepare?.Invoke();
                 _videoPlayer.Prepare();
+                OnPrepare?.Invoke();
             }
         }
+
+        private GalleryRoom _room;
+
+        private static Action<RoomVideosController> OnVideoStart;
 
         public event Action<int> OnInitialize;
         public event Action<int, string> OnVideoChange;
@@ -70,6 +74,10 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
             _videoPlayer.prepareCompleted += (source) => Prepared();
             _videoPlayer.prepareCompleted += (source) => Pause();
+
+            _room.OnPlacement += Prepare;
+
+            OnVideoStart += DisableOtherVideoPlayers;
         }
         private void OnDisable()
         {
@@ -82,17 +90,20 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
             _videoPlayer.prepareCompleted -= (source) => Prepared();
             _videoPlayer.prepareCompleted -= (source) => Pause();
+
+            _room.OnPlacement -= Prepare;
+
+            OnVideoStart -= DisableOtherVideoPlayers;
+        }
+        private void Awake()
+        {
+            _room = GetComponent<GalleryRoom>();
         }
         private void Start()
         {
             var renderTexture = new RenderTexture(1920, 1080, 0);
             _videoPlayer.targetTexture = renderTexture;
             _videoPlayer.GetComponent<RawImage>().texture = renderTexture;
-
-            if (_videoData.Length >= 1)
-            {
-                Index = 0;
-            }
 
             OnInitialize?.Invoke(_videoData.Length);
         }
@@ -104,8 +115,23 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             }
         }
 
+        private void DisableOtherVideoPlayers(RoomVideosController controller)
+        {
+            if(controller != this)
+            {
+                _videoPlayer.Pause();
+            }
+        }
+
         private void NextVideo() => Index++;
         private void PreviousVideo() => Index--;
+        private void Prepare()
+        {
+            if (_videoData.Length >= 1)
+            {
+                Index = 0;
+            }
+        }
         private void Prepared()
         {
             OnPrepareCompleted?.Invoke(_videoPlayer.length);
@@ -137,7 +163,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         {
             _videoPlayer.Play();
 
-            OnPlay?.Invoke();
+            OnPlayInput?.Invoke();
 
             while (!_videoPlayer.isPlaying)
             {
@@ -145,6 +171,8 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             }
 
             OnPlay?.Invoke();
+
+            OnVideoStart?.Invoke(this);
         }
     }
 }

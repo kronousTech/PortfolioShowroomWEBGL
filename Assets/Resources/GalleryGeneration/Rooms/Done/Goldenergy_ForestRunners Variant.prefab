@@ -1,91 +1,136 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5915747694362042017
+--- !u!1001 &2137197669838503462
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517124979816117917, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 899000220320831686, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 2067083580944217935, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _videoData.Array.size
-      value: 2
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 3291773372820177048, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _videoData.Array.data[0].url
-      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/raw/main/Images/1_HiGames%20-%20PartyGolf/Screenrecorder-2023-01-02-03-31-34-198.mp4
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _videoData.Array.data[1].url
-      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/raw/main/Images/1_HiGames%20-%20PartyGolf/VID_20230102_033635.mp4
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_text
+      value: '<b><size=90>Role</b></size>
+
+        Lead Developer.
+
+
+        <b><size=90>Client</b></size>
+
+        Goldenergy
+        is a Portuguese company in the free energy market. It offers electricity
+        and gas tariffs for both individual customers and businesses, allowing them
+        to choose either one or both of the energy services.
+
+
+        <b><size=90>Overview</b></size>
+
+        This
+        compact project was created for a sustainable energy company within a tight
+        three-day deadline. The objective was to craft an adventure for Goldy the
+        gorilla. The result was an endless runner, drawing inspiration from games
+        like Subway Surfers. Players control Goldy as they navigate side-to-side,
+        jump, and roll to avoid obstacles, represented by a rolling tree trunk. The
+        game features basic mechanics and employs randomly generated obstacles for
+        a dynamic experience.
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032626993100454659, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: Hivolve_PartyGolf Variant
+      value: Goldenergy_ForestRunners Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303765843991482258, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472125357650772227, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570647795597516356, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/blob/main/Images/1_HiGames%20-%20PartyGolf/Gameplay.png
+      value: Images/GoldEnergy/Screenshot_3.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/1_HiGames%20-%20PartyGolf/Level%20Select.jpg
+      value: Images/GoldEnergy/Screenshot_4.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/1_HiGames%20-%20PartyGolf/Local%20Multiplayer.png
+      value: Images/GoldEnergy/Screenshot_5.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/1_HiGames%20-%20PartyGolf/MainMenu.png
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[4].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/1_HiGames%20-%20PartyGolf/Shop.png
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[0].title
-      value: Gameplay
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[1].title
-      value: Level Select
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[2].title
-      value: Local Multiplayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[3].title
-      value: Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[4].title
-      value: Shop
+      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/GoldEnergy/Screenshot_5.png
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -100,17 +145,17 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Hivolve - Party Golf
+      value: Goldenergy - Forest Runners
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -120,22 +165,25 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: hivolve develops XR (VR/AR/MR) experiences to increase business performance.
-        With businesses in Europe & America, working closely with HR, Sales or Marketing
-        executives.
+      value: Goldenergy is a Portuguese company in the free energy market. It offers
+        electricity and gas tariffs for both individual customers and businesses,
+        allowing them to choose either one or both of the energy services.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].info
-      value: '''Party Golf'' is a game that I developed during my internship at hivolve.
-        The game was inspired by the golf game ''Golf It'' but following a party
-        theme.  and how to add Ads to a game.'
+      value: This compact project was created for a sustainable energy company within
+        a tight three-day deadline. The objective was to craft an adventure for Goldy
+        the gorilla. The result was an endless runner, drawing inspiration from games
+        like Subway Surfers. Players control Goldy as they navigate side-to-side,
+        jump, and roll to avoid obstacles, represented by a rolling tree trunk. The
+        game features basic mechanics and employs randomly generated obstacles for
+        a dynamic experience.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].info
-      value: Being my first mobile game I've developed at the time, it inspired me
-        to learn more about how to create inputs via screen, game optimization
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -150,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].category
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8563523199043799894, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -206,6 +254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043520866421796713, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c, type: 3}

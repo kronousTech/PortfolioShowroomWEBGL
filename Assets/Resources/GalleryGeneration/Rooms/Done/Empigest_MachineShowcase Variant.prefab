@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2804122154271259504
+--- !u!1001 &3922263462919926700
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -12,10 +12,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 152139041425145694, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 441905407508771473, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 517124979816117917, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -27,10 +27,55 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698665289376805758, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014941914656550716, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2067083580944217935, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077950923257229896, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2198377072186408603, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249913154256109028, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250913361082893943, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446093174744819911, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3291773372820177048, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -49,23 +94,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365814158526226298, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562947462773934064, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_text
+      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nEMPIGEST
+        started its activity in 2007, as a result of the enormous desire of a group
+        of professionals in the forklift market to create a different project, based
+        on the quality of the services provided, regardless of the brands assisted
+        and the size of the customer.\n\n<b><size=90>Overview</b></size>\nThis project
+        was designed with the intent of showcasing the operational prowess of EMPIGEST's
+        autonomous machines\u2014innovative technologies that function seamlessly
+        without the necessity of direct human control.\n\n<b><size=90>Technologies</b></size>\nThe
+        project was developed for Google VR using its SDK for Unity.\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 4704101651971478463, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -85,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: WebGLFullScreenVariant
+      value: Empigest_MachineShowcase Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5303765843991482258, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -96,6 +169,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486838510015999272, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 5570647795597516356, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -110,17 +193,22 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/WebGLTemplate/page.png
+      value: Images/Empigest/Scenario%201.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].url
+      value: Images/Empigest/Scenariot%202.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: roomTags
-      value: 24
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6911240588372966099, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -130,7 +218,20 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Unity Store - WebGL Fullscreen
+      value: Empigest - Machine Showcase
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_text
+      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nEMPIGEST
+        started its activity in 2007, as a result of the enormous desire of a group
+        of professionals in the forklift market to create a different project, based
+        on the quality of the services provided, regardless of the brands assisted
+        and the size of the customer.\n\n<b><size=90>Overview</b></size>\nThis project
+        was designed with the intent of showcasing the operational prowess of EMPIGEST's
+        autonomous machines\u2014innovative technologies that function seamlessly
+        without the necessity of direct human control.\n\n<b><size=90>Technologies</b></size>\nThe
+        project was developed for Google VR using its SDK for Unity.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -140,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -150,20 +251,22 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: 'A simple package with a WebGL template to make your build screen adapt
-        to the browsers window size.
-
-
-        After developing it for this experience,
-        I decided to publish it on Unity Asset Store.'
+      value: EMPIGEST started its activity in 2007, as a result of the enormous desire
+        of a group of professionals in the forklift market to create a different
+        project, based on the quality of the services provided, regardless of the
+        brands assisted and the size of the customer.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].info
-      value: In the process of publishing my package on the Unity Asset Store, I
-        gained valuable insights into Unity's publishing guidelines. Additionally,
-        delving into the code behind the WebGL templates provided me with a comprehensive
-        understanding of the technical aspects involved in it.
+      value: "This project was designed with the intent of showcasing the operational
+        prowess of EMPIGEST's autonomous machines\u2014innovative technologies that
+        function seamlessly without the necessity of direct human control."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[3].info
+      value: The project was developed for Google VR using its SDK for Unity.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -173,12 +276,27 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].category
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].category
-      value: 5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[3].category
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8563523199043799894, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -235,15 +353,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8674042517211735322, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _projectURL
-      value: https://assetstore.unity.com/packages/tools/utilities/webgl-fullscreen-template-243280
-      objectReference: {fileID: 0}
     - target: {fileID: 9043520866421796713, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169170399050841783, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c, type: 3}

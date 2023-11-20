@@ -1,18 +1,17 @@
-Fix clipping on ui elements.
-
 Change try it button to whatever portfolio needs.
 Add master volume slider.
 
 [BUG]
-- Check if button is interactable when using interact scripts.
-- Check video sizing.
+
 
 [FEATURES]
 - Add a way to increase/decrease video volume
-
+- Play/pause using the video screen instead of button.
+- Reset cameras x axis when teleporting. (Try disabling camera, rotating, enabling).
+- Show download progress at start.
 
 [OPTIMIZATION]
 - Download Materials from repo.
-
-
-Bug - Change camera root pitch (maybe change to regular camera if necessary)
+- Convert to asset bundles.
+- Optimize canvases.
+- Optimize room generation

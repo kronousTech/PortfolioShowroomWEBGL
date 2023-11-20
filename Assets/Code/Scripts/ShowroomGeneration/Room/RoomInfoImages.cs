@@ -11,6 +11,8 @@ namespace KronosTech.ShowroomGeneration.Room
 
         private RoomImageSpriteData[] _imageSprites;
 
+        private readonly static string _imagesURl = "https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/";
+
         private void Start()
         {
             _imageSprites = new RoomImageSpriteData[_imageData.Length];
@@ -21,7 +23,7 @@ namespace KronosTech.ShowroomGeneration.Room
             {
                 var index = i;
 
-                ServiceLocator.Instance.GetWebImagesService().GetImageSprite(_imageData[index].url, this, (Sprite sprite, string error) =>
+                ServiceLocator.Instance.GetWebImagesService().GetImageSprite(_imagesURl + _imageData[index].url, this, (Sprite sprite, string error) =>
                 {
                     if (string.IsNullOrEmpty(error))
                     {

@@ -2,8 +2,6 @@ using System;
 using UnityEngine.Networking;
 using UnityEngine;
 using System.Collections;
-using System.Net;
-using UnityEngine.Video;
 
 namespace KronosTech.Services
 {
@@ -16,7 +14,7 @@ namespace KronosTech.Services
 //            www.SetRequestHeader("Access-Control-Allow-Credentials", "true");
 //            www.SetRequestHeader("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, Accepts, accept, client-security-token, access-control-allow-headers");
 //            www.SetRequestHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-//            www.SetRequestHeader("Access-Control-Allow-Origin", "*");
+//            www.SetRequestHeader("Access-Control-Allow-Origin", "https://kronoustech.github.io");
 //#endif
 
             www.downloadHandler = new DownloadHandlerTexture();
