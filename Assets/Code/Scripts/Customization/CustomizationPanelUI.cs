@@ -8,11 +8,11 @@ namespace KronosTech.Customization
         [Header("Prefabs")]
         [SerializeField] private MaterialButtonDisplay _materialButtonDisplayPrefab;
         [Header("Parents")]
-        [SerializeField] private Transform _floorParent;
-        [SerializeField] private Transform _baseboardParent;
-        [SerializeField] private Transform _wallParent;
-        [SerializeField] private Transform _guidelinesParent;
-        [SerializeField] private Transform _backgroundParent;
+        [SerializeField] private ToggleGroup _floorParent;
+        [SerializeField] private ToggleGroup _baseboardParent;
+        [SerializeField] private ToggleGroup _wallParent;
+        [SerializeField] private ToggleGroup _guidelinesParent;
+        [SerializeField] private ToggleGroup _backgroundParent;
 
         private void OnEnable()
         {
@@ -33,26 +33,34 @@ namespace KronosTech.Customization
             GalleryEnvironment.OnAddSkyboxMaterials -= (materials) => AddButtons(_backgroundParent, materials);
         }
 
-        private void AddButtons(CustomizableElement element, Transform parent, Material[] materials)
+        private void AddButtons(CustomizableElement element, ToggleGroup parent, Material[] materials)
         {
             for (int i = 0; i < materials.Length; i++)
             {
                 var material = materials[i];
-                var button = Instantiate(_materialButtonDisplayPrefab, parent);
-                button.Initialize(material);
-                button.GetComponent<Button>().onClick.AddListener(() 
-                    => GalleryCustomization.SetNewCurrentMat(element, material));
+                var toggle = Instantiate(_materialButtonDisplayPrefab, parent.transform);
+                toggle.Initialize(material);
+                if(toggle.TryGetComponent<Toggle>(out var toggleComponent))
+                {
+                    toggleComponent.group = parent;
+                    toggleComponent.onValueChanged.AddListener((value)
+                    => { if (value) GalleryCustomization.SetNewCurrentMat(element, material); });
+                }
             }
         }
-        private void AddButtons(Transform parent, Material[] materials)
+        private void AddButtons(ToggleGroup parent, Material[] materials)
         {
             for (int i = 0; i < materials.Length; i++)
             {
                 var index = i;
-                var button = Instantiate(_materialButtonDisplayPrefab, parent);
-                button.Initialize(materials[i]);
-                button.GetComponent<Button>().onClick.AddListener(()
-                    => GalleryEnvironment.ReplaceEnvironment(index));
+                var toggle = Instantiate(_materialButtonDisplayPrefab, parent.transform);
+                toggle.Initialize(materials[i]);
+                if (toggle.TryGetComponent<Toggle>(out var toggleComponent))
+                {
+                    toggleComponent.group = parent;
+                    toggleComponent.onValueChanged.AddListener((value)
+                    => { if (value) GalleryEnvironment.ReplaceEnvironment(index); });
+                }
             }
         }
     }
