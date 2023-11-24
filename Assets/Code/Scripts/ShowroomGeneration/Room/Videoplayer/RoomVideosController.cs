@@ -1,6 +1,7 @@
+using KronosTech.AssetManagement;
+using KronosTech.Services;
 using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -25,27 +26,29 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             get => _index;
             set
             {
-                if (value >= _videoData.Length)
+                if (value >= _videoClips.Length)
                 {
                     _index = 0;
                 }
                 else if (value < 0)
                 {
-                    _index = _videoData.Length - 1;
+                    _index = _videoClips.Length - 1;
                 }
                 else
                 {
                     _index = value;
                 }
 
-                OnVideoChange?.Invoke(_index, _videoData[_index].title);
+                OnVideoChange?.Invoke(_index, _videoClips[_index].title);
 
-                _videoPlayer.url = _videoData[_index].url;
+                _videoPlayer.url = _videoClips[_index].url;
 
                 _videoPlayer.Prepare();
                 OnPrepare?.Invoke();
             }
         }
+
+        private RoomVideoData[] _videoClips;
 
         private GalleryRoom _room;
 
@@ -65,9 +68,10 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
         private void OnEnable()
         {
+            AssetsLoader.OnBundlesDownload += LoadVideos;
+
             _buttonNext.onClick.AddListener(NextVideo);
             _buttonPrev.onClick.AddListener(PreviousVideo);
-
             _buttonPlay.onClick.AddListener(() => StartCoroutine(PlayCoroutine()));
             _buttonPause.onClick.AddListener(Pause);
             _buttonRestart.onClick.AddListener(() => StartCoroutine(Restart()));
@@ -81,9 +85,10 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         }
         private void OnDisable()
         {
+            AssetsLoader.OnBundlesDownload -= LoadVideos;
+
             _buttonNext.onClick.RemoveListener(NextVideo);
             _buttonPrev.onClick.RemoveListener(PreviousVideo);
-
             _buttonPlay.onClick.RemoveListener(() => StartCoroutine(PlayCoroutine()));
             _buttonPause.onClick.RemoveListener(Pause);
             _buttonRestart.onClick.RemoveListener(() => StartCoroutine(Restart()));
@@ -101,7 +106,9 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         }
         private void Start()
         {
-            var renderTexture = new RenderTexture(1920, 1080, 0);
+            _videoPlayer.source = VideoSource.Url;
+
+            var renderTexture = new RenderTexture(1024, 768, 0);
             _videoPlayer.targetTexture = renderTexture;
             _videoPlayer.GetComponent<RawImage>().texture = renderTexture;
 
@@ -113,6 +120,19 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             {
                 OnPlaying?.Invoke(_videoPlayer.time);
             }
+        }
+
+        private void LoadVideos()
+        {
+            _videoClips = new RoomVideoData[_videoData.Length];
+
+            for (int i = 0; i < _videoClips.Length; i++)
+            {
+                _videoClips[i].title = _videoData[i].title;
+                _videoClips[i].url = ServiceLocator.Instance.GetWebVideosService().LoadVideo(_videoData[i].asset);
+            }
+
+            Index = 0;
         }
 
         private void DisableOtherVideoPlayers(RoomVideosController controller)
@@ -174,5 +194,11 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
             OnVideoStart?.Invoke(this);
         }
+    }
+
+    public struct RoomVideoData
+    {
+        public string title;
+        public string url;
     }
 }

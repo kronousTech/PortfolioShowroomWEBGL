@@ -1,3 +1,4 @@
+using KronosTech.AssetManagement;
 using KronosTech.Services;
 using System;
 using UnityEngine;
@@ -6,14 +7,21 @@ namespace KronosTech.ShowroomGeneration.Room
 {
     public class RoomInfoImages : MonoBehaviour
     {
+        private RoomImageSpriteData[] _imageSprites;
+
         [SerializeField] private ContentData[] _imageData;
         [SerializeField] private RoomDisplayImages[] _displays;
 
-        private RoomImageSpriteData[] _imageSprites;
+        private void OnEnable()
+        {
+            AssetsLoader.OnBundlesDownload += LoadImages;   
+        }
+        private void OnDisable()
+        {
+            AssetsLoader.OnBundlesDownload -= LoadImages;
+        }
 
-        private readonly static string _imagesURl = "https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/";
-
-        private void Start()
+        private void LoadImages()
         {
             _imageSprites = new RoomImageSpriteData[_imageData.Length];
 
@@ -21,27 +29,17 @@ namespace KronosTech.ShowroomGeneration.Room
 
             for (int i = 0; i < _imageData.Length; i++)
             {
-                var index = i;
-
-                ServiceLocator.Instance.GetWebImagesService().GetImageSprite(_imagesURl + _imageData[index].url, this, (Sprite sprite, string error) =>
+                var sprite = ServiceLocator.Instance.GetWebImagesService().LoadImage(_imageData[i].asset);
+                
+                _imageSprites[i].title = _imageData[i].title;   
+                _imageSprites[i].sprite = sprite;
+                
+                loadCount++;
+                
+                if(loadCount == _imageData.Length)
                 {
-                    if (string.IsNullOrEmpty(error))
-                    {
-                        _imageSprites[index].title = _imageData[index].title;   
-                        _imageSprites[index].sprite = sprite;
-
-                        loadCount++;
-                    }
-                    else
-                    {
-                        Debug.Log("Error loading sprite");
-                    }
-
-                    if(loadCount == _imageData.Length)
-                    {
-                        AddSpritesToDisplays();
-                    }
-                });
+                    AddSpritesToDisplays();
+                }
             }
         }
 
@@ -54,12 +52,7 @@ namespace KronosTech.ShowroomGeneration.Room
         }
     }
 
-    [Serializable]
-    public struct ContentData
-    {
-        public string title;
-        [TextArea(1,5)] public string url;
-    }
+    
     [Serializable]
     public struct RoomImageSpriteData
     {

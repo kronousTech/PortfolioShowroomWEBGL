@@ -24,10 +24,8 @@ namespace KronosTech.Services
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
         {
-            // Should only be used in the Services
-            var requestServiceAPI = new ServiceRequestAPI();
-
-            Instance.Register(new ServiceWebImages(requestServiceAPI));
+            Instance.Register(new ServiceWebImages());
+            Instance.Register(new ServiceWebVideos());
         }
 
         /// <summary>
@@ -64,5 +62,6 @@ namespace KronosTech.Services
         }
 
         public ServiceWebImages GetWebImagesService() => Get<ServiceWebImages>();
+        public ServiceWebVideos GetWebVideosService() => Get<ServiceWebVideos>();
     }
 }

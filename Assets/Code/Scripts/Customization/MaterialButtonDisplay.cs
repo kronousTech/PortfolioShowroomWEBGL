@@ -14,16 +14,16 @@ namespace KronosTech.Customization
 
         public void Initialize(Material material)
         {
-            if(material.mainTexture != null)
+            // Skybox
+            if (material.HasProperty("_Tex"))
             {
-                var texture2D = TextureToTexture2D(material.mainTexture);
+                var texture2D = ConvertCubemapToTexture2D((Cubemap)material.GetTexture("_Tex"));
 
                 _image.sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
             }
-            // Skybox
-            else if (material.HasProperty("_Tex"))
+            else if (material.HasTexture("_MainTex") && material.mainTexture != null)
             {
-                var texture2D = ConvertCubemapToTexture2D((Cubemap)material.GetTexture("_Tex"));
+                var texture2D = TextureToTexture2D(material.mainTexture);
 
                 _image.sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
             }

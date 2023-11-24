@@ -62,6 +62,46 @@ PrefabInstance:
       propertyPath: _videoData.Array.data[1].url
       value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Ooty/VID_20221229_134054.mp4
       objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.name
+      value: OotyVideo1.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[1].asset.name
+      value: OotyVideo2.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.bundle
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[1].asset.bundle
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[1].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.bundle_name
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[1].asset.bundle_name
+      value: ooty
+      objectReference: {fileID: 0}
     - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
@@ -273,6 +313,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5750668888546891499, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
@@ -317,6 +362,86 @@ PrefabInstance:
         type: 3}
       propertyPath: _imageData.Array.data[3].title
       value: House Editor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.name
+      value: House 1.png
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.name
+      value: House 2.png
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.name
+      value: Interior View.png
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.name
+      value: House Editor.png
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.bundle
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.bundle
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.bundle
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.bundle
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.bundle_name
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.bundle_name
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.bundle_name
+      value: ooty
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.bundle_name
+      value: ooty
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

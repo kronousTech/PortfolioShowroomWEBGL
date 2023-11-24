@@ -42,6 +42,7 @@ public class UiDisplay : MonoBehaviour
         GameEvents.OnPanelOpen?.Invoke(_isOpen);
     }
 
+
     public void ClosePanel()
     {
         if (_isOpen)
