@@ -1,16 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7923889600154358858
+--- !u!1001 &6014220433195287811
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 441905407508771473, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+    - target: {fileID: 152139041425145694, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 517124979816117917, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -22,30 +22,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1698665289376805758, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2014941914656550716, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2067083580944217935, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2077950923257229896, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2198377072186408603, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3291773372820177048, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -64,7 +44,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
@@ -72,64 +62,20 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3365814158526226298, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: '<b><size=90>Role</b></size>
-
-        Lead Developer.
-
-
-        <b><size=90>Client</b></size>
-
-        ADIRA
-        is a leading manufacturer and global supplier of sheet metal working machinery,
-        specialized in the production of laser cutting machines, hydraulic press
-        brakes, shears, robotized bending cells and automatic sheet metal transforming
-        systems.
-
-
-        <b><size=90>Overview</b></size>
-
-        This project,
-        for HTC Vive, was developed to showcase the client''s machinery in intricate
-        detail. The experience unfolds through dynamic animations, allowing users
-        to witness the machines in action. Moreover, the immersive environment empowers
-        users to actively engage with the machinery, allowing them to learn about
-        the production process.
-
-
-        <b><size=90>Challenges</b></size>
-
-        Due
-        to the complexity of the machine models, performance issues quickly became
-        present in the project.
-
-
-        <b><size=90>Solutions</b></size>
-
-        To
-        improve performance, several LOD''s were created for the models present in
-        the scene. With the addition of LOD''s and a downgrade in the quality settings,
-        we managed to maintain a consistent frame rate throughout the experience.
-
-
-'
+      value: "<b><size=90>Role</b></size>\nLead Programmer.\n\n<b><size=90>Overview</b></size>\nThis
+        project, developed for Esposende's Municipal Chamber, aimed to captivate
+        the essence of the city, highlighting its diverse offerings, encompassing
+        gastronomy, natural beauty, pristine beaches, and vibrant nautical sports.
+        \n\nThe narrative unfolded through a captivating series of immersive 360-degree
+        videos.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_fontSize
-      value: 73.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704101651971478463, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5032626993100454659, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -139,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: Adira_MachineShowcase Variant
+      value: Esposende_360VideoPlayerVariant
       objectReference: {fileID: 0}
     - target: {fileID: 5303765843991482258, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -151,17 +97,7 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5486838510015999272, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5570647795597516356, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6379613173572115594, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -169,27 +105,47 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: Images/AdiraVR/Screenshot_4.png?raw=true
+      value: Images/Esposende/Screenshot_1.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: Images/AdiraVR/Screenshot_1.png?raw=true
+      value: Images/Esposende/Screenshot_6.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _imageData.Array.data[2].url
-      value: Images/AdiraVR/Screenshot_2.png?raw=true
+      propertyPath: _imageData.Array.data[0].asset.name
+      value: Screenshot_1
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _imageData.Array.data[3].url
-      value: Images/AdiraVR/Screenshot_3.png?raw=true
+      propertyPath: _imageData.Array.data[1].asset.name
+      value: Screenshot_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.bundle
+      value: esposende360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.bundle
+      value: esposende360
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.category
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -204,51 +160,7 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Adira - Machine Showcase
-      objectReference: {fileID: 0}
-    - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_text
-      value: '<b><size=90>Role</b></size>
-
-        Lead Developer.
-
-
-        <b><size=90>Client</b></size>
-
-        ADIRA
-        is a leading manufacturer and global supplier of sheet metal working machinery,
-        specialized in the production of laser cutting machines, hydraulic press
-        brakes, shears, robotized bending cells and automatic sheet metal transforming
-        systems.
-
-
-        <b><size=90>Overview</b></size>
-
-        This project,
-        for HTC Vive, was developed to showcase the client''s machinery in intricate
-        detail. The experience unfolds through dynamic animations, allowing users
-        to witness the machines in action. Moreover, the immersive environment empowers
-        users to actively engage with the machinery, allowing them to learn about
-        the production process.
-
-
-        <b><size=90>Challenges</b></size>
-
-        Due
-        to the complexity of the machine models, performance issues quickly became
-        present in the project.
-
-
-        <b><size=90>Solutions</b></size>
-
-        To
-        improve performance, several LOD''s were created for the models present in
-        the scene. With the addition of LOD''s and a downgrade in the quality settings,
-        we managed to maintain a consistent frame rate throughout the experience.
-
-
-'
+      value: Esposende - 360 Video Player
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -258,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -268,57 +180,16 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: ADIRA is a leading manufacturer and global supplier of sheet metal working
-        machinery, specialized in the production of laser cutting machines, hydraulic
-        press brakes, shears, robotized bending cells and automatic sheet metal transforming
-        systems.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[2].info
-      value: This project, for HTC Vive, was developed to showcase the client's machinery
-        in intricate detail. The experience unfolds through dynamic animations, allowing
-        users to witness the machines in action. Moreover, the immersive environment
-        empowers users to actively engage with the machinery, allowing them to learn
-        about the production process.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[3].info
-      value: Due to the complexity of the machine models, performance issues quickly
-        became present in the project.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[4].info
-      value: To improve performance, several LOD's were created for the models present
-        in the scene. With the addition of LOD's and a downgrade in the quality settings,
-        we managed to maintain a consistent frame rate throughout the experience.
+      value: "This project, developed for Esposende's Municipal Chamber, aimed to
+        captivate the essence of the city, highlighting its diverse offerings, encompassing
+        gastronomy, natural beauty, pristine beaches, and vibrant nautical sports.
+        \n\nThe narrative unfolded through a captivating series of immersive 360-degree
+        videos."
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].category
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[2].category
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[3].category
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _infoData.Array.data[4].category
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8563523199043799894, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

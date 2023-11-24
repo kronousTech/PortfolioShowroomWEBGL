@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5339259864780693476
+--- !u!1001 &2804122154271259504
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,6 +11,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 152139041425145694, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 441905407508771473, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -31,6 +36,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 15.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502000924990906890, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_text
+      value: Unity store product page
       objectReference: {fileID: 0}
     - target: {fileID: 1698665289376805758, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -94,7 +104,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319376331248035172, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
@@ -120,31 +140,24 @@ PrefabInstance:
         Lead Developer.
 
 
-        <b><size=90>Client</b></size>
-
-        Super
-        Bock is a Portuguese beer brand from the Super Bock Group brewery, which
-        produces a range of beers under the same name. Established in 1927, Super
-        Bock maintains a leading position in the market, and it is among the favorite
-        beer brands of the Portuguese. It is also the best-selling Portuguese beer
-        in the world.
-
-
         <b><size=90>Overview</b></size>
 
-        Come travel
-        back in time at Super Bock ''Casa da Cerveja'', and follow how beer was made
-        in our first brewing room, which now comes to life again through this immersive
-        Augmented Reality experience.
+        A
+        simple package with a WebGL template to make your build screen adapt to the
+        browsers window size.
 
 
+        After developing it for this experience,
+        I decided to publish it on Unity Asset Store.
 
-        The Super Bock ''Casa da Cerveja''
-        is a tour circuit located right inside the Super Bock Group Production Center.
-        On this journey through the world of beer, you will learn about its manufacturing
-        process, from the raw materials that give rise to it, to the production of
-        the wort, through fermentation and ending with the filling, where you can
-        hear the clinking of the bottles.
+
+        <b><size=90>Lessons</b></size>
+
+        In
+        the process of publishing my package on the Unity Asset Store, I gained valuable
+        insights into Unity''s publishing guidelines. Additionally, delving into
+        the code behind the WebGL templates provided me with a comprehensive understanding
+        of the technical aspects involved in it.
 
 
 '
@@ -152,7 +165,7 @@ PrefabInstance:
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_fontSize
-      value: 79.4
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -182,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: SuperBock_CasaDaCerveja Variant
+      value: WebGLFullScreenVariant
       objectReference: {fileID: 0}
     - target: {fileID: 5303765843991482258, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -222,12 +235,27 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: Images/SuperBock/SuperBockImage.png?raw=true
+      value: Images/WebGLTemplate/page.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.name
+      value: page
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.bundle
+      value: webgltemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.category
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: roomTags
-      value: 68
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6911240588372966099, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -237,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Super Bock - Casa da Cerveja
+      value: Unity Store - WebGL Fullscreen
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -247,31 +275,24 @@ PrefabInstance:
         Lead Developer.
 
 
-        <b><size=90>Client</b></size>
-
-        Super
-        Bock is a Portuguese beer brand from the Super Bock Group brewery, which
-        produces a range of beers under the same name. Established in 1927, Super
-        Bock maintains a leading position in the market, and it is among the favorite
-        beer brands of the Portuguese. It is also the best-selling Portuguese beer
-        in the world.
-
-
         <b><size=90>Overview</b></size>
 
-        Come travel
-        back in time at Super Bock ''Casa da Cerveja'', and follow how beer was made
-        in our first brewing room, which now comes to life again through this immersive
-        Augmented Reality experience.
+        A
+        simple package with a WebGL template to make your build screen adapt to the
+        browsers window size.
 
 
+        After developing it for this experience,
+        I decided to publish it on Unity Asset Store.
 
-        The Super Bock ''Casa da Cerveja''
-        is a tour circuit located right inside the Super Bock Group Production Center.
-        On this journey through the world of beer, you will learn about its manufacturing
-        process, from the raw materials that give rise to it, to the production of
-        the wort, through fermentation and ending with the filling, where you can
-        hear the clinking of the bottles.
+
+        <b><size=90>Lessons</b></size>
+
+        In
+        the process of publishing my package on the Unity Asset Store, I gained valuable
+        insights into Unity''s publishing guidelines. Additionally, delving into
+        the code behind the WebGL templates provided me with a comprehensive understanding
+        of the technical aspects involved in it.
 
 
 '
@@ -294,37 +315,35 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: Super Bock is a Portuguese beer brand from the Super Bock Group brewery,
-        which produces a range of beers under the same name. Established in 1927,
-        Super Bock maintains a leading position in the market, and it is among the
-        favorite beer brands of the Portuguese. It is also the best-selling Portuguese
-        beer in the world.
+      value: 'A simple package with a WebGL template to make your build screen adapt
+        to the browsers window size.
+
+
+        After developing it for this experience,
+        I decided to publish it on Unity Asset Store.'
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].info
-      value: 'Come travel back in time at Super Bock ''Casa da Cerveja'', and follow
-        how beer was made in our first brewing room, which now comes to life again
-        through this immersive Augmented Reality experience.
-
-
-
-        The Super
-        Bock ''Casa da Cerveja'' is a tour circuit located right inside the Super
-        Bock Group Production Center. On this journey through the world of beer,
-        you will learn about its manufacturing process, from the raw materials that
-        give rise to it, to the production of the wort, through fermentation and
-        ending with the filling, where you can hear the clinking of the bottles.'
+      value: In the process of publishing my package on the Unity Asset Store, I
+        gained valuable insights into Unity's publishing guidelines. Additionally,
+        delving into the code behind the WebGL templates provided me with a comprehensive
+        understanding of the technical aspects involved in it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[0].category
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].category
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].category
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -394,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 8674042517211735322, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _projectURL
-      value: https://play.google.com/store/apps/details?id=com.YourCompany.SuperBockHouse
+      value: https://assetstore.unity.com/packages/tools/utilities/webgl-fullscreen-template-243280
       objectReference: {fileID: 0}
     - target: {fileID: 9043520866421796713, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

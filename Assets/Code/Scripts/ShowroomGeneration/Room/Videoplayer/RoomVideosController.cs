@@ -43,7 +43,11 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
                 _videoPlayer.url = _videoClips[_index].url;
 
-                _videoPlayer.Prepare();
+                if(_videoPlayer.isActiveAndEnabled)
+                {
+                    _videoPlayer.Prepare();
+                }
+
                 OnPrepare?.Invoke();
             }
         }
@@ -124,6 +128,9 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
 
         private void LoadVideos()
         {
+            if (_videoData.Length == 0)
+                return;
+
             _videoClips = new RoomVideoData[_videoData.Length];
 
             for (int i = 0; i < _videoClips.Length; i++)

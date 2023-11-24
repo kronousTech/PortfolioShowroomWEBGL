@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8130472506662413954
+--- !u!1001 &8864841986333716073
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -20,32 +20,32 @@ PrefabInstance:
     - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 15.375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200.875
       objectReference: {fileID: 0}
     - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.6875
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -55,32 +55,37 @@ PrefabInstance:
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[0].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Ooty/VID_20221229_133906.mp4
+      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Olaria%20AR.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _videoData.Array.data[1].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Ooty/VID_20221229_134054.mp4
+      propertyPath: _videoData.Array.data[0].title
+      value: Part 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[1].title
+      value: Part 2
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[0].asset.name
-      value: OotyVideo1
+      value: GrandolaARPart1
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[1].asset.name
-      value: OotyVideo2
+      value: GrandolaARPart2
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[0].asset.bundle
-      value: ooty
+      value: grandolaar
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[1].asset.bundle
-      value: ooty
+      value: grandolaar
       objectReference: {fileID: 0}
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -91,16 +96,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _videoData.Array.data[1].asset.category
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _videoData.Array.data[0].asset.bundle_name
-      value: ooty
-      objectReference: {fileID: 0}
-    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _videoData.Array.data[1].asset.bundle_name
-      value: ooty
       objectReference: {fileID: 0}
     - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -142,101 +137,78 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3562947462773934064, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: '<b><size=90>Role</b></size>
-
-        Lead Developer.
-
-
-        <b><size=90>Client</b></size>
-
-        Ooty
-        is a registered trademark belonging to the Black Oak Company, which operates
-        in the field of prefabricated and modular structures with a wooden substructure.
-        Houses, Bungalows, accommodation modules, tourism, commerce, annexes, etc.
-
-        With
-        a strong and characteristic image, Ooty presents a contemporary concept of
-        prefabricated structures and, at the same time, proposes to respond to particular
-        requests, accompanied by its architecture and engineering department.
-
-
-        <b><size=90>Overview</b></size>
-
-        Developed
-        for both Android and iOS, this project leverages the ArCore and ArKit frameworks
-        to provide users with an engaging augmented reality (AR) experience. The
-        app allows users to place products in their actual size for an immersive
-        view or scale them down for a more comprehensive perspective. Additionally,
-        users have the creative freedom to construct personalized houses using a
-        custom editor. The primary goal of the app is to showcase the diverse collection
-        of products offered by the client, combining functionality with a seamless
-        AR interface.
-
-
-'
+      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nGr\xE2ndola's
+        Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThe project was developed
+        with the purpose of creating entertaining animations related to the pottery
+        process and Gr\xE2ndola's old cultures.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 15.375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 182.5
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.6875
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 15.375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 145.75
       objectReference: {fileID: 0}
     - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.6875
       objectReference: {fileID: 0}
     - target: {fileID: 5005744636271038246, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -261,37 +233,37 @@ PrefabInstance:
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: Ooty_AugmentedRealityApp Variant
+      value: Grandola_MelidesPotteryAR Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 219.25
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.6875
       objectReference: {fileID: 0}
     - target: {fileID: 5701410561163785084, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -311,11 +283,6 @@ PrefabInstance:
     - target: {fileID: 5701410561163785084, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5750668888546891499, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
@@ -326,82 +293,62 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: Images/Ooty/House%201.png?raw=true
+      value: Images/Grandola%20AR/Screenshot_1.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: Images/Ooty/House%202.png?raw=true
+      value: Images/Grandola%20AR/Screenshot_2.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].url
-      value: Images/Ooty/Interior%20View.png?raw=true
+      value: Images/Grandola%20AR/Screenshot_3.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].url
-      value: Images/Ooty/House%20Editor.png?raw=true
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[0].title
-      value: House Preview
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[1].title
-      value: House Preview
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[2].title
-      value: Interior View
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[3].title
-      value: House Editor
+      value: Images/Grandola%20AR/Screenshot_4.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].asset.name
-      value: House 1.png
+      value: Screenshot_1
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].asset.name
-      value: House 2.png
+      value: Screenshot_2
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].asset.name
-      value: Interior View.png
+      value: Screenshot_3
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].asset.name
-      value: House Editor.png
+      value: Screenshot_4
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].asset.bundle
-      value: ooty
+      value: grandolaar
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].asset.bundle
-      value: ooty
+      value: grandolaar
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].asset.bundle
-      value: ooty
+      value: grandolaar
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].asset.bundle
-      value: ooty
+      value: grandolaar
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -423,26 +370,6 @@ PrefabInstance:
       propertyPath: _imageData.Array.data[3].asset.category
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[0].asset.bundle_name
-      value: ooty
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[1].asset.bundle_name
-      value: ooty
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[2].asset.bundle_name
-      value: ooty
-      objectReference: {fileID: 0}
-    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _imageData.Array.data[3].asset.bundle_name
-      value: ooty
-      objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: roomTags
@@ -456,48 +383,20 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Ooty - App
+      value: Grandola - Pottery AR
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: '<b><size=90>Role</b></size>
-
-        Lead Developer.
-
-
-        <b><size=90>Client</b></size>
-
-        Ooty
-        is a registered trademark belonging to the Black Oak Company, which operates
-        in the field of prefabricated and modular structures with a wooden substructure.
-        Houses, Bungalows, accommodation modules, tourism, commerce, annexes, etc.
-
-        With
-        a strong and characteristic image, Ooty presents a contemporary concept of
-        prefabricated structures and, at the same time, proposes to respond to particular
-        requests, accompanied by its architecture and engineering department.
-
-
-        <b><size=90>Overview</b></size>
-
-        Developed
-        for both Android and iOS, this project leverages the ArCore and ArKit frameworks
-        to provide users with an engaging augmented reality (AR) experience. The
-        app allows users to place products in their actual size for an immersive
-        view or scale them down for a more comprehensive perspective. Additionally,
-        users have the creative freedom to construct personalized houses using a
-        custom editor. The primary goal of the app is to showcase the diverse collection
-        of products offered by the client, combining functionality with a seamless
-        AR interface.
-
-
-'
+      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nGr\xE2ndola's
+        Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThe project was developed
+        with the purpose of creating entertaining animations related to the pottery
+        process and Gr\xE2ndola's old cultures.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_fontSize
-      value: 76.4
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -517,27 +416,18 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: 'Ooty is a registered trademark belonging to the Black Oak Company,
-        which operates in the field of prefabricated and modular structures with
-        a wooden substructure. Houses, Bungalows, accommodation modules, tourism,
-        commerce, annexes, etc.
-
-        With a strong and characteristic image,
-        Ooty presents a contemporary concept of prefabricated structures and, at
-        the same time, proposes to respond to particular requests, accompanied by
-        its architecture and engineering department.'
+      value: "Gr\xE2ndola's Municipal Chamber."
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].info
-      value: Developed for both Android and iOS, this project leverages the ArCore
-        and ArKit frameworks to provide users with an engaging augmented reality
-        (AR) experience. The app allows users to place products in their actual size
-        for an immersive view or scale them down for a more comprehensive perspective.
-        Additionally, users have the creative freedom to construct personalized houses
-        using a custom editor. The primary goal of the app is to showcase the diverse
-        collection of products offered by the client, combining functionality with
-        a seamless AR interface.
+      value: "The project was developed with the purpose of creating entertaining
+        animations related to the pottery process and Gr\xE2ndola's old cultures."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[0].category
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -557,32 +447,32 @@ PrefabInstance:
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 15.375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 164.125
       objectReference: {fileID: 0}
     - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.6875
       objectReference: {fileID: 0}
     - target: {fileID: 8563523199043799894, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -638,11 +528,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674042517211735322, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: _projectURL
-      value: https://play.google.com/store/apps/details?id=com.hivolve.ooty&hl=pt_PT&gl=US
       objectReference: {fileID: 0}
     - target: {fileID: 9169170399050841783, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

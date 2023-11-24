@@ -1,17 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3922263462919926700
+--- !u!1001 &7923889600154358858
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 96469436381536548, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 441905407508771473, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
@@ -27,20 +22,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1205457954705345587, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15.375
-      objectReference: {fileID: 0}
     - target: {fileID: 1698665289376805758, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2014941914656550716, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -58,21 +43,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2198377072186408603, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249913154256109028, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2250913361082893943, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 2446093174744819911, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -107,38 +77,54 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3562947462773934064, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nEMPIGEST
-        started its activity in 2007, as a result of the enormous desire of a group
-        of professionals in the forklift market to create a different project, based
-        on the quality of the services provided, regardless of the brands assisted
-        and the size of the customer.\n\n<b><size=90>Overview</b></size>\nThis project
-        was designed with the intent of showcasing the operational prowess of EMPIGEST's
-        autonomous machines\u2014innovative technologies that function seamlessly
-        without the necessity of direct human control.\n\n<b><size=90>Technologies</b></size>\nThe
-        project was developed for Google VR using its SDK for Unity.\n\n"
+      value: '<b><size=90>Role</b></size>
+
+        Lead Developer.
+
+
+        <b><size=90>Client</b></size>
+
+        ADIRA
+        is a leading manufacturer and global supplier of sheet metal working machinery,
+        specialized in the production of laser cutting machines, hydraulic press
+        brakes, shears, robotized bending cells and automatic sheet metal transforming
+        systems.
+
+
+        <b><size=90>Overview</b></size>
+
+        This project,
+        for HTC Vive, was developed to showcase the client''s machinery in intricate
+        detail. The experience unfolds through dynamic animations, allowing users
+        to witness the machines in action. Moreover, the immersive environment empowers
+        users to actively engage with the machinery, allowing them to learn about
+        the production process.
+
+
+        <b><size=90>Challenges</b></size>
+
+        Due
+        to the complexity of the machine models, performance issues quickly became
+        present in the project.
+
+
+        <b><size=90>Solutions</b></size>
+
+        To
+        improve performance, several LOD''s were created for the models present in
+        the scene. With the addition of LOD''s and a downgrade in the quality settings,
+        we managed to maintain a consistent frame rate throughout the experience.
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_fontSize
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652011228962653467, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15.375
+      value: 73.05
       objectReference: {fileID: 0}
     - target: {fileID: 4704101651971478463, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -150,15 +136,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5088967334057996811, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: Empigest_MachineShowcase Variant
+      value: Adira_MachineShowcase Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5303765843991482258, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -175,11 +156,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15.375
-      objectReference: {fileID: 0}
     - target: {fileID: 5570647795597516356, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
@@ -193,17 +169,87 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: Images/Empigest/Scenario%201.png?raw=true
+      value: Images/AdiraVR/Screenshot_4.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: Images/Empigest/Scenariot%202.png?raw=true
+      value: Images/AdiraVR/Screenshot_1.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].url
+      value: Images/AdiraVR/Screenshot_2.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].url
+      value: Images/AdiraVR/Screenshot_3.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.name
+      value: Screenshot_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.name
+      value: Screenshot_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.name
+      value: Screenshot_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.name
+      value: Screenshot_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.bundle
+      value: adiravr
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.bundle
+      value: adiravr
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.bundle
+      value: adiravr
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.bundle
+      value: adiravr
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.category
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -218,20 +264,51 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Empigest - Machine Showcase
+      value: Adira - Machine Showcase
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nEMPIGEST
-        started its activity in 2007, as a result of the enormous desire of a group
-        of professionals in the forklift market to create a different project, based
-        on the quality of the services provided, regardless of the brands assisted
-        and the size of the customer.\n\n<b><size=90>Overview</b></size>\nThis project
-        was designed with the intent of showcasing the operational prowess of EMPIGEST's
-        autonomous machines\u2014innovative technologies that function seamlessly
-        without the necessity of direct human control.\n\n<b><size=90>Technologies</b></size>\nThe
-        project was developed for Google VR using its SDK for Unity.\n\n"
+      value: '<b><size=90>Role</b></size>
+
+        Lead Developer.
+
+
+        <b><size=90>Client</b></size>
+
+        ADIRA
+        is a leading manufacturer and global supplier of sheet metal working machinery,
+        specialized in the production of laser cutting machines, hydraulic press
+        brakes, shears, robotized bending cells and automatic sheet metal transforming
+        systems.
+
+
+        <b><size=90>Overview</b></size>
+
+        This project,
+        for HTC Vive, was developed to showcase the client''s machinery in intricate
+        detail. The experience unfolds through dynamic animations, allowing users
+        to witness the machines in action. Moreover, the immersive environment empowers
+        users to actively engage with the machinery, allowing them to learn about
+        the production process.
+
+
+        <b><size=90>Challenges</b></size>
+
+        Due
+        to the complexity of the machine models, performance issues quickly became
+        present in the project.
+
+
+        <b><size=90>Solutions</b></size>
+
+        To
+        improve performance, several LOD''s were created for the models present in
+        the scene. With the addition of LOD''s and a downgrade in the quality settings,
+        we managed to maintain a consistent frame rate throughout the experience.
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -241,7 +318,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -251,27 +328,32 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: EMPIGEST started its activity in 2007, as a result of the enormous desire
-        of a group of professionals in the forklift market to create a different
-        project, based on the quality of the services provided, regardless of the
-        brands assisted and the size of the customer.
+      value: ADIRA is a leading manufacturer and global supplier of sheet metal working
+        machinery, specialized in the production of laser cutting machines, hydraulic
+        press brakes, shears, robotized bending cells and automatic sheet metal transforming
+        systems.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].info
-      value: "This project was designed with the intent of showcasing the operational
-        prowess of EMPIGEST's autonomous machines\u2014innovative technologies that
-        function seamlessly without the necessity of direct human control."
+      value: This project, for HTC Vive, was developed to showcase the client's machinery
+        in intricate detail. The experience unfolds through dynamic animations, allowing
+        users to witness the machines in action. Moreover, the immersive environment
+        empowers users to actively engage with the machinery, allowing them to learn
+        about the production process.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].info
-      value: The project was developed for Google VR using its SDK for Unity.
+      value: Due to the complexity of the machine models, performance issues quickly
+        became present in the project.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _infoData.Array.data[0].category
-      value: 0
+      propertyPath: _infoData.Array.data[4].info
+      value: To improve performance, several LOD's were created for the models present
+        in the scene. With the addition of LOD's and a downgrade in the quality settings,
+        we managed to maintain a consistent frame rate throughout the experience.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -286,17 +368,17 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].category
-      value: 6
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].category
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8345432383405157712, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15.375
       objectReference: {fileID: 0}
     - target: {fileID: 8563523199043799894, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -357,11 +439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9169170399050841783, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c, type: 3}

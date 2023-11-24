@@ -98,13 +98,13 @@ namespace KronosTech.Services
                     }
                     catch (Exception e)
                     {
-                        Debug.LogError("Error downloading video: " + url + " - " + e.Message);
+                        Debug.LogError("Error getting text data: " + url + " - " + e.Message);
                         onComplete?.Invoke(null, e.Message);
                     }
                 }
                 else
                 {
-                    Debug.LogError("Error on video API request: " + url + " - " + www.result + " - " + www.error);
+                    Debug.LogError("Error getting text data: " + url + " - " + www.result + " - " + www.error);
                     onComplete?.Invoke(null, www.error);
                 }
             }

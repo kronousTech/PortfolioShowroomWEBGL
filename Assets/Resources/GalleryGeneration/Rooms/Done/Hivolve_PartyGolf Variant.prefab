@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8864841986333716073
+--- !u!1001 &5915747694362042017
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -55,7 +55,27 @@ PrefabInstance:
     - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _videoData.Array.data[0].url
-      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/Grandola%20AR/Olaria%20AR.mp4
+      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/1_HiGames%20-%20PartyGolf/Screenrecorder-2023-01-02-03-31-34-198.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[1].url
+      value: https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Images/1_HiGames%20-%20PartyGolf/VID_20230102_033635.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.name
+      value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.bundle
+      value: hivolve_partygolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856104302283059666, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _videoData.Array.data[0].asset.category
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -105,10 +125,34 @@ PrefabInstance:
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nGr\xE2ndola's
-        Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThe project was developed
-        with the purpose of creating entertaining animations related to the pottery
-        process and Gr\xE2ndola's old cultures.\n\n"
+      value: '<b><size=90>Role</b></size>
+
+        Lead Developer.
+
+
+        <b><size=90>Client</b></size>
+
+        hivolve
+        develops XR (VR/AR/MR) experiences to increase business performance. With
+        businesses in Europe & America, working closely with HR, Sales or Marketing
+        executives.
+
+
+        <b><size=90>Overview</b></size>
+
+        ''Party Golf''
+        is a game that I developed during my internship at hivolve. The game was
+        inspired by the golf game ''Golf It'' but following a party theme.
+
+
+        <b><size=90>Lessons</b></size>
+
+        Being
+        my first mobile game I''ve developed at the time, it inspired me to learn
+        more about how to create inputs via screen, game optimization.
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -193,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 5196600039252470121, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Name
-      value: Grandola_MelidesPotteryAR Variant
+      value: Hivolve_PartyGolf Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5508431463053356674, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -253,27 +297,117 @@ PrefabInstance:
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[0].url
-      value: Images/Grandola%20AR/Screenshot_1.png?raw=true
+      value: Images/1_HiGames%20-%20PartyGolf/Gameplay.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[1].url
-      value: Images/Grandola%20AR/Screenshot_2.png?raw=true
+      value: Images/1_HiGames%20-%20PartyGolf/Local%20Multiplayer.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[2].url
-      value: Images/Grandola%20AR/Screenshot_3.png?raw=true
+      value: Images/1_HiGames%20-%20PartyGolf/MainMenu.png?raw=true
       objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.data[3].url
-      value: Images/Grandola%20AR/Screenshot_4.png?raw=true
+      value: Images/1_HiGames%20-%20PartyGolf/Shop.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[4].url
+      value: https://github.com/kronousTech/Portfolio-WEBGL-PC/blob/main/Images/1_HiGames%20-%20PartyGolf/Shop.png?raw=true
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].title
+      value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].title
+      value: Local Multiplayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].title
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].title
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[4].title
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.name
+      value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.name
+      value: Local Multiplayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.name
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.name
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.bundle
+      value: hivolve_partygolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.bundle
+      value: hivolve_partygolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.bundle
+      value: hivolve_partygolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.bundle
+      value: hivolve_partygolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[0].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[1].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[2].asset.category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _imageData.Array.data[3].asset.category
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6794864701753151679, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: roomTags
-      value: 68
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 6911240588372966099, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -283,15 +417,39 @@ PrefabInstance:
     - target: {fileID: 7653291659167730707, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _name
-      value: Grandola - Pottery AR
+      value: Hivolve - Party Golf
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_text
-      value: "<b><size=90>Role</b></size>\nLead Developer.\n\n<b><size=90>Client</b></size>\nGr\xE2ndola's
-        Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThe project was developed
-        with the purpose of creating entertaining animations related to the pottery
-        process and Gr\xE2ndola's old cultures.\n\n"
+      value: '<b><size=90>Role</b></size>
+
+        Lead Developer.
+
+
+        <b><size=90>Client</b></size>
+
+        hivolve
+        develops XR (VR/AR/MR) experiences to increase business performance. With
+        businesses in Europe & America, working closely with HR, Sales or Marketing
+        executives.
+
+
+        <b><size=90>Overview</b></size>
+
+        ''Party Golf''
+        is a game that I developed during my internship at hivolve. The game was
+        inspired by the golf game ''Golf It'' but following a party theme.
+
+
+        <b><size=90>Lessons</b></size>
+
+        Being
+        my first mobile game I''ve developed at the time, it inspired me to learn
+        more about how to create inputs via screen, game optimization.
+
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -306,7 +464,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -316,18 +474,22 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[1].info
-      value: "Gr\xE2ndola's Municipal Chamber."
+      value: hivolve develops XR (VR/AR/MR) experiences to increase business performance.
+        With businesses in Europe & America, working closely with HR, Sales or Marketing
+        executives.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[2].info
-      value: "The project was developed with the purpose of creating entertaining
-        animations related to the pottery process and Gr\xE2ndola's old cultures."
+      value: '''Party Golf'' is a game that I developed during my internship at hivolve.
+        The game was inspired by the golf game ''Golf It'' but following a party
+        theme.'
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _infoData.Array.data[0].category
-      value: 0
+      propertyPath: _infoData.Array.data[3].info
+      value: Being my first mobile game I've developed at the time, it inspired me
+        to learn more about how to create inputs via screen, game optimization.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -338,6 +500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _infoData.Array.data[2].category
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[3].category
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

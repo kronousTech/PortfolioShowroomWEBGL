@@ -29,7 +29,8 @@ namespace KronosTech.Services
         
                 if (bundle_asset == null)
                 {
-                    Debug.LogError("SERVICE REQUEST BUNDLE: Error loading bundle asset at directory: " + asset.bundle + " - " + directory);
+                    Debug.LogError("SERVICE REQUEST BUNDLE: Error loading bundle asset at directory: " 
+                        + asset.name + " - " +  asset.bundle + " - " + directory);
                 }
         
                 bundle.Unload(false);

@@ -10,7 +10,7 @@ namespace KronosTech.Services
 
         public string LoadVideo(Asset asset)
         {
-            return _baseURL + asset.category + "/" + asset.bundle + "/" + asset.name;
+            return _baseURL + asset.category + "/" + asset.bundle + "/" + asset.name + ".mp4";
         }
     }
 }

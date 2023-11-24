@@ -64,8 +64,6 @@ namespace KronosTech.ShowroomGeneration.Room
 
             Index = 0;
 
-            UpdateImage();
-
             _buttonsHolder.SetActive(_sprites.Length > 1);
         }
 
