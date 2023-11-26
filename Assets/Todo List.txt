@@ -4,14 +4,17 @@ Add master volume slider.
 [BUG]
 
 
+
 [FEATURES]
+- Add hide decoration feature.
+- Add meme displays.
+- Add upwork rooms.
 - Add a way to increase/decrease video volume
 - Play/pause using the video screen instead of button.
 - Reset cameras x axis when teleporting. (Try disabling camera, rotating, enabling).
-- Show download progress at start.
 
 [OPTIMIZATION]
 - Download Materials from repo.
-- Convert to asset bundles.
 - Optimize canvases.
 - Optimize room generation
+- Disable canvas and vido players if no visible

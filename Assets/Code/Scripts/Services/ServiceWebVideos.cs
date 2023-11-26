@@ -6,7 +6,7 @@ namespace KronosTech.Services
     {
         public ServiceWebVideos() { }
 
-        private static string _baseURL = "https://github.com/kronousTech/Portfolio-WEBGL-PC/raw/main/Content/Videos/";
+        private static readonly string _baseURL = "https://media.githubusercontent.com/media/kronousTech/Portfolio-WEBGL-PC/main/Content/Videos/";
 
         public string LoadVideo(Asset asset)
         {

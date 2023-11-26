@@ -24,12 +24,18 @@ namespace KronosTech.InputSystem
 
         private void OnEnable()
         {
-			GameEvents.OnPanelOpen += (state) => _disableMouseInput = state;
+			AssetsLoader.OnBundlesDownload += () => _disableMouseInput = false;
+            AssetsLoader.OnBundlesDownload += () => _disableMoveInput = false;
+
+            GameEvents.OnPanelOpen += (state) => _disableMouseInput = state;
             GameEvents.OnPanelOpen += (state) => _disableMoveInput = state;
             GameEvents.OnPanelOpen += (state) => { if (state) StopMovement(); };
         }
         private void OnDisable()
         {
+            AssetsLoader.OnBundlesDownload -= () => _disableMouseInput = false;
+            AssetsLoader.OnBundlesDownload -= () => _disableMoveInput = false;
+
             GameEvents.OnPanelOpen -= (state) => _disableMouseInput = state;
             GameEvents.OnPanelOpen -= (state) => _disableMoveInput = state;
             GameEvents.OnPanelOpen += (state) => { if (state) StopMovement(); };
