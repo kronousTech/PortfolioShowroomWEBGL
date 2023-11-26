@@ -25,22 +25,13 @@ namespace KronosTech.ShowroomGeneration.Room
         {
             _imageSprites = new RoomImageSpriteData[_imageData.Length];
 
-            var loadCount = 0;
-
             for (int i = 0; i < _imageData.Length; i++)
             {
-                var sprite = ServiceLocator.Instance.GetWebImagesService().LoadImage(_imageData[i].asset);
-                
                 _imageSprites[i].title = _imageData[i].title;   
-                _imageSprites[i].sprite = sprite;
-                
-                loadCount++;
-                
-                if(loadCount == _imageData.Length)
-                {
-                    AddSpritesToDisplays();
-                }
+                _imageSprites[i].sprite = ServiceLocator.Instance.GetWebImagesService().LoadImage(_imageData[i].asset);
             }
+
+            AddSpritesToDisplays();
         }
 
         private void AddSpritesToDisplays()

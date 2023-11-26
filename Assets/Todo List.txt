@@ -3,10 +3,7 @@ Add master volume slider.
 
 [BUG]
 
-
-
 [FEATURES]
-- Add hide decoration feature.
 - Add meme displays.
 - Add upwork rooms.
 - Add a way to increase/decrease video volume

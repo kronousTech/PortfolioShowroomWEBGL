@@ -4754,6 +4754,7 @@ GameObject:
   - component: {fileID: 4165410216016963751}
   - component: {fileID: 9067266973784821430}
   - component: {fileID: 9044398600466881500}
+  - component: {fileID: 938973780886748659}
   m_Layer: 0
   m_Name: BarBarrier
   m_TagString: Untagged
@@ -4912,6 +4913,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &938973780886748659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092413145374268916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ddd84f806dca746ac4d323e4c92fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2450245305896092690
 GameObject:
   m_ObjectHideFlags: 0
@@ -36380,6 +36393,7 @@ GameObject:
   - component: {fileID: 564026317377024375}
   - component: {fileID: 2753952699416376649}
   - component: {fileID: 84971252204853436}
+  - component: {fileID: 451186975395124576}
   m_Layer: 0
   m_Name: BarBarrier (1)
   m_TagString: Untagged
@@ -36538,6 +36552,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &451186975395124576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655780233876987499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ddd84f806dca746ac4d323e4c92fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4907966880047733435
 GameObject:
   m_ObjectHideFlags: 0
@@ -38499,6 +38525,7 @@ GameObject:
   - component: {fileID: 5638569034027565579}
   - component: {fileID: 7335658921890688164}
   - component: {fileID: 2878596663675138501}
+  - component: {fileID: 3816261926854460629}
   m_Layer: 0
   m_Name: BarBarrier
   m_TagString: Untagged
@@ -38657,6 +38684,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3816261926854460629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465139550477520455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ddd84f806dca746ac4d323e4c92fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6569165401762772375
 GameObject:
   m_ObjectHideFlags: 0
@@ -44106,6 +44145,7 @@ GameObject:
   - component: {fileID: 4921648169516952353}
   - component: {fileID: 8279680963932837814}
   - component: {fileID: 4143438709014781183}
+  - component: {fileID: 1901125868273003232}
   m_Layer: 0
   m_Name: BarBarrier
   m_TagString: Untagged
@@ -44264,6 +44304,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &1901125868273003232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859264127933614808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ddd84f806dca746ac4d323e4c92fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7613851350617021325
 GameObject:
   m_ObjectHideFlags: 0
