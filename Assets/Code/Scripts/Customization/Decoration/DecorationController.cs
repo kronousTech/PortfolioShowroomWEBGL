@@ -23,5 +23,9 @@ namespace KronosTech.Customization.Decoration
 
             model.gameObject.SetActive(_currentState);
         }
+        public static void Remove(DecorationModel model)
+        {
+            _modelsList.Remove(model);
+        }
     }
 }

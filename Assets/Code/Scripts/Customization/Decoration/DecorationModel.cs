@@ -8,5 +8,9 @@ namespace KronosTech.Customization.Decoration
         {
             DecorationController.Add(this);
         }
+        private void OnDestroy()
+        {
+            DecorationController.Remove(this);
+        }
     }
 }

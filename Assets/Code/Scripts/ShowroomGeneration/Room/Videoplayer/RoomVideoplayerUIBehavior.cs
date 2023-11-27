@@ -46,7 +46,6 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _controller.OnPlayInput += () => _buttonPlay.interactable = false;
             _controller.OnPlayInput += () => _buttonPause.interactable = false;
             _controller.OnPlayInput += () => _buttonRestart.interactable = false;
-
             _controller.OnPlay += () => _buttonPlay.interactable = true;
             _controller.OnPlay += () => _buttonPause.interactable = true;
             _controller.OnPlay += () => _buttonRestart.interactable = true;

@@ -74,6 +74,8 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         {
             AssetsLoader.OnBundlesDownload += LoadVideos;
 
+            GenerateShowroom.OnGenerationEnd += (state) => Prepare();
+
             _buttonNext.onClick.AddListener(NextVideo);
             _buttonPrev.onClick.AddListener(PreviousVideo);
             _buttonPlay.onClick.AddListener(() => StartCoroutine(PlayCoroutine()));
@@ -90,6 +92,8 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         private void OnDisable()
         {
             AssetsLoader.OnBundlesDownload -= LoadVideos;
+
+            GenerateShowroom.OnGenerationEnd -= (state) => Prepare();
 
             _buttonNext.onClick.RemoveListener(NextVideo);
             _buttonPrev.onClick.RemoveListener(PreviousVideo);
@@ -112,7 +116,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         {
             _videoPlayer.source = VideoSource.Url;
 
-            var renderTexture = new RenderTexture(1024, 768, 0);
+            var renderTexture = new RenderTexture(800, 600, 0);
             _videoPlayer.targetTexture = renderTexture;
             _videoPlayer.GetComponent<RawImage>().texture = renderTexture;
 
@@ -190,6 +194,13 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         {
             _videoPlayer.Play();
 
+            while (!_videoPlayer.isPrepared)
+            {
+                yield return null;
+            }
+
+            _videoPlayer.Play();
+
             OnPlayInput?.Invoke();
 
             while (!_videoPlayer.isPlaying)
@@ -198,8 +209,12 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             }
 
             OnPlay?.Invoke();
-
             OnVideoStart?.Invoke(this);
+        }
+
+        public void ForcePause()
+        {
+            Pause();
         }
     }
 

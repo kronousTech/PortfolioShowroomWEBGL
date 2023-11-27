@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class FpsCounterDisplay : MonoBehaviour
 {
-    private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private Color _low;
+    [SerializeField] private Color _medium;
+    [SerializeField] private Color _high;
 
     private const float INTERVAL = 0.5f;
 
@@ -11,10 +14,6 @@ public class FpsCounterDisplay : MonoBehaviour
     private int frames = 0;
     private float timeleft;
 
-    private void Awake()
-    {
-        _text = GetComponent<TextMeshProUGUI>();
-    }
     private void Update()
     {
         timeleft -= Time.deltaTime;
@@ -24,7 +23,22 @@ public class FpsCounterDisplay : MonoBehaviour
         // Interval ended - update GUI text and start new interval
         if (timeleft <= 0.0)
         {
-            _text.text = "FPS: " + (int)(accum / frames);
+            var value = (int)(accum / frames);
+            
+            if (value <= 15)
+            {
+                _text.color = _low;
+            }
+            else if(value <= 45)
+            {
+                _text.color = _medium;
+            }
+            else
+            {
+                _text.color = _high;
+            }
+
+            _text.text = value.ToString();
 
             // Reset variables
             timeleft = INTERVAL;

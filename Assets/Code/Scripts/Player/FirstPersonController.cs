@@ -1,4 +1,5 @@
-﻿using KronosTech.InputSystem;
+﻿using Cinemachine;
+using KronosTech.InputSystem;
 using System.Collections;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
@@ -210,21 +211,19 @@ namespace KronosTech.Player
 			}
 		}
 
-		public IEnumerator Teleport(Transform location)
+		public void Teleport(Transform location)
 		{
 			_controller.enabled = false;
 
-			transform.position = location.position;
+            transform.position = location.position;
 			transform.eulerAngles = location.eulerAngles;
-
-			yield return new WaitForEndOfFrame();
 
             CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(0, 0.0f, 0.0f);
 
             _controller.enabled = true;
-		}
+        }
 
-		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
+        private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;

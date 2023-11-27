@@ -39,7 +39,7 @@ namespace Teleports
             newDisplay.Init(name, tags);
             newDisplay.button.onClick.AddListener(() =>
             {
-                StartCoroutine(_playerController.Teleport(location));
+                _playerController.Teleport(location);
                 _teleportPanel.ClosePanel();
             });
 

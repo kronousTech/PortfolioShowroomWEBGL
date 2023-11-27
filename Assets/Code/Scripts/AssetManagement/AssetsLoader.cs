@@ -7,8 +7,6 @@ using UnityEngine;
 
 public static class AssetsLoader
 {
-    private class CoroutineRunner : MonoBehaviour { }
-
     private static MonoBehaviour _temporaryCoroutineRunner;
     private static string _manifestURL = "https://raw.githubusercontent.com/kronousTech/Portfolio-WEBGL-PC/main/Content/Bundles/AssetBundles.manifest";
 
