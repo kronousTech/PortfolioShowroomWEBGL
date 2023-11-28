@@ -59,7 +59,7 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
     }
     private void ClickButton()
     {
-        if (_selectedButton == null || !_selectedButton.interactable || _uiOpen || !_isFocused)
+        if (_selectedButton == null || !_selectedButton.interactable || _uiOpen || !_isFocused || Cursor.lockState == CursorLockMode.None)
         {
             return;
         }
@@ -75,7 +75,7 @@ public class PlayerGraphicButtonInteractable : MonoBehaviour
     {
         if (focused)
         {
-            yield return null;
+            yield return new WaitForSeconds(0.2f);
 
             _isFocused = true;
         }

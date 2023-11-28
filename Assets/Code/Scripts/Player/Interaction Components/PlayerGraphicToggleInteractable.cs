@@ -59,7 +59,7 @@ namespace KronosTech.PlayerInteraction
         }
         private void ClickToggle()
         {
-            if (_selectedToggle == null || !_selectedToggle.interactable || _uiOpen || !_isFocused)
+            if (_selectedToggle == null || !_selectedToggle.interactable || _uiOpen || !_isFocused || Cursor.lockState == CursorLockMode.None)
             {
                 return;
             }
@@ -75,7 +75,7 @@ namespace KronosTech.PlayerInteraction
         {
             if (focused)
             {
-                yield return null;
+                yield return new WaitForSeconds(0.2f);
 
                 _isFocused = true;
             }

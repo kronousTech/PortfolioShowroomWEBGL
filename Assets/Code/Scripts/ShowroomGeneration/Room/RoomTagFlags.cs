@@ -9,4 +9,5 @@ public enum RoomTagFlags
     Product = 1 << 4,
     Game = 1 << 5,
     Mobile = 1 << 6,
+    Upwork = 1 << 7
 }
