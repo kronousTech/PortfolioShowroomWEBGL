@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4ee445c45515d4ca330144d5aea9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _url: 
+  _url: https://codeverze.com
 --- !u!1 &5678131864872683768
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +400,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1759560418321914747, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759560418321914747, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 634
+      objectReference: {fileID: 0}
     - target: {fileID: 1898065491560273756, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_Mesh
@@ -499,7 +509,7 @@ PrefabInstance:
         a high standard for my expectations in future Upwork endeavors.\n\nUnfortunately,
         I'm unable to provide specific project details due to the signing of a non-disclosure
         agreement (NDA). \n\nFor further insights into Codeverze you can explore
-        their LinkedIn profile and website through the links bellow.\n\n<b><size=90>Duration</b></size>\nOctover
+        their LinkedIn profile and website through the links bellow.\n\n<b><size=90>Duration</b></size>\nOctober
         12, 2022 - Ongoing.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
@@ -626,7 +636,7 @@ PrefabInstance:
         a high standard for my expectations in future Upwork endeavors.\n\nUnfortunately,
         I'm unable to provide specific project details due to the signing of a non-disclosure
         agreement (NDA). \n\nFor further insights into Codeverze you can explore
-        their LinkedIn profile and website through the links bellow.\n\n<b><size=90>Duration</b></size>\nOctover
+        their LinkedIn profile and website through the links bellow.\n\n<b><size=90>Duration</b></size>\nOctober
         12, 2022 - Ongoing.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,

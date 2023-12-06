@@ -406,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -426,6 +426,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
+      propertyPath: _infoData.Array.data[3].info
+      value: This project was straightforward overall, with the primary hurdle being
+        effectively interpreting AR markers and ensuring consistent tracking once
+        the models appeared.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].info
+      value: To ensure reliable tracking, we implemented a 3-second timer. This way,
+        if the marker temporarily lost tracking, the object would persist in its
+        last known position. This helped prevent the object from disappearing due
+        to minor tracking glitches when the marker detection faltered.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
       propertyPath: _infoData.Array.data[0].category
       value: 0
       objectReference: {fileID: 0}
@@ -438,6 +453,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _infoData.Array.data[2].category
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[3].category
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].category
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

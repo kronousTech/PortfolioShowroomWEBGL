@@ -164,7 +164,15 @@ PrefabInstance:
         Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThis project showcases
         the traditional process of crafting clay pots, allowing players to experience
         each step, from gathering raw clay to shaping and eventually selling the
-        finished pot.\n\n"
+        finished pot.\n\n<b><size=90>Challenges</b></size>\nBeing a long experience,
+        the main challenge involved establishing a system to incorporate multiple
+        tasks for players. Each task required a clear condition and corresponding
+        visual cues to guide the player. Additionally, there was a need for visual
+        or auditory feedback upon task completion.\n\n<b><size=90>Solutions</b></size>\nTo
+        address this challenge, I devised a script encompassing all scene tasks,
+        iterating to the next one once the current task was finished. I established
+        an abstract class for tasks, providing a flexible structure that allowed
+        for creativity and expansion while maintaining a robust foundation.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4273987360796567649, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -301,6 +309,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5750668888546891499, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6530184104893239348, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _imageData.Array.size
@@ -408,12 +421,20 @@ PrefabInstance:
         Municipal Chamber.\n\n<b><size=90>Overview</b></size>\nThis project showcases
         the traditional process of crafting clay pots, allowing players to experience
         each step, from gathering raw clay to shaping and eventually selling the
-        finished pot.\n\n"
+        finished pot.\n\n<b><size=90>Challenges</b></size>\nBeing a long experience,
+        the main challenge involved establishing a system to incorporate multiple
+        tasks for players. Each task required a clear condition and corresponding
+        visual cues to guide the player. Additionally, there was a need for visual
+        or auditory feedback upon task completion.\n\n<b><size=90>Solutions</b></size>\nTo
+        address this challenge, I devised a script encompassing all scene tasks,
+        iterating to the next one once the current task was finished. I established
+        an abstract class for tasks, providing a flexible structure that allowed
+        for creativity and expansion while maintaining a robust foundation.\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7836380202051135750, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 78.25
       objectReference: {fileID: 0}
     - target: {fileID: 7894941355213749977, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -423,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -444,6 +465,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
+      propertyPath: _infoData.Array.data[3].info
+      value: Being a long experience, the main challenge involved establishing a
+        system to incorporate multiple tasks for players. Each task required a clear
+        condition and corresponding visual cues to guide the player. Additionally,
+        there was a need for visual or auditory feedback upon task completion.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].info
+      value: To address this challenge, I devised a script encompassing all scene
+        tasks, iterating to the next one once the current task was finished. I established
+        an abstract class for tasks, providing a flexible structure that allowed
+        for creativity and expansion while maintaining a robust foundation.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
       propertyPath: _infoData.Array.data[1].category
       value: 1
       objectReference: {fileID: 0}
@@ -451,6 +488,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _infoData.Array.data[2].category
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[3].category
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].category
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

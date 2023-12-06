@@ -20,7 +20,7 @@ namespace KronosTech.ShowroomGeneration.Room
     public struct InfoCategory
     {
         public InfoCategories category;
-        [TextArea(10, 50)] public string info;
+        [TextArea(15, 75)] public string info;
     }
 
     [ExecuteInEditMode]

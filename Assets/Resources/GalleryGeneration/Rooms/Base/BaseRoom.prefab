@@ -326,7 +326,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 458
+  m_VersionIndex: 461
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -447,6 +447,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &460560360976910668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1008,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &563565244627898704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1465,7 @@ VideoPlayer:
   m_PlayOnAwake: 0
   m_SkipOnDrop: 0
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!82 &8563152449180599976
@@ -11462,6 +11468,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1490853910251118893}
+        m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+        m_MethodName: Prepare
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3176344511322484316
 GameObject:
   m_ObjectHideFlags: 0
@@ -17156,6 +17177,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4089630708958554058
 GameObject:
   m_ObjectHideFlags: 0
@@ -28680,6 +28704,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBecameVisibleEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8371512410641683882
 GameObject:
   m_ObjectHideFlags: 0

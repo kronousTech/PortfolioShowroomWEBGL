@@ -306,7 +306,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -330,16 +330,19 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].info
-      value: In embarking on my initial WebGL project, I encountered a range of new
-        challenges related to optimization, build sizes, and interaction with elements
-        within the scene. These challenges provided valuable learning opportunities,
-        allowing me to deepen my understanding of WebGL development intricacies and
-        refine my problem-solving skills.
+      value: In embarking on my first WebGL project, I encountered a range of new
+        challenges related to optimization and build sizes. These challenges provided
+        valuable learning opportunities, allowing me to deepen my understanding of
+        WebGL development intricacies and refine my problem-solving skills.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[4].info
-      value: 'With this project i learned the webgl limitations, and the '
+      value: To address the optimization and build size concerns, I began by reducing
+        the quality of various images. In some cases, the default quality was unnecessarily
+        high, and cutting it in half significantly reduced the build size. This adjustment
+        resulted in smoother application performance with almost no noticeable difference
+        in visual quality.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -359,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[4].category
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}

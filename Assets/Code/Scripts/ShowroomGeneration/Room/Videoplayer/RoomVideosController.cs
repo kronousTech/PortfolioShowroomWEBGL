@@ -46,6 +46,8 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
                 if(_videoPlayer.isActiveAndEnabled)
                 {
                     _videoPlayer.Prepare();
+
+                    StartCoroutine(PrepareCoroutine());
                 }
 
                 OnPrepare?.Invoke();
@@ -53,8 +55,6 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         }
 
         private RoomVideoData[] _videoClips;
-
-        private GalleryRoom _room;
 
         private static Action<RoomVideosController> OnVideoStart;
 
@@ -73,7 +73,6 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         private void OnEnable()
         {
             AssetsLoader.OnBundlesDownload += LoadVideos;
-
             GenerateShowroom.OnGenerationEnd += (state) => Prepare();
 
             _buttonNext.onClick.AddListener(NextVideo);
@@ -85,14 +84,11 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _videoPlayer.prepareCompleted += (source) => Prepared();
             _videoPlayer.prepareCompleted += (source) => Pause();
 
-            _room.OnPlacement += Prepare;
-
             OnVideoStart += DisableOtherVideoPlayers;
         }
         private void OnDisable()
         {
             AssetsLoader.OnBundlesDownload -= LoadVideos;
-
             GenerateShowroom.OnGenerationEnd -= (state) => Prepare();
 
             _buttonNext.onClick.RemoveListener(NextVideo);
@@ -104,13 +100,7 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
             _videoPlayer.prepareCompleted -= (source) => Prepared();
             _videoPlayer.prepareCompleted -= (source) => Pause();
 
-            _room.OnPlacement -= Prepare;
-
             OnVideoStart -= DisableOtherVideoPlayers;
-        }
-        private void Awake()
-        {
-            _room = GetComponent<GalleryRoom>();
         }
         private void Start()
         {
@@ -142,8 +132,6 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
                 _videoClips[i].title = _videoData[i].title;
                 _videoClips[i].url = ServiceLocator.Instance.GetWebVideosService().LoadVideo(_videoData[i].asset);
             }
-
-            Index = 0;
         }
 
         private void DisableOtherVideoPlayers(RoomVideosController controller)
@@ -215,6 +203,14 @@ namespace KronosTech.ShowroomGeneration.Room.Videoplayer
         public void ForcePause()
         {
             Pause();
+        }
+
+        private IEnumerator PrepareCoroutine()
+        {
+            yield return new WaitForSeconds(2.0f);
+
+            if(!_videoPlayer.isPrepared)
+                _videoPlayer.Prepare();
         }
     }
 

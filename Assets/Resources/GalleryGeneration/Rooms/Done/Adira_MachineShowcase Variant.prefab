@@ -104,19 +104,25 @@ PrefabInstance:
         the production process.
 
 
+        <b><size=90>Technologies</b></size>
+
+        Initially
+        in development
+
+
         <b><size=90>Challenges</b></size>
 
-        Due
-        to the complexity of the machine models, performance issues quickly became
-        present in the project.
+        Due to
+        the complexity of the machine models, performance issues quickly became present
+        in the project.
 
 
         <b><size=90>Solutions</b></size>
 
-        To
-        improve performance, several LOD''s were created for the models present in
-        the scene. With the addition of LOD''s and a downgrade in the quality settings,
-        we managed to maintain a consistent frame rate throughout the experience.
+        To improve
+        performance, several LOD''s were created for the models present in the scene.
+        With the addition of LOD''s and a downgrade in the quality settings, we managed
+        to maintain a consistent frame rate throughout the experience.
 
 
 '
@@ -124,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 4216721815233997155, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: m_fontSize
-      value: 73.05
+      value: 68.55
       objectReference: {fileID: 0}
     - target: {fileID: 4704101651971478463, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -293,19 +299,25 @@ PrefabInstance:
         the production process.
 
 
+        <b><size=90>Technologies</b></size>
+
+        Initially
+        in development
+
+
         <b><size=90>Challenges</b></size>
 
-        Due
-        to the complexity of the machine models, performance issues quickly became
-        present in the project.
+        Due to
+        the complexity of the machine models, performance issues quickly became present
+        in the project.
 
 
         <b><size=90>Solutions</b></size>
 
-        To
-        improve performance, several LOD''s were created for the models present in
-        the scene. With the addition of LOD''s and a downgrade in the quality settings,
-        we managed to maintain a consistent frame rate throughout the experience.
+        To improve
+        performance, several LOD''s were created for the models present in the scene.
+        With the addition of LOD''s and a downgrade in the quality settings, we managed
+        to maintain a consistent frame rate throughout the experience.
 
 
 '
@@ -318,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -345,12 +357,19 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].info
+      value: At first, we planned to use the SteamVR SDK for VR controls and interaction.
+        However, as the project progressed, we switched to the Oculus Plugin because
+        we decided to develop for the Oculus Quest 2 instead.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].info
       value: Due to the complexity of the machine models, performance issues quickly
         became present in the project.
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
-      propertyPath: _infoData.Array.data[4].info
+      propertyPath: _infoData.Array.data[5].info
       value: To improve performance, several LOD's were created for the models present
         in the scene. With the addition of LOD's and a downgrade in the quality settings,
         we managed to maintain a consistent frame rate throughout the experience.
@@ -368,11 +387,16 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[3].category
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.data[4].category
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[5].category
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,

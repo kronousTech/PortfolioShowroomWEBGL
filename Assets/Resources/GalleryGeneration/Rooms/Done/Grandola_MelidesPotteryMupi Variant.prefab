@@ -485,7 +485,7 @@ PrefabInstance:
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
       propertyPath: _infoData.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
@@ -507,6 +507,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
+      propertyPath: _infoData.Array.data[3].info
+      value: The trickiest aspect of this project was putting together the Word Search
+        game, especially since it was my first attempt at creating one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].info
+      value: "To develop the Word Search game, I devised a system for placing words
+        on a grid, allowing certain letter squares to serve multiple words. \nFirst,
+        I randomly determined the direction of the word\u2014horizontal or vertical.
+        Once the direction was set, I selected a starting position by calculating
+        a range within the grid size, considering the word's letter count. Moving
+        through the squares, I checked if each square was either empty or contained
+        the same letter as the one being placed.\r\n\r\nIf placing the word wasn't
+        feasible, I sought a new position. In cases of repeated unsuccessful attempts,
+        I reset the temporary grid board and restarted the generation process. To
+        minimize the need for restarts, I ensured the grid was slightly larger than
+        the largest word, this made the need for restarts very rare. After placing
+        all the words, I filled the remaining empty squares with random letters and
+        then displayed the grid on the screen."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
       propertyPath: _infoData.Array.data[1].category
       value: 1
       objectReference: {fileID: 0}
@@ -514,6 +537,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _infoData.Array.data[2].category
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[3].category
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110303635493442429, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
+        type: 3}
+      propertyPath: _infoData.Array.data[4].category
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8119131832080894656, guid: ff2360dfd2c9dfc4381f0f5a049f6a3c,
         type: 3}
